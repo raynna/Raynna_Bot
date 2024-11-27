@@ -1,0 +1,526 @@
+{
+  "48741210": {
+    "twitch": {
+      "channel": "moistbean",
+      "username": "MoistBean"
+    },
+    "runescape": {
+      "id": 3817572475,
+      "name": "GIMoistbean"
+    },
+    "toggled": [
+      "hugge",
+      "dino"
+    ],
+    "font": "bold"
+  },
+  "57810555": {
+    "twitch": {
+      "channel": "whitegrimreaper_",
+      "username": "whitegrimreaper_"
+    },
+    "runescape": {
+      "id": 1360974753,
+      "name": "whitegrim"
+    },
+    "toggled": [
+      "emotes",
+      "botinfo",
+      "cmd"
+    ],
+    "font": "bold"
+  },
+  "57878968": {
+    "twitch": {
+      "channel": "kram_yelooc",
+      "username": "Kram_Yelooc"
+    },
+    "runescape": {
+      "name": "",
+      "id": -1
+    },
+    "toggled": [],
+    "font": "bold"
+  },
+  "65381354": {
+    "twitch": {
+      "channel": "pingisb0rd",
+      "username": "Pingisb0rd"
+    },
+    "runescape": {
+      "name": "",
+      "id": -1
+    },
+    "toggled": [],
+    "font": "bold"
+  },
+  "71333591": {
+    "twitch": {
+      "channel": "chevalricrs",
+      "username": "ChevalricRS"
+    },
+    "runescape": {
+      "name": "",
+      "id": -1
+    },
+    "toggled": [],
+    "font": "bold"
+  },
+  "78501398": {
+    "twitch": {
+      "channel": "duckonatruck",
+      "username": "DuckOnATruck"
+    },
+    "runescape": {
+      "name": "",
+      "id": -1
+    },
+    "toggled": [],
+    "font": "bold"
+  },
+  "80953740": {
+    "twitch": {
+      "channel": "cakez77",
+      "username": "cakez77"
+    },
+    "runescape": {
+      "name": "",
+      "id": -1
+    },
+    "toggled": [],
+    "font": "bold"
+  },
+  "83260968": {
+    "twitch": {
+      "channel": "xroseyposeyx",
+      "username": "xRoseyPoseyx"
+    },
+    "runescape": {
+      "id": 2764391883,
+      "name": "xRoseyPosiex"
+    },
+    "toggled": [],
+    "font": "default"
+  },
+  "83285315": {
+    "twitch": {
+      "channel": "dungtutor",
+      "username": "DungTutor"
+    },
+    "runescape": {
+      "name": "",
+      "id": -1
+    },
+    "toggled": [],
+    "font": "bold"
+  },
+  "84895439": {
+    "twitch": {
+      "channel": "1linneaa",
+      "username": "1Linneaa"
+    },
+    "runescape": {
+      "name": "",
+      "id": -1
+    },
+    "toggled": [],
+    "font": "bold"
+  },
+  "100786482": {
+    "twitch": {
+      "channel": "whitfin",
+      "username": "whitfin"
+    },
+    "runescape": {
+      "name": "",
+      "id": -1
+    },
+    "toggled": [],
+    "font": "bold"
+  },
+  "100957167": {
+    "twitch": {
+      "channel": "corrovt",
+      "username": "CORROvt"
+    },
+    "runescape": {
+      "name": "",
+      "id": -1
+    },
+    "toggled": [
+      "dino"
+    ],
+    "font": "bold"
+  },
+  "117020610": {
+    "twitch": {
+      "channel": "dolerei",
+      "username": "Dolerei"
+    },
+    "runescape": {
+      "name": "",
+      "id": -1
+    },
+    "toggled": [],
+    "font": "bold"
+  },
+  "123046275": {
+    "twitch": {
+      "channel": "sarahdominist",
+      "username": "Sarahdominist"
+    },
+    "runescape": {
+      "id": 386832,
+      "name": "Sarah Janey"
+    },
+    "toggled": [],
+    "font": "bold"
+  },
+  "127302375": {
+    "twitch": {
+      "channel": "soulbug",
+      "username": "soulbug"
+    },
+    "runescape": {
+      "name": "",
+      "id": -1
+    },
+    "toggled": [],
+    "font": "bold"
+  },
+  "129134957": {
+    "twitch": {
+      "channel": "its_rigged_m8",
+      "username": "its_rigged_m8"
+    },
+    "runescape": {
+      "name": "",
+      "id": -1
+    },
+    "toggled": [],
+    "font": "bold"
+  },
+  "132082909": {
+    "twitch": {
+      "channel": "teakeh",
+      "username": "Teakeh"
+    },
+    "runescape": {
+      "name": "",
+      "id": -1
+    },
+    "toggled": [],
+    "font": "bold"
+  },
+  "136347277": {
+    "twitch": {
+      "channel": "parally",
+      "username": "Parally"
+    },
+    "runescape": {
+      "name": "",
+      "id": -1
+    },
+    "toggled": [],
+    "font": "bold"
+  },
+  "140293496": {
+    "twitch": {
+      "channel": "rsn_jesper",
+      "username": "Rsn_Jesper"
+    },
+    "runescape": {
+      "name": "",
+      "id": -1
+    },
+    "toggled": [],
+    "font": "bold"
+  },
+  "141328522": {
+    "twitch": {
+      "channel": "danthespoon",
+      "username": "DanTheSpoon"
+    },
+    "runescape": {
+      "name": "",
+      "id": -1
+    },
+    "toggled": [],
+    "font": "bold"
+  },
+  "141651249": {
+    "twitch": {
+      "channel": "tangoalphamango",
+      "username": "TangoAlphaMango"
+    },
+    "runescape": {
+      "id": 252510679,
+      "name": "RS Tango"
+    },
+    "toggled": [
+      "pricecheck"
+    ],
+    "font": "bold"
+  },
+  "145498937": {
+    "twitch": {
+      "channel": "stakarn",
+      "username": "StakarN"
+    },
+    "runescape": {
+      "name": "",
+      "id": -1
+    },
+    "toggled": [],
+    "font": "bold"
+  },
+  "146316667": {
+    "twitch": {
+      "channel": "tubbzfl",
+      "username": "TubbzFL"
+    },
+    "runescape": {
+      "name": "",
+      "id": -1
+    },
+    "toggled": [],
+    "font": "bold"
+  },
+  "147039284": {
+    "twitch": {
+      "channel": "staciij",
+      "username": "StaciiJ"
+    },
+    "runescape": {
+      "id": 347530407,
+      "name": "Stacii"
+    },
+    "toggled": [],
+    "font": "bold"
+  },
+  "155825736": {
+    "twitch": {
+      "channel": "ktthelemon",
+      "username": "KtTheLemon"
+    },
+    "runescape": {
+      "name": "",
+      "id": -1
+    },
+    "toggled": [],
+    "font": "bold"
+  },
+  "160956273": {
+    "twitch": {
+      "channel": "zingstah",
+      "username": "Zingstah"
+    },
+    "runescape": {
+      "id": 139301,
+      "name": "Zingstah"
+    },
+    "toggled": [
+      "pricecheck"
+    ],
+    "font": "bold"
+  },
+  "175307947": {
+    "twitch": {
+      "channel": "bunnybop",
+      "username": "bunnybop"
+    },
+    "runescape": {
+      "name": "",
+      "id": -1
+    },
+    "toggled": [],
+    "font": "bold"
+  },
+  "192574918": {
+    "twitch": {
+      "channel": "lovvel_",
+      "username": "LovveL_"
+    },
+    "runescape": {
+      "name": "",
+      "id": -1
+    },
+    "toggled": [],
+    "font": "bold"
+  },
+  "211128304": {
+    "twitch": {
+      "channel": "rsbeckyy",
+      "username": "rsbeckyy"
+    },
+    "runescape": {
+      "id": 179535,
+      "name": "Beckyy"
+    },
+    "toggled": [],
+    "font": "bold"
+  },
+  "234808254": {
+    "twitch": {
+      "channel": "beard_hub",
+      "username": "Beard_Hub"
+    },
+    "runescape": {
+      "id": 363169,
+      "name": "POGO RS"
+    },
+    "toggled": [
+      "commands"
+    ],
+    "font": "bold"
+  },
+  "413797152": {
+    "twitch": {
+      "channel": "braygs",
+      "username": "Braygs"
+    },
+    "runescape": {
+      "name": "",
+      "id": -1
+    },
+    "toggled": [],
+    "font": "bold"
+  },
+  "491679637": {
+    "twitch": {
+      "channel": "raynnacs",
+      "username": "RaynnaCS"
+    },
+    "runescape": {
+      "id": 1616518952,
+      "name": "Iron Raynna"
+    },
+    "toggled": [],
+    "font": "bold"
+  },
+  "504293747": {
+    "twitch": {
+      "channel": "drincompetentgamer",
+      "username": "DrIncompetentGamer"
+    },
+    "runescape": {
+      "name": "",
+      "id": -1
+    },
+    "toggled": [],
+    "font": "bold"
+  },
+  "506925489": {
+    "twitch": {
+      "channel": "mcnee92",
+      "username": "McNee92"
+    },
+    "runescape": {
+      "name": "",
+      "id": -1
+    },
+    "toggled": [],
+    "font": "bold"
+  },
+  "559016232": {
+    "twitch": {
+      "channel": "uneedme15",
+      "username": "Uneedme15"
+    },
+    "runescape": {
+      "name": "",
+      "id": -1
+    },
+    "toggled": [],
+    "font": "bold"
+  },
+  "561066744": {
+    "twitch": {
+      "channel": "ltsmaluwa",
+      "username": "ltsmaluwa"
+    },
+    "runescape": {
+      "name": "",
+      "id": -1
+    },
+    "toggled": [],
+    "font": "bold"
+  },
+  "587584543": {
+    "twitch": {
+      "channel": "godjamot",
+      "username": "GodJamot"
+    },
+    "runescape": {
+      "id": 3817556879,
+      "name": "OhNooWayyy"
+    },
+    "toggled": [],
+    "font": "bold"
+  },
+  "669172013": {
+    "twitch": {
+      "channel": "n5wmob",
+      "username": "n5wmob"
+    },
+    "runescape": {
+      "id": 2101719654,
+      "name": "N5W"
+    },
+    "toggled": [],
+    "font": "bold"
+  },
+  "675764127": {
+    "twitch": {
+      "channel": "0rland0smith",
+      "username": "0rland0Smith"
+    },
+    "runescape": {
+      "name": "",
+      "id": -1
+    },
+    "toggled": [],
+    "font": "bold"
+  },
+  "678745276": {
+    "twitch": {
+      "channel": "eltophat",
+      "username": "ElTopHat"
+    },
+    "runescape": {
+      "name": "",
+      "id": -1
+    },
+    "toggled": [
+      "year"
+    ],
+    "font": "bold"
+  },
+  "720842231": {
+    "twitch": {
+      "channel": "2hard2kill20",
+      "username": "2hard2kill20"
+    },
+    "runescape": {
+      "id": 214472,
+      "name": "2hard2kill"
+    },
+    "toggled": [],
+    "font": "bold"
+  },
+  "731050740": {
+    "twitch": {
+      "channel": "dextrog",
+      "username": "dextrog"
+    },
+    "runescape": {
+      "id": 3821351813,
+      "name": "Ms Dextrog"
+    },
+    "toggled": [
+      "hugge",
+      "dino"
+    ],
+    "font": "italic"
+  }
+}
