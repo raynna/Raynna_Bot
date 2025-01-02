@@ -1,4 +1,38 @@
 {
+  "25415809": {
+    "twitch": {
+      "channel": "tiimwork",
+      "username": "Tiimwork"
+    },
+    "runescape": {
+      "name": "",
+      "id": -1
+    },
+    "cs2": {
+      "name": "",
+      "id": -1
+    },
+    "toggled": [],
+    "font": "bold",
+    "game": "Counter-Strike"
+  },
+  "38019896": {
+    "twitch": {
+      "channel": "heatoncs",
+      "username": "HeatoNcs"
+    },
+    "runescape": {
+      "name": "",
+      "id": -1
+    },
+    "cs2": {
+      "name": "",
+      "id": -1
+    },
+    "toggled": [],
+    "font": "bold",
+    "game": "Counter-Strike"
+  },
   "48741210": {
     "twitch": {
       "channel": "moistbean",
@@ -130,7 +164,11 @@
     },
     "toggled": [],
     "font": "bold",
-    "game": ""
+    "game": "",
+    "cs2": {
+      "name": "",
+      "id": -1
+    }
   },
   "100786482": {
     "twitch": {
@@ -169,6 +207,23 @@
     },
     "toggled": [],
     "font": "bold"
+  },
+  "119453882": {
+    "twitch": {
+      "channel": "nilslegend",
+      "username": "NilsLegend"
+    },
+    "runescape": {
+      "name": "",
+      "id": -1
+    },
+    "cs2": {
+      "name": "",
+      "id": -1
+    },
+    "toggled": [],
+    "font": "bold",
+    "game": "Slots"
   },
   "123046275": {
     "twitch": {

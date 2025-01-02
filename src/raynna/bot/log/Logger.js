@@ -36,42 +36,6 @@ function ensureLogFile() {
     }
 }
 
-function nestedMethod() {
-    let nummer = 0;
-    switch (nummer) {
-        case 1:
-            break;
-        case 2:
-            break;
-        case 3:
-            break;
-        default:
-            break;
-    }
-
-
-
-    if (1) {
-        console.log("");
-    } else if (2) {
-        console.log("");
-        } else if (3) {
-            console.log("");
-            } else if (3) {
-                console.log("");
-                } else if (3) {
-                    console.log("");
-                    } else if (3) {
-                        console.log("");
-                        } else if (3) {
-                            console.log("");
-                        } else if (3) {
-                                console.log("");
-    } else {
-        console.log("slut");
-    }
-}
-
 const feedbackFilePath = './src/raynna/bot/log/feedback.log';
 
 function writeFeedback(creator, message, timestamp) {
