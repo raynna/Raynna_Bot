@@ -5,7 +5,6 @@ class Bengt {
         this.emote = true;
         this.triggers = ["bengan", "kloakbengt", "sara"];
         this.avoidTag = true;
-        this.game = "Counter-Strike";
     }
 
     async execute(tags, channel, argument, client, isBotModerator) {

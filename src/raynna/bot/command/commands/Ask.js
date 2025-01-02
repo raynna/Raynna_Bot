@@ -7,6 +7,7 @@ class Ask {
     constructor() {
         this.name = 'Ask';
         this.triggers = ['question', 'heybot'];
+        this.game = "General";
         this.apiKey = process.env.OPENAI_KEY;
         this.conversations = {};
         this.lastActivity = {};

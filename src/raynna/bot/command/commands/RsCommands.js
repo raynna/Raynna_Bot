@@ -1,9 +1,10 @@
-const Settings = require('../../settings/Settings');
-const {getData, RequestType} = require("../../requests/Request");
+const { getData, RequestType } = require("../../requests/Request");
+const Settings = require("../../settings/Settings");
 
-class Emotes {
+class RsCommands {
     constructor() {
-        this.name = 'Emotes';
+        this.name = 'RsCommands';
+        this.triggers = ["runescapecommands", "rs3commands"];
         this.commands = require('../Commands').getInstance();
         this.settings = new Settings();
         this.game = "General";
@@ -19,14 +20,20 @@ class Emotes {
             }
             const { id: twitchId } = twitch.data[0];
             await this.settings.check(twitchId);
-            const emoteCommands = this.commands.getEmoteCommands();
-            const enabled = emoteCommands.filter(command => !this.settings.savedSettings[twitchId].toggled.includes(command.toLowerCase()));
-            const formattedList = this.commands.formatCommandList(enabled);
-            return `Emote commands in ${channel.slice(1)}'s chat: -> ${formattedList}`;
+
+            // Get Runescape commands using the new method
+            const rsCommands = this.commands.getRsCommands();
+            const enabledCommands = rsCommands.filter(command =>
+                !this.settings.savedSettings[twitchId]?.toggled.includes(command.toLowerCase())
+            );
+            // Format the Counter-Strike commands list
+            const formattedList = this.commands.formatCommandList(enabledCommands);
+
+            return `RuneScape Commands in ${channel.slice(1)}'s chat: -> ${formattedList}`;
         } catch (error) {
             console.log(`An error has occurred while executing command ${this.name}`, error);
         }
     }
 }
 
-module.exports = Emotes;
+module.exports = RsCommands;

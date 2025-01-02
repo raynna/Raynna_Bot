@@ -6,6 +6,7 @@ class Users {
         this.name = 'Users';
         this.avoidTag = true;
         this.settings = new Settings();
+        this.game = "General";
     }
 
     async execute(tags, channel, argument, client, isBotModerator) {

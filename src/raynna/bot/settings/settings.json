@@ -52,7 +52,11 @@
       "id": -1
     },
     "toggled": [],
-    "font": "bold"
+    "font": "bold",
+    "cs2": {
+      "id": 802695411,
+      "name": "PunishD"
+    }
   },
   "71333591": {
     "twitch": {
@@ -413,7 +417,11 @@
     },
     "toggled": [],
     "font": "bold",
-    "game": "RuneScape"
+    "game": "RuneScape",
+    "cs2": {
+      "id": 3006037612,
+      "name": "Raynna"
+    }
   },
   "504293747": {
     "twitch": {
@@ -562,7 +570,11 @@
     },
     "toggled": [],
     "font": "bold",
-    "game": "Counter-Strike"
+    "game": "Counter-Strike",
+    "cs2": {
+      "id": 1882505739,
+      "name": "KloakBengt"
+    }
   },
   "902152197": {
     "twitch": {

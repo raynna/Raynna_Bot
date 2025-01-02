@@ -6,7 +6,7 @@ const { updateChannels } = require('../../channels/Channels');
 
 class ChangeList {
     constructor() {
-        this.moderator = true;
+        this.developer = true;
         this.name = 'Changelist';
     }
 

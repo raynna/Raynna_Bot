@@ -70,6 +70,18 @@ class Settings {
         }
     }
 
+    async getCounterstrikeName(twitchId) {
+        try {
+            await this.check(twitchId);
+            if (!this.savedSettings[twitchId]) {
+                return "";
+            }
+            return this.savedSettings[twitchId].cs2.name;
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
     async getGameName(twitchId){
         try {
             await this.check(twitchId);
@@ -112,6 +124,11 @@ class Settings {
                     console.log(`Added runescape settings for: ${twitchId}: ${JSON.stringify(this.savedSettings[twitchId].runescape)}`);
                     hasChanges = true;
                 }
+                if (!this.savedSettings[twitchId].cs2) {
+                    this.savedSettings[twitchId].cs2 = {name: "", id: -1};
+                    console.log(`Added cs2 settings for: ${twitchId}: ${JSON.stringify(this.savedSettings[twitchId].cs2)}`);
+                    hasChanges = true;
+                }
                 if (!this.savedSettings[twitchId].toggled || !Array.isArray(this.savedSettings[twitchId].toggled)) {
                     this.savedSettings[twitchId].toggled = [];
                     console.log(`Added toggle settings for: ${twitchId}: ${JSON.stringify(this.savedSettings[twitchId].toggled)}`);
@@ -137,9 +154,15 @@ class Settings {
         }
     }
 
-    async saveRunescape(twitchId, runescapeName, runescapeId) {
+    async saveRunescape(twitchId, name, id) {
         await this.check(twitchId);
-        this.savedSettings[twitchId].runescape = {id: runescapeId, name: runescapeName};
+        this.savedSettings[twitchId].runescape = {id: id, name: name};
+        await this.saveSettings();
+    }
+
+    async saveCounterstrike(twitchId, name, id) {
+        await this.check(twitchId);
+        this.savedSettings[twitchId].cs2 = {id: id, name: name};
         await this.saveSettings();
     }
 

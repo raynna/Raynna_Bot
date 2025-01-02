@@ -4,6 +4,7 @@ const { updateChannels } = require('../../channels/Channels');
 class Removeme {
     constructor() {
         this.name = 'Removeme';
+        this.game = "General";
     }
 
     async execute(tags, channel, argument, client, isBotModerator) {

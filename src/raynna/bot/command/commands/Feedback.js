@@ -5,6 +5,7 @@ class Feedback {
     constructor() {
         this.name = 'Feedback';
         this.triggers = [ 'idea', 'suggestion'];
+        this.game = "General";
     }
 
     async execute(tags, channel, argument, client, isBotModerator) {

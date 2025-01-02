@@ -1,45 +1,73 @@
 {
-  "totalCommands": 23,
+  "totalCommands": 37,
+  "uniqueUserCount": 3,
+  "mostUsedCommand": {
+    "command": "cscommands",
+    "count": 11
+  },
+  "mostActiveUser": {
+    "user": "raynnacs",
+    "totalCommands": 34
+  },
+  "mostActiveChannel": {
+    "channel": "#raynnacs",
+    "totalCommands": 26
+  },
   "commandsToday": {
-    "2025-01-02": 23
+    "2025-01-02": 37
   },
   "commandsThisWeek": {
-    "2025-W1": 23
+    "2025-W1": 37
   },
   "commandsThisMonth": {
-    "2025-01": 23
+    "2025-01": 37
   },
   "userLogs": {
     "raynnacs": {
-      "totalCommands": 19
+      "totalCommands": 34
     },
-    "kloakbengt": {
-      "totalCommands": 4
+    "filleja": {
+      "totalCommands": 2
+    },
+    "ptnyes": {
+      "totalCommands": 1
     }
   },
-  "#raynnacs": {
-    "totalCommands": 7,
-    "specificCommands": {
-      "99s": 1,
-      "ask": 1,
-      "wildyevent": 4,
-      "changelist": 1
-    }
-  },
-  "#rsn_jesper": {
-    "totalCommands": 10,
-    "specificCommands": {
-      "ask": 6,
-      "pc": 2,
-      "wildyevent": 2
-    }
-  },
-  "#kloakbengt": {
-    "totalCommands": 6,
-    "specificCommands": {
-      "ask": 2,
-      "bengt": 1,
-      "stats": 3
+  "channels": {
+    "#raynnacs": {
+      "totalCommands": 26,
+      "specificCommands": {
+        "ask": 1,
+        "99s": 1,
+        "commands": 3,
+        "cscommands": 9,
+        "rscommands": 3,
+        "toggle": 2,
+        "general": 1,
+        "modcommands": 1,
+        "rsname": 2,
+        "csname": 1,
+        "kdr": 1,
+        "emotes": 1
+      }
+    },
+    "#kloakbengt": {
+      "totalCommands": 7,
+      "specificCommands": {
+        "lastgame": 4,
+        "cscommands": 1,
+        "csname": 1,
+        "kdr": 1
+      }
+    },
+    "#pingisb0rd": {
+      "totalCommands": 4,
+      "specificCommands": {
+        "csname": 1,
+        "commands": 1,
+        "cscommands": 1,
+        "emotes": 1
+      }
     }
   }
 }

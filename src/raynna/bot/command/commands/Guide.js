@@ -2,6 +2,7 @@ class Guide {
 
     constructor() {
         this.name = 'Guide';
+        this.game = "General";
     }
 
     async execute(tags, channel, argument, client, isBotModerator) {

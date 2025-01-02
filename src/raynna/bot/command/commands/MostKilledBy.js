@@ -22,7 +22,7 @@ class MostKilledBy {
                 }
                 const {id: twitchId} = twitch.data[0];
                 await this.settings.check(twitchId);
-                name = await this.settings.getRunescapeName(twitchId);
+                name = await this.settings.getCounterstrikeName(twitchId);
             }
             if (!name) {
                 return `You didn't enter a valid ESPLAY username. For example 'Raynna'`;

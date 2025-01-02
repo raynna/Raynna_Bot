@@ -98,28 +98,29 @@ async function removeChannel(channel) {
 async function addLog(channel, username, command) {
     try {
         const logFilePath = path.resolve(__dirname, '..', '..', '..', '..', 'commandLogs.json');
-
         const now = new Date();
-        const todayKey = now.toISOString().split('T')[0]; // Format: YYYY-MM-DD
-        const weekKey = `${now.getFullYear()}-W${getWeekNumber(now)}`; // Format: YYYY-WW
-        const monthKey = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}`; // Format: YYYY-MM
-
+        const todayKey = now.toISOString().split('T')[0];
+        const weekKey = `${now.getFullYear()}-W${getWeekNumber(now)}`;
+        const monthKey = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}`;
 
         let logData = {};
         if (fs.existsSync(logFilePath)) {
             const rawData = await fs.promises.readFile(logFilePath, 'utf-8');
             logData = JSON.parse(rawData);
         }
-        if (!logData.totalCommands)
-            logData.totalCommands = 0;
-        if (!logData.commandsToday)
-            logData.commandsToday = {};
-        if (!logData.commandsThisWeek)
-            logData.commandsThisWeek = {};
-        if (!logData.commandsThisMonth)
-            logData.commandsThisMonth = {};
-        if (!logData.userLogs)
-            logData.userLogs = {};
+
+        // Initialize fields if missing
+        logData.totalCommands = logData.totalCommands || 0;
+        logData.uniqueUserCount = logData.uniqueUserCount || 0;
+        logData.mostUsedCommand = logData.mostUsedCommand || {};
+        logData.mostActiveUser = logData.mostActiveUser || {};
+        logData.mostActiveChannel = logData.mostActiveChannel || {};
+        logData.commandsToday = logData.commandsToday || {};
+        logData.commandsThisWeek = logData.commandsThisWeek || {};
+        logData.commandsThisMonth = logData.commandsThisMonth || {};
+        logData.userLogs = logData.userLogs || {};
+        logData.channels = logData.channels || {};  // New channel data
+        logData.channels[channel] = logData.channels[channel] || { totalCommands: 0, specificCommands: {} };
 
         // Increment global stats
         logData.totalCommands++;
@@ -127,39 +128,79 @@ async function addLog(channel, username, command) {
         logData.commandsThisWeek[weekKey] = (logData.commandsThisWeek[weekKey] || 0) + 1;
         logData.commandsThisMonth[monthKey] = (logData.commandsThisMonth[monthKey] || 0) + 1;
 
-        if (!logData[channel]) {
-            logData[channel] = {
-                totalCommands: 0,
-                specificCommands: {}
-            };
-        }
+        // Increment channel-specific stats
+        logData.channels[channel].totalCommands++;
+        logData.channels[channel].specificCommands[command] = (logData.channels[channel].specificCommands[command] || 0) + 1;
 
-        if (!logData[channel].specificCommands[command]) {
-            logData[channel].specificCommands[command] = 0;
-        }
-        logData[channel].specificCommands[command]++;
-
-        logData[channel].totalCommands++;
-
-        if (!logData.userLogs[username]) {
-            logData.userLogs[username] = {
-                totalCommands: 0,
-            };
-        }
-
+        // Increment user-specific stats
+        const isNewUser = !logData.userLogs[username];
+        logData.userLogs[username] = logData.userLogs[username] || { totalCommands: 0 };
         logData.userLogs[username].totalCommands++;
 
+        // Increment unique user count if this is a new user
+        if (isNewUser) {
+            logData.uniqueUserCount++;
+        }
+
+        // Validation checks
+        const userCommands = Object.values(logData.userLogs).reduce((sum, user) => sum + user.totalCommands, 0);
+        const channelCommands = Object.values(logData.channels).reduce((sum, channel) => sum + channel.totalCommands, 0);
+        const calculatedUniqueUserCount = Object.keys(logData.userLogs).length;
+
+        if (logData.totalCommands !== userCommands || logData.totalCommands !== channelCommands || logData.uniqueUserCount !== calculatedUniqueUserCount) {
+            console.warn('Inconsistent totals detected:', {
+                totalCommands: logData.totalCommands,
+                userCommands,
+                channelCommands,
+                uniqueUserCount: logData.uniqueUserCount,
+                calculatedUniqueUserCount
+            });
+
+            // Correct the totals if necessary
+            logData.totalCommands = Math.max(userCommands, channelCommands);
+            logData.uniqueUserCount = calculatedUniqueUserCount; // Correct the unique user count
+        }
+
+        // Find the most used command across all channels
+        const allCommands = Object.entries(logData.channels).map(([key, value]) => value.specificCommands);
+        const allCommandsFlattened = allCommands.reduce((acc, commands) => {
+            Object.entries(commands).forEach(([cmd, count]) => {
+                acc[cmd] = (acc[cmd] || 0) + count;
+            });
+            return acc;
+        }, {});
+
+        const mostUsedCommand = Object.entries(allCommandsFlattened).reduce((max, [cmd, count]) => count > max.count ? { command: cmd, count } : max, { command: '', count: 0 });
+
+        // Find the most active user across all users
+        const mostActiveUser = Object.entries(logData.userLogs).reduce((max, [user, { totalCommands }]) => totalCommands > max.totalCommands ? { user, totalCommands } : max, { user: '', totalCommands: 0 });
+
+        // Find the most active channel (fix for the mostActiveChannel issue)
+        const mostActiveChannel = Object.entries(logData.channels).reduce((max, [channel, { totalCommands }]) => totalCommands > max.totalCommands ? { channel, totalCommands } : max, { channel: '', totalCommands: 0 });
+
+        // Update the most used command, most active user, and most active channel fields
+        logData.mostUsedCommand = mostUsedCommand;
+        logData.mostActiveUser = mostActiveUser;
+        logData.mostActiveChannel = mostActiveChannel;
+
+        // Save updated log data
         await fs.promises.writeFile(logFilePath, JSON.stringify(logData, null, 2), 'utf-8');
     } catch (error) {
         console.error(error);
     }
 }
 
+
+
+
+// Helper function to calculate the week number
 function getWeekNumber(date) {
     const startOfYear = new Date(date.getFullYear(), 0, 1);
     const days = Math.floor((date - startOfYear) / (24 * 60 * 60 * 1000));
     return Math.ceil((days + startOfYear.getDay() + 1) / 7);
 }
+
+
 
 async function addChannel(channel) {
     try {

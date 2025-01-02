@@ -91,6 +91,78 @@ class Commands {
         return nonModeratorCommands.map(command => command.name);
     }
 
+    static getCsCommands() {
+        const commandsFolder = path.join('src/raynna/bot/command/commands/');
+        const commands = fs.readdirSync(commandsFolder)
+            .filter(file => fs.statSync(path.join(commandsFolder, file)).isFile())
+            .map(file => {
+                const commandName = path.parse(file).name;
+                const CommandClass = require(path.join(__dirname, '.', 'commands', file));
+                const instance = new CommandClass();
+
+                if ((instance.game === "Counter-Strike") && !instance.hasOwnProperty('moderator') && !instance.hasOwnProperty('emote')) {
+                    return { name: commandName, class: CommandClass };
+                }
+                return null;
+            }).filter(command => command !== null);
+
+        return commands.map(command => command.name);
+    }
+
+    static getRsCommands() {
+        const commandsFolder = path.join('src/raynna/bot/command/commands/');
+        const commands = fs.readdirSync(commandsFolder)
+            .filter(file => fs.statSync(path.join(commandsFolder, file)).isFile())
+            .map(file => {
+                const commandName = path.parse(file).name;
+                const CommandClass = require(path.join(__dirname, '.', 'commands', file));
+                const instance = new CommandClass();
+
+                if ((instance.game === "RuneScape") && !instance.hasOwnProperty('moderator') && !instance.hasOwnProperty('emote')) {
+                    return { name: commandName, class: CommandClass };
+                }
+                return null;
+            }).filter(command => command !== null);
+
+        return commands.map(command => command.name);
+    }
+
+    static getGeneralCommands() {
+        const commandsFolder = path.join('src/raynna/bot/command/commands/');
+        const commands = fs.readdirSync(commandsFolder)
+            .filter(file => fs.statSync(path.join(commandsFolder, file)).isFile())
+            .map(file => {
+                const commandName = path.parse(file).name;
+                const CommandClass = require(path.join(__dirname, '.', 'commands', file));
+                const instance = new CommandClass();
+
+                if ((instance.game === "General") && !instance.hasOwnProperty('moderator') && !instance.hasOwnProperty('emote')) {
+                    return { name: commandName, class: CommandClass };
+                }
+                return null;
+            }).filter(command => command !== null);
+
+        return commands.map(command => command.name);
+    }
+
+    static getModeratorCommands() {
+        const commandsFolder = path.join('src/raynna/bot/command/commands/');
+        const commands = fs.readdirSync(commandsFolder)
+            .filter(file => fs.statSync(path.join(commandsFolder, file)).isFile())
+            .map(file => {
+                const commandName = path.parse(file).name;
+                const CommandClass = require(path.join(__dirname, '.', 'commands', file));
+                const instance = new CommandClass();
+
+                if (instance.hasOwnProperty('moderator')) {
+                    return { name: commandName, class: CommandClass };
+                }
+                return null;
+            }).filter(command => command !== null);
+
+        return commands.map(command => command.name);
+    }
+
     static getEmoteCommands() {
         const commandsFolder = path.join('src/raynna/bot/command/commands/');
         const commands = fs.readdirSync(commandsFolder)
