@@ -7,6 +7,7 @@ class EasyRank {
     constructor() {
         this.name = 'EasyRank';
         this.settings = new Settings();
+        this.game = "RuneScape";
     }
 
     async execute(tags, channel, argument, client, isBotModerator) {

@@ -4,6 +4,7 @@ class Hugge {
         this.name = 'Hugge';
         this.emote = true;
         this.avoidTag = true;
+        this.game = "Counter-Strike";
     }
 
     async execute(tags, channel, argument, client, isBotModerator) {

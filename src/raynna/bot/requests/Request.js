@@ -128,14 +128,67 @@ const RequestType = {
         },
         link: `https://api.weirdgloop.org/runescape/social/last`,
     },
+    //https://esplay.com/api/profile/matches/list?id=3006037612&limit=3
     CS2Stats: {
             name: 'CS2Stats',
             errors: {
+                notFound: "This player does not exist on ESPlay",
                 badRequest: 'Bad Request',
             },
             link: `https://esplay.com/api/profile/get?username={username}&teams=1&friends=1&header=1&followers=1&medals=1&game_stats=1&game_id=1&level_history=1&clips=1&twitch=1&steam=1&spaces=1&username_history=1&item_drops=1`,
             values: ['{username}']
         },
+    ESPlayBanList: {
+        name: 'ESPlayBanList',
+        errors: {
+            badRequest: 'Bad Request',
+        },
+        link: `https://esplay.com/api/ban/list`
+    },
+    ESPLAY_CURRENT_MATCH: {
+        name: 'ESPLAY_CURRENT_MATCH',
+        errors: {
+            notFound: "This player does not exist on ESPlay",
+            badRequest: 'Bad Request',
+        },
+        link: `https://esplay.com/api/profile/match/current?id={id}`,
+        values: ['{id}']
+    },
+    ESPLAY_MATCHLIST: {
+        name: 'ESPLAY_MATCHLIST',
+        errors: {
+            notFound: "This player does not exist on ESPlay",
+            badRequest: 'Bad Request',
+        },
+        link: `https://esplay.com/api/profile/matches/list?id={id}&limit=3`,
+        values: ['{id}']
+    },
+    ESPLAY_MOST_KILLED: {
+        name: 'ESPLAY_MOST_KILLED',
+        errors: {
+            notFound: "This player does not exist on ESPlay",
+            badRequest: 'Bad Request',
+        },
+        link: `https://esplay.com/api/stats/user/most_killed?id={id}`,
+        values: ['{id}']
+    },
+    ESPLAY_MOST_KILLED_BY: {
+        name: 'ESPLAY_MOST_KILLED_BY',
+        errors: {
+            notFound: "This player does not exist on ESPlay",
+            badRequest: 'Bad Request',
+        },
+        link: `https://esplay.com/api/stats/user/most_killed_by?id={id}`,
+        values: ['{id}']
+    },
+    ESPLAY_GLOBALS: {
+        name: 'ESPLAY_GLOBALS',
+        link: 'https://esplay.com/api/globals/get?ts=_0',
+    },
+    ESPLAY_GATHERS: {
+        name: 'ESPLAY_GATHERS',
+        link: 'https://esplay.com/api/gather/list?game_id=1'
+    },
     VoiceOfSeren: {
             name: 'Voice of Seren',
             link: 'https://runescape.wiki/w/Voice_of_Seren',
@@ -161,7 +214,7 @@ let REQUEST_COUNTER = {};
 let PREVIOUS_REQUEST_COUNTER = {};
 
 function addRequests(requestType) {
-    const name = requestType.name; // Assuming the type property holds the identifier for the request type
+    const name = requestType.name;
     if (!REQUEST_COUNTER[name]) {
         REQUEST_COUNTER[name] = 1;
     } else {

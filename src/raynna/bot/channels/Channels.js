@@ -18,7 +18,6 @@ async function updateChannels(client) {
             try {
                 const channelExists = Object.values(settings.savedSettings).some(entry => entry.twitch.channel === channel);
                 if (!channelExists) {
-                    // If the channel does not exist in savedSettings, remove it
                     channelsToLeave.add(channel);
                     hasChanges = true;
                 }

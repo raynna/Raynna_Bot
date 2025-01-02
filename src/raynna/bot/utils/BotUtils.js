@@ -1,6 +1,8 @@
 require('dotenv').config();
 axios = require('axios');
 
+const fs = require('fs');
+const path = require('path');
 const Settings = require('../settings/Settings');
 const settings = new Settings();
 
@@ -21,15 +23,48 @@ async function changeChannel(channel) {
             return `Something went from getting this twitch, no data`;
         }
         const {id: id, login: login, display_name: username} = twitch.data[0];
+        const {data: status, errorMessage: statusError} = await getData(RequestType.StreamStatus, channelWithoutHash);
+        if (statusError) {
+            console.log(statusError);
+            return statusError;
+        }
+        const { game_name } = status.data[0];
         settings.savedSettings = await settings.loadSettings();
         if (settings.savedSettings[id]) {
             await settings.remove(id);
             console.log(`Bot removed from channel: ${login} (id: ${id}).`);
             return `Bot removed from channel: ${login} (id: ${id}).`;
         }
-        await settings.save(id, login, username);
-        console.log(`Bot registered on channel: ${login} (id: ${id}).`);
-        return `Bot registered on channel: ${login} (id: ${id}).`;
+        await settings.save(id, login, username, game_name);
+        console.log(`Bot registered on channel: ${login} (id: ${id}) with game: ${game_name}.`);
+        return `Bot registered on channel: ${login} (id: ${id}) with game: ${game_name}.`;
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+async function registerGame(channel) {
+    try {
+        const channelWithoutHash = channel.startsWith('#') ? channel.replace('#', '').toLowerCase() : channel.toLowerCase();
+        const {data: twitch, errorMessage: error} = await getData(RequestType.TwitchUser, channelWithoutHash);
+        if (error) {
+            console.log(error);
+            return error;
+        }
+        if (!twitch.data || twitch.data.length === 0) {
+            return `Something went from getting this twitch, no data`;
+        }
+        const {id: id, login: login, display_name: username} = twitch.data[0];
+        const {data: status, errorMessage: statusError} = await getData(RequestType.StreamStatus, channelWithoutHash);
+        if (statusError) {
+            console.log(statusError);
+            return statusError;
+        }
+        const { game_name } = status.data[0];
+        settings.savedSettings = await settings.loadSettings();
+        await settings.registerGame(id, game_name);
+        console.log(`Bot registered game: ${game_name} on: ${login} (id: ${id}).`);
+        return `Bot registered game: ${game_name} on: ${login} (id: ${id}).`;
     } catch (error) {
         console.log(error);
     }
@@ -60,6 +95,72 @@ async function removeChannel(channel) {
     }
 }
 
+async function addLog(channel, username, command) {
+    try {
+        const logFilePath = path.resolve(__dirname, '..', '..', '..', '..', 'commandLogs.json');
+
+        const now = new Date();
+        const todayKey = now.toISOString().split('T')[0]; // Format: YYYY-MM-DD
+        const weekKey = `${now.getFullYear()}-W${getWeekNumber(now)}`; // Format: YYYY-WW
+        const monthKey = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}`; // Format: YYYY-MM
+
+
+        let logData = {};
+        if (fs.existsSync(logFilePath)) {
+            const rawData = await fs.promises.readFile(logFilePath, 'utf-8');
+            logData = JSON.parse(rawData);
+        }
+        if (!logData.totalCommands)
+            logData.totalCommands = 0;
+        if (!logData.commandsToday)
+            logData.commandsToday = {};
+        if (!logData.commandsThisWeek)
+            logData.commandsThisWeek = {};
+        if (!logData.commandsThisMonth)
+            logData.commandsThisMonth = {};
+        if (!logData.userLogs)
+            logData.userLogs = {};
+
+        // Increment global stats
+        logData.totalCommands++;
+        logData.commandsToday[todayKey] = (logData.commandsToday[todayKey] || 0) + 1;
+        logData.commandsThisWeek[weekKey] = (logData.commandsThisWeek[weekKey] || 0) + 1;
+        logData.commandsThisMonth[monthKey] = (logData.commandsThisMonth[monthKey] || 0) + 1;
+
+        if (!logData[channel]) {
+            logData[channel] = {
+                totalCommands: 0,
+                specificCommands: {}
+            };
+        }
+
+        if (!logData[channel].specificCommands[command]) {
+            logData[channel].specificCommands[command] = 0;
+        }
+        logData[channel].specificCommands[command]++;
+
+        logData[channel].totalCommands++;
+
+        if (!logData.userLogs[username]) {
+            logData.userLogs[username] = {
+                totalCommands: 0,
+            };
+        }
+
+        logData.userLogs[username].totalCommands++;
+
+        await fs.promises.writeFile(logFilePath, JSON.stringify(logData, null, 2), 'utf-8');
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+function getWeekNumber(date) {
+    const startOfYear = new Date(date.getFullYear(), 0, 1);
+    const days = Math.floor((date - startOfYear) / (24 * 60 * 60 * 1000));
+    return Math.ceil((days + startOfYear.getDay() + 1) / 7);
+}
+
 async function addChannel(channel) {
     try {
         const channelWithoutHash = channel.startsWith('#') ? channel.replace('#', '').toLowerCase() : channel.toLowerCase();
@@ -72,14 +173,20 @@ async function addChannel(channel) {
             return `Something went from getting this twitch, no data`;
         }
         const {id: id, login: login, display_name: username} = twitch.data[0];
+        const {data: status, errorMessage: statusError} = await getData(RequestType.StreamStatus, channelWithoutHash);
+        if (statusError) {
+            console.log(statusError);
+            return statusError;
+        }
+        const { game_name } = status.data[0];
         settings.savedSettings = await settings.loadSettings();
         if (settings.savedSettings[id] && settings.savedSettings[id].twitch.channel) {
             console.log(`Twitch channel ${settings.savedSettings[id].twitch.channel} is already registered on the bot.`);
             return `Twitch channel ${settings.savedSettings[id].twitch.channel} is already registered on the bot.`;
         }
-        await settings.save(id, login, username);
-        console.log(`Bot registered on channel: ${login} (id: ${id}).`);
-        return `Bot registered on channel: ${login} (id: ${id}).`;
+        await settings.save(id, login, username, game_name);
+        console.log(`Bot registered on channel: ${login} (id: ${id}) with game: ${game_name}.`);
+        return `Bot registered on channel: ${login} (id: ${id}) with game: ${game_name}.`;
     } catch (error) {
         console.log(error);
     }
@@ -190,8 +297,6 @@ async function isStreamOnline(channel) {
                 await settings.check(twitchId);
             }
         }
-
-        //console.log(`data for channel: ${channel}: ${JSON.stringify(streamData)}, length: ${streamData.length}`);
         return streamData.data && streamData.data.length > 0;
     } catch (error) {
         console.log(error);
@@ -210,4 +315,6 @@ module.exports = {
     removeChannel,
     changeChannel,
     isBotModerator,
+    registerGame,
+    addLog
 }

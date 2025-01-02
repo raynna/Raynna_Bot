@@ -36,11 +36,19 @@ class Settings {
         }
     }
 
-    async save(twitchId, channel, username) {
+    async save(twitchId, channel, username, game) {
         await this.create(twitchId);
         await this.check(twitchId);
         this.savedSettings[twitchId].twitch.channel = channel;
         this.savedSettings[twitchId].twitch.username = username;
+        this.savedSettings[twitchId].game = game;
+        await this.saveSettings();
+    }
+
+    async registerGame(twitchId, game) {
+        await this.create(twitchId);
+        await this.check(twitchId);
+        this.savedSettings[twitchId].game = game;
         await this.saveSettings();
     }
 
@@ -58,6 +66,18 @@ class Settings {
             }
             return this.savedSettings[twitchId].runescape.name;
         } catch (error) {
+            console.error(error);
+        }
+    }
+
+    async getGameName(twitchId){
+        try {
+            await this.check(twitchId);
+            if (!this.savedSettings[twitchId]) {
+                return "";
+            }
+            return this.savedSettings[twitchId].game;
+        } catch (error){
             console.error(error);
         }
     }
@@ -100,11 +120,6 @@ class Settings {
                 if (!this.savedSettings[twitchId].font) {
                     this.savedSettings[twitchId].font = "bold";
                     console.log(`Added font settings for: ${twitchId}: ${JSON.stringify(this.savedSettings[twitchId].font)}`);
-                    hasChanges = true;
-                }
-                if (this.savedSettings[twitchId].toggled && !Array.isArray(this.savedSettings[twitchId].toggled)) {
-                    this.savedSettings[twitchId].toggled = [];
-                    console.log(`Tranformed toggle settings for: ${twitchId} to array: ${JSON.stringify(this.savedSettings[twitchId].toggled)}`);
                     hasChanges = true;
                 }
 		    if (this.savedSettings[twitchId].custom) {

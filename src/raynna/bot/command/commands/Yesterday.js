@@ -7,6 +7,7 @@ class Yesterday {
     constructor() {
         this.name = 'Yesterday';
         this.settings = new Settings();
+        this.game = "RuneScape";
     }
 
     async execute(tags, channel, argument, client, isBotModerator) {

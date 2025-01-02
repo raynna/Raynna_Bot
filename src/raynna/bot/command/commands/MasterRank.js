@@ -7,6 +7,7 @@ class MasterRank {
     constructor() {
         this.name = 'MasterRank';
         this.settings = new Settings();
+        this.game = "RuneScape";
     }
 
     async execute(tags, channel, argument, client, isBotModerator) {

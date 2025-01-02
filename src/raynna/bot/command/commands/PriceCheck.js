@@ -47,6 +47,7 @@ const shortcuts = [
     {name: "Saradomin brew (4)", triggers: ['brews', 'sara brews', 'sarabrew', 'saradomin brew']},
     {name: "Saradomin brew flask (6)", triggers: ['saraflask', 'sara flask', 'saradomin flask', 'brew flask']},
     {name: "Super Saradomin brew flask (6)", triggers: ['super sara flask', 'super saraflask', 'super saradomin', 'super flask']},
+    {name: "Dragon Rider lance", triggers: ['lance', 'dragonrider lance', 'dragonrider']},
 ];
 
 
@@ -56,6 +57,7 @@ class PriceCheck {
         this.name = 'PriceCheck';
         this.triggers = ['pc', 'price'];
         this.settings = new Settings();
+        this.game = "RuneScape";
     }
 
     async execute(tags, channel, argument, client, isBotModerator) {

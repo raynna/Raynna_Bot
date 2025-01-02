@@ -27,6 +27,7 @@ class ChangeList {
                 }
                 return message;
             }
+            console.log(twitchData);
             let result = await changeChannel(name);
             await updateChannels(client);
             return result;

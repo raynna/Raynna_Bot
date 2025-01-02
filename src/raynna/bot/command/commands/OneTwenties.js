@@ -6,6 +6,7 @@ class OneTwenties {
         this.name = 'OneTwenties';
         this.triggers = ["120s", "120"];
         this.settings = new Settings();
+        this.game = "RuneScape";
     }
 
     async execute(tags, channel, argument, client, isBotModerator) {

@@ -160,6 +160,32 @@ class Commands {
         return commandInstance?.moderator ?? false;
     }
 
+    isGameCommand(commandInstance, currentGame) {
+        if (!commandInstance?.game && !commandInstance?.triggers) {
+            return true; // If no game or triggers are specified, it's valid for any game.
+        }
+
+        if (commandInstance.game?.toLowerCase() === currentGame?.toLowerCase()) {
+            return true;
+        }
+
+        if (Array.isArray(commandInstance.triggers)) {
+            return commandInstance.triggers.some(trigger => {
+                try {
+                    const CommandClass = require(path.join(__dirname, 'commands', trigger.toLowerCase()));
+                    const instance = new CommandClass();
+                    return instance.game?.toLowerCase() === currentGame?.toLowerCase();
+                } catch (error) {
+                    console.error(`Error loading trigger "${trigger}" for game check`);
+                    return false;
+                }
+            });
+        }
+
+        return false;
+    }
+
+
     isAvoidTag(commandInstance) {
         return commandInstance?.avoidTag ?? false;
     }

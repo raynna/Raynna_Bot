@@ -1,0 +1,45 @@
+{
+  "totalCommands": 23,
+  "commandsToday": {
+    "2025-01-02": 23
+  },
+  "commandsThisWeek": {
+    "2025-W1": 23
+  },
+  "commandsThisMonth": {
+    "2025-01": 23
+  },
+  "userLogs": {
+    "raynnacs": {
+      "totalCommands": 19
+    },
+    "kloakbengt": {
+      "totalCommands": 4
+    }
+  },
+  "#raynnacs": {
+    "totalCommands": 7,
+    "specificCommands": {
+      "99s": 1,
+      "ask": 1,
+      "wildyevent": 4,
+      "changelist": 1
+    }
+  },
+  "#rsn_jesper": {
+    "totalCommands": 10,
+    "specificCommands": {
+      "ask": 6,
+      "pc": 2,
+      "wildyevent": 2
+    }
+  },
+  "#kloakbengt": {
+    "totalCommands": 6,
+    "specificCommands": {
+      "ask": 2,
+      "bengt": 1,
+      "stats": 3
+    }
+  }
+}

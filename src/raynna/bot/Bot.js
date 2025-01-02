@@ -5,10 +5,10 @@ const tmi = require("tmi.js");
 const Commands = require('./command/Commands');
 const commands = new Commands();
 
-const {isBotModerator, addChannel} = require('./utils/BotUtils');
+const {isBotModerator, addChannel, registerGame} = require('./utils/BotUtils');
 
 const {updateChannels, connectedChannels} = require('./channels/Channels');
-const {sendMessage} = require('./utils/BotUtils');
+const {sendMessage, addLog} = require('./utils/BotUtils');
 
 const {showRequests, getData, RequestType} = require('./requests/Request');
 
@@ -25,6 +25,7 @@ const client = new tmi.Client({
 console.log("Connecting..");
 client.connect().then(async () => {
     console.log(`Connected Raynna_Bot!`);
+
 }).catch((error) => {
     console.error(error);
 });
@@ -41,7 +42,7 @@ async function reconnectBot() {
     }
 }
 
-const reconnectInterval = 900 * 1000; // 10 minutes
+const reconnectInterval = 900 * 1000; // 15 minutes
 setInterval(async () => {
     await reconnectBot();
 }, reconnectInterval);
@@ -56,11 +57,12 @@ setInterval(() => {
 client.on('connected', (address, port) => {
     try {
         setTimeout(() => {
+
 console.log(`Bot connected with ip: ${address}:${port}`);
 
             updateChannels(client).then(async r => {
                 await showRequests();
-	                //await addChannel("raynnacs");
+                //await addChannel("raynnacs");
                 //console.log(`Updated channels!`);
             });
         }, 1000);
@@ -72,7 +74,6 @@ console.log(`Bot connected with ip: ${address}:${port}`);
 client.on('join', (channel, username, self) => {
     try {
         const normalizedChannel = channel.startsWith('#') ? channel.replace('#', '').toLowerCase() : channel;
-
         if (self && !connectedChannels.includes(normalizedChannel)) {
             connectedChannels.push(normalizedChannel);
         }
@@ -127,10 +128,10 @@ client.on('message', async (channel, tags, message, self) => {
                 }
                 const announcement = message.slice("announce".length).trim() || "No reason";
                 for (const connected of connectedChannels) {
-                    const isModerator = await isBotModerator(client, connected);
-                    if (isModerator) {
+                    //const isModerator = await isBotModerator(client, connected);
+                    //if (isModerator) {
                         await sendMessage(client, connected, `Announcement from ${tags.username}: ${announcement}`);
-                    }
+                    //}
                 }
                 return;
             }
@@ -181,10 +182,16 @@ client.on('message', async (channel, tags, message, self) => {
                 for (const connected of connectedChannels) {
                     const isModerator = await isBotModerator(client, connected);
                     if (isModerator) {
-                        await sendMessage(client, connected, `Bot was restarted by ${tags.username}. Reason: ${reason}`);
+                        await sendMessage(client, connected, `Reconnecting bot by ${tags.username}. Reason: ${reason}`);
                     }
                 }
                 await reconnectBot();
+                for (const connected of connectedChannels) {
+                    const isModerator = await isBotModerator(client, connected);
+                    if (isModerator) {
+                        await sendMessage(client, connected, `Bot has been reconnected.`);
+                    }
+                }
                 return;
             }
             if (message.toLowerCase().startsWith("reconnect")) {
@@ -227,7 +234,30 @@ client.on('message', async (channel, tags, message, self) => {
                             }
                             return;
                         }
-                        //avoid mod commands to be executed by regular users.
+
+                        /*const channelWithoutHash = channel.startsWith('#') ? channel.replace('#', '').toLowerCase() : channel.toLowerCase();
+                        const { data: twitch, errorMessage: message } = await getData(RequestType.StreamStatus, channelWithoutHash);
+                        if (!twitch || !twitch.data || twitch.data.length === 0) {
+                        } else {
+                            const { id, game_name } = twitch.data[0];
+
+                            let currentGame = await commands.settings.getGameName(id);
+                            if (currentGame === "" && game_name) {
+                                await commands.settings.registerGame(id, game_name);
+                                currentGame = await commands.settings.getGameName(id);
+                            }
+
+                            if (commandInstance?.game && (!currentGame || currentGame.trim() === "")) {
+                                await sendMessage(client, channel, `Streamer doesn't have any game registered, use !registergame`);
+                                return;
+                            }
+
+                            if (!commands.isGameCommand(commandInstance, currentGame)) {
+                                console.log(`Command ${command} is not compatible with the current game: ${currentGame}`);
+                                //await sendMessage(client, channel, `This command can only be used for ${commandInstance.game}. The current game is set to ${currentGame}.`);
+                                return;
+                            }
+                        }*/
                         if (commands.isModeratorCommand(commandInstance)) {
                             if (!(playerIsMod || isStreamer || isCreator)) {
                                 await sendMessage(client, channel, `Only the streamer or a moderator can use this command. @${tags.username}`);
@@ -235,7 +265,7 @@ client.on('message', async (channel, tags, message, self) => {
                             }
                         }
                         cooldowns[tags.username][channel] = currentTime;
-                        await info(`Command execute on channel: ${channel}`, `${playerIsMod ? `Mod: ` : isStreamer ? `Streamer: ` : `Viewer: `}${tags.username} has used the command: ${message}`);
+                        await info(`Command execute on channel: ${channel}`, `${playerIsMod ? `Mod: ` : isStreamer ? `Streamer: ` : `Viewer: `}${tags.username} has used the command: ${command}`);
                         let result = await commandInstance.execute(tags, channel, argument, client, await isBotModerator(client, channel));
                         if (result) {
                             console.log(`Result: ${result}`);
@@ -243,6 +273,7 @@ client.on('message', async (channel, tags, message, self) => {
                                 result += ` @${tags.username}`;
                             }
                             await sendMessage(client, channel, result, commands.isEmoteCommand(commandInstance));
+                            await addLog(channel, tags.username, command);
                         }
                         //console.log(`[Channel: ${channel}] ${botIsModerator ? `[Mod] ` : ``}Raynna_Bot: ${result}`);
                     } catch (e) {

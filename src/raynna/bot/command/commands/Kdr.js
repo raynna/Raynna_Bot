@@ -6,7 +6,9 @@ class Kdr {
 
     constructor() {
         this.name = 'Kdr';
+        this.triggers = ["stats"];
         this.settings = new Settings();
+        this.game = "Counter-Strike";
     }
 
     async execute(tags, channel, argument, client, isBotModerator) {
@@ -23,26 +25,30 @@ class Kdr {
                 name = await this.settings.getRunescapeName(twitchId);
             }
             if (!name) {
-                return `You didn't enter a valid ESPLAY username. For example 'Raynna'`;
+                return `You didn't enter a valid ESPlay username. For example 'Raynna'`;
             }
             const { data: player, errorMessage: message } = await getData(RequestType.CS2Stats, name);
             if (message) {
                 return message.replace('{username}', name);
             }
             if (!player) {
-                return `Couldn't find player with name ${name}`;
+                return `Couldn't find player with name ${name} on ESPlay.`;
             }
             const { cs_fields, game_stats, ban } = player;
             if (ban != null) {
-               return `${player.username} is banned on Esplay, reason: ${ban.reason}.`;
+               return `${player.username} is banned on ESPlay, reason: ${ban.reason}.`;
             }
             if (!cs_fields) {
                 return `Couldn't find any gamestats data for player ${name}`;
             }
-            const kills = cs_fields.kills;
-            const deaths = cs_fields.deaths;
+            const { kills, deaths, rounds, damage_dealt } = cs_fields;
             const ratio = deaths !== 0 ? (kills / deaths).toFixed(2) : "N/A";
-            return `${player.username}'s Kdr: Kills: ${kills}, Deaths: ${deaths}, Ratio: ${ratio} with a total of ${game_stats.matches} matches.`;
+
+            const { matches, wins, losses, elo, reported } = game_stats;
+            const winRatio = matches !== 0 ? ((wins / matches) * 100).toFixed(2) + "%" : "N/A";
+
+            const avgDamagePerRound = rounds !== 0 ? (damage_dealt / rounds).toFixed(2) : "N/A";
+            return `${player.username}'s: Elo: ${elo}, Kills: ${kills}, Deaths: ${deaths}, Ratio: ${ratio}, Damage/Round: ${avgDamagePerRound}, Matches: ${game_stats.matches}, Win%: ${winRatio}, Reports: ${reported}`
         } catch (error) {
             console.log(`An error has occurred while executing command ${this.name}`, error);
         }

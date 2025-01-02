@@ -8,6 +8,7 @@ class RSName {
         this.name = 'RSName';
         this.triggers = ['register'];
         this.settings = new Settings();
+        this.game = "RuneScape";
     }
 
     async execute(tags, channel, argument, client, isBotModerator) {

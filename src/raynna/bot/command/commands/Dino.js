@@ -5,6 +5,7 @@ class Dino {
         this.emote = true;
         this.triggers = ["linnea", "l1nnea", "l1nneaaaa", "linneaz"];
         this.avoidTag = true;
+        this.game = "Counter-Strike";
     }
 
     async execute(tags, channel, argument, client, isBotModerator) {

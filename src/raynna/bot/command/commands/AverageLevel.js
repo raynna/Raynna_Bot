@@ -7,6 +7,7 @@ class AverageLevel {
         this.name = 'AverageLevel';
         this.triggers = ["avglvl", "avglevel", "averagelvl", "averageskills"];
         this.settings = new Settings();
+        this.game = "RuneScape";
     }
 
     async execute(tags, channel, argument, client, isBotModerator) {

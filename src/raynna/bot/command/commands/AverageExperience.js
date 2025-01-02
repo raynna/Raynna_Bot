@@ -7,6 +7,7 @@ class AverageExperience {
         this.name = 'AverageExperience';
         this.triggers = ["averageexp", "averagexp", "avgexp", "avgxp"];
         this.settings = new Settings();
+        this.game = "RuneScape";
     }
 
     async execute(tags, channel, argument, client, isBotModerator) {

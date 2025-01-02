@@ -6,12 +6,13 @@ class DropsYesterday {
     constructor() {
         this.name = 'DropsYesterday';
         this.settings = new Settings();
+        this.game = "RuneScape";
     }
 
     async execute(tags, channel, argument, client, isBotModerator) {
         try {
-            let name = argument ? argument.trim() : "";
-            if (!name) {
+            let username = argument ? argument.trim() : "";
+            if (!username) {
                 const channelWithoutHash = channel.startsWith('#') ? channel.replace('#', '').toLowerCase() : channel.toLowerCase();
                 const { data: twitch, errorMessage: message } = await getData(RequestType.TwitchUser, channelWithoutHash);
                 if (message) {
@@ -19,15 +20,15 @@ class DropsYesterday {
                 }
                 const { id: twitchId } = twitch.data[0];
                 await this.settings.check(twitchId);
-                name = await this.settings.getRunescapeName(twitchId);
+                username = await this.settings.getRunescapeName(twitchId);
             }
-            if (!name) {
+            if (!username) {
                 return `You didn't enter a valid RuneScape username. For example 'Raynna' or 'Iron-raynna'`;
             }
 
-            const { data: player, errorMessage: message } = await getData(RequestType.Activities, name.replace(' ', "_"));
+            const { data: player, errorMessage: message } = await getData(RequestType.Activities, username.replace(' ', "_"));
             if (message) {
-                return message.replace('{username}', name);
+                return message.replace('{username}', username);
             }
             console.log(JSON.stringify(player));
 
@@ -38,13 +39,13 @@ class DropsYesterday {
                 if (player.error === "PROFILE_PRIVATE") {
                     return username + "'s RuneMetrics profile is set on private.";
                 }
-                return "Error looking for " + name + ", reason: " + player.error;
+                return "Error looking for " + username + ", reason: " + player.error;
             }
 
             const drops = {};
             const activities = player.activities;
+            const name = player.name;
 
-            // Calculate yesterday's date in UTC
             const yesterday = new Date();
             yesterday.setUTCDate(yesterday.getUTCDate() - 1);
             const yesterdayString = yesterday.toISOString().split('T')[0];

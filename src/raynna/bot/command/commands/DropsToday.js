@@ -7,6 +7,7 @@ class DropsToday {
     constructor() {
         this.name = 'DropsToday';
         this.settings = new Settings();
+        this.game = "RuneScape";
     }
 
     async execute(tags, channel, argument, client, isBotModerator) {
@@ -35,15 +36,15 @@ class DropsToday {
             }
             if (player.error) {
                 if (player.error === "PROFILE_PRIVATE") {
-                    return name + "'s RuneMetrics profile is set on private.";
+                    return username + "'s RuneMetrics profile is set on private.";
                 }
-                return "Error looking for " + name + ", reason: " + player.error;
+                return "Error looking for " + username + ", reason: " + player.error;
             }
             const drops = {};
             const activities = player.activities;
             const name = player.name;
             const today = new Date().toISOString().split('T')[0];
-            console.log("Today's date:", today); // Debug: Log today's date
+            console.log("Today's date:", today);
             if (activities.length === 0) {
                 return name + " haven't gotten any drops today.";
             }

@@ -9,3 +9,7 @@ function calculateUptime(startedAt) {
 
     return `${hours}h ${minutes}m ${seconds}s`;
 }
+
+function ett() {
+
+}

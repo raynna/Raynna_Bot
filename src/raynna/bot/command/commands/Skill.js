@@ -38,6 +38,7 @@ class Skill {
     constructor() {
         this.name = 'Skill';
         this.settings = new Settings();
+        this.game = "RuneScape";
     }
 
     async execute(tags, channel, argument, client, isBotModerator) {

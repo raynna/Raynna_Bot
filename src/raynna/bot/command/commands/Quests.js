@@ -6,6 +6,7 @@ class Quests {
     constructor() {
         this.name = 'Quests';
         this.settings = new Settings();
+        this.game = "RuneScape";
     }
 
     async execute(tags, channel, argument, client, isBotModerator) {
@@ -39,7 +40,7 @@ class Quests {
             }
             const { questsstarted, questsnotstarted, questscomplete } = player;
             const totalQuests = questscomplete + questsnotstarted + questsstarted;
-            if (questsstarted == 0 && questsnotstarted == 0) {
+            if (questsstarted === 0 && questsnotstarted === 0) {
                 `${player.name} has completed all ${questscomplete} quests!`;
             }
             return `${player.name} has ${questscomplete}/${totalQuests} quests completed. Started: ${questsstarted}`;

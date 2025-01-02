@@ -64,7 +64,8 @@
       "id": -1
     },
     "toggled": [],
-    "font": "bold"
+    "font": "bold",
+    "game": ""
   },
   "78501398": {
     "twitch": {
@@ -124,7 +125,8 @@
       "id": -1
     },
     "toggled": [],
-    "font": "bold"
+    "font": "bold",
+    "game": ""
   },
   "100786482": {
     "twitch": {
@@ -324,17 +326,18 @@
     ],
     "font": "bold"
   },
-  "175307947": {
+  "180011933": {
     "twitch": {
-      "channel": "bunnybop",
-      "username": "bunnybop"
+      "channel": "esplaycom",
+      "username": "Esplaycom"
     },
     "runescape": {
       "name": "",
       "id": -1
     },
     "toggled": [],
-    "font": "bold"
+    "font": "bold",
+    "game": "Counter-Strike"
   },
   "192574918": {
     "twitch": {
@@ -386,6 +389,19 @@
     "toggled": [],
     "font": "bold"
   },
+  "434303919": {
+    "twitch": {
+      "channel": "chrilleekberg",
+      "username": "ChrilleEkberG"
+    },
+    "runescape": {
+      "name": "",
+      "id": -1
+    },
+    "toggled": [],
+    "font": "bold",
+    "game": "Counter-Strike"
+  },
   "491679637": {
     "twitch": {
       "channel": "raynnacs",
@@ -396,7 +412,8 @@
       "name": "Iron Raynna"
     },
     "toggled": [],
-    "font": "bold"
+    "font": "bold",
+    "game": "RuneScape"
   },
   "504293747": {
     "twitch": {
@@ -416,11 +433,22 @@
       "username": "McNee92"
     },
     "runescape": {
-      "name": "",
-      "id": -1
+      "id": 329956,
+      "name": "McNee"
     },
-    "toggled": [],
-    "font": "bold"
+    "toggled": [
+      "lastmatch",
+      "kdr",
+      "latestban",
+      "latestbans",
+      "mostkilled",
+      "mostkilledby",
+      "steam",
+      "registergame",
+      "match"
+    ],
+    "font": "bold",
+    "game": ""
   },
   "559016232": {
     "twitch": {
@@ -522,5 +550,44 @@
       "dino"
     ],
     "font": "italic"
+  },
+  "746055686": {
+    "twitch": {
+      "channel": "kloakbengt",
+      "username": "kloakbengt"
+    },
+    "runescape": {
+      "name": "",
+      "id": -1
+    },
+    "toggled": [],
+    "font": "bold",
+    "game": "Counter-Strike"
+  },
+  "902152197": {
+    "twitch": {
+      "channel": "rimbodejaneiro",
+      "username": "rimbodejaneiro"
+    },
+    "runescape": {
+      "name": "",
+      "id": -1
+    },
+    "toggled": [],
+    "font": "bold",
+    "game": "Counter-Strike"
+  },
+  "43465526392": {
+    "twitch": {
+      "channel": "",
+      "username": ""
+    },
+    "runescape": {
+      "name": "",
+      "id": -1
+    },
+    "toggled": [],
+    "font": "bold",
+    "game": "Counter-Strike"
   }
 }
