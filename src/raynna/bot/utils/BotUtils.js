@@ -213,33 +213,53 @@ function getWeekNumber(date) {
 async function addChannel(channel) {
     try {
         const channelWithoutHash = channel.startsWith('#') ? channel.replace('#', '').toLowerCase() : channel.toLowerCase();
-        const {data: twitch, errorMessage: error} = await getData(RequestType.TwitchUser, channelWithoutHash);
+        const { data: twitch, errorMessage: error } = await getData(RequestType.TwitchUser, channelWithoutHash);
         if (error) {
             console.log(error);
             return error;
         }
         if (!twitch.data || twitch.data.length === 0) {
-            return `Something went from getting this twitch, no data`;
+            return `Something went wrong getting this Twitch channel, no data found`;
         }
-        const {id: id, login: login, display_name: username} = twitch.data[0];
-        const {data: status, errorMessage: statusError} = await getData(RequestType.StreamStatus, channelWithoutHash);
+        const { id, login, display_name: username } = twitch.data[0];
+
+        const { data: status, errorMessage: statusError } = await getData(RequestType.StreamStatus, channelWithoutHash);
         if (statusError) {
             console.log(statusError);
             return statusError;
         }
-        const { game_name } = status.data[0];
-        settings.savedSettings = await settings.loadSettings();
-        if (settings.savedSettings[id] && settings.savedSettings[id].twitch.channel) {
-            console.log(`Twitch channel ${settings.savedSettings[id].twitch.channel} is already registered on the bot.`);
-            return `Twitch channel ${settings.savedSettings[id].twitch.channel} is already registered on the bot.`;
+
+        // Handle stream offline case
+        if (status && status.data && status.data.length > 0) {
+            const { game_name } = status.data[0];
+
+            settings.savedSettings = await settings.loadSettings();
+            if (settings.savedSettings[id] && settings.savedSettings[id].twitch.channel) {
+                console.log(`Twitch channel ${settings.savedSettings[id].twitch.channel} is already registered on the bot.`);
+                return `Twitch channel ${settings.savedSettings[id].twitch.channel} is already registered on the bot.`;
+            }
+
+            await settings.save(id, login, username, game_name);
+            console.log(`Bot registered on channel: ${login} (id: ${id}) with game: ${game_name}.`);
+            return `Bot registered on channel: ${login} (id: ${id}) with game: ${game_name}.`;
+
+        } else {
+            settings.savedSettings = await settings.loadSettings();
+            if (settings.savedSettings[id] && settings.savedSettings[id].twitch.channel) {
+                console.log(`Twitch channel ${settings.savedSettings[id].twitch.channel} is already registered on the bot.`);
+                return `Twitch channel ${settings.savedSettings[id].twitch.channel} is already registered on the bot.`;
+            }
+
+            // If stream is offline, just save without the game_name
+            await settings.save(id, login, username, "");
+            console.log(`Bot registered on channel: ${login} (id: ${id}). Stream is offline.`);
+            return `Bot registered on channel: ${login} (id: ${id}). Stream is offline.`;
         }
-        await settings.save(id, login, username, game_name);
-        console.log(`Bot registered on channel: ${login} (id: ${id}) with game: ${game_name}.`);
-        return `Bot registered on channel: ${login} (id: ${id}) with game: ${game_name}.`;
     } catch (error) {
         console.log(error);
     }
 }
+
 
 async function isBotModerator(client, channel) {
     try {

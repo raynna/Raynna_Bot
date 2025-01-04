@@ -60,7 +60,7 @@ class Ask {
         const userMessage = argument ? argument.trim() : '';
 
         if (!userMessage) {
-            return `@${username}, please provide a question after !ask.`;
+            return `Please provide a question after !ask.`;
         }
 
         this.resetConversationIfInactive(channel, username);
@@ -74,7 +74,7 @@ class Ask {
                 messages: [
                     {
                         role: 'system',
-                        content: 'Please provide a response that is under 250 characters.'
+                        content: 'Respond to the user while keeping the answer under 200 characters.'
                     },
                     ...conversationHistory,
                     {
@@ -82,15 +82,15 @@ class Ask {
                         content: userMessage,
                     }
                 ],
-                max_tokens: 50,
+                max_tokens: 40,
                 temperature: 0.7,
             });
 
             let answer = responseData.choices[0].message.content.trim();
             this.saveConversation(channel, username, userMessage, answer);
 
-            if (answer.length > 250) {
-                answer = answer.substring(0, 247) + '...';
+            if (answer.length > 200) {
+                answer = answer.substring(0, 200);
             }
             return `${answer}`;
         }  catch (error) {

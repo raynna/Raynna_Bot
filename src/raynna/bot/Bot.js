@@ -25,7 +25,6 @@ const client = new tmi.Client({
 console.log("Connecting..");
 client.connect().then(async () => {
     console.log(`Connected Raynna_Bot!`);
-
 }).catch((error) => {
     console.error(error);
 });
@@ -229,35 +228,11 @@ client.on('message', async (channel, tags, message, self) => {
                         }
                         //avoid all commands if its not VIP/mod, exception is creator of bot.
                         if (!botIsModerator && tags.username.toLowerCase() !== process.env.CREATOR_CHANNEL.toLowerCase()) {
-                            if (tags.username.toLowerCase() === channel) {
+                            if (isStreamer) {
                                 await sendMessage(client, channel, `Bot needs to be a VIP or Moderator to use commands.`);
                             }
                             return;
                         }
-
-                        /*const channelWithoutHash = channel.startsWith('#') ? channel.replace('#', '').toLowerCase() : channel.toLowerCase();
-                        const { data: twitch, errorMessage: message } = await getData(RequestType.StreamStatus, channelWithoutHash);
-                        if (!twitch || !twitch.data || twitch.data.length === 0) {
-                        } else {
-                            const { id, game_name } = twitch.data[0];
-
-                            let currentGame = await commands.settings.getGameName(id);
-                            if (currentGame === "" && game_name) {
-                                await commands.settings.registerGame(id, game_name);
-                                currentGame = await commands.settings.getGameName(id);
-                            }
-
-                            if (commandInstance?.game && (!currentGame || currentGame.trim() === "")) {
-                                await sendMessage(client, channel, `Streamer doesn't have any game registered, use !registergame`);
-                                return;
-                            }
-
-                            if (!commands.isGameCommand(commandInstance, currentGame)) {
-                                console.log(`Command ${command} is not compatible with the current game: ${currentGame}`);
-                                //await sendMessage(client, channel, `This command can only be used for ${commandInstance.game}. The current game is set to ${currentGame}.`);
-                                return;
-                            }
-                        }*/
                         if (commands.isModeratorCommand(commandInstance)) {
                             if (!(playerIsMod || isStreamer || isCreator)) {
                                 await sendMessage(client, channel, `Only the streamer or a moderator can use this command. @${tags.username}`);

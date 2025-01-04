@@ -170,6 +170,23 @@
       "id": -1
     }
   },
+  "93645775": {
+    "twitch": {
+      "channel": "itsoik",
+      "username": "itsOik"
+    },
+    "runescape": {
+      "name": "",
+      "id": -1
+    },
+    "cs2": {
+      "name": "",
+      "id": -1
+    },
+    "toggled": [],
+    "font": "bold",
+    "game": "Software and Game Development"
+  },
   "100786482": {
     "twitch": {
       "channel": "whitfin",
@@ -194,7 +211,11 @@
     "toggled": [
       "dino"
     ],
-    "font": "bold"
+    "font": "bold",
+    "cs2": {
+      "name": "",
+      "id": -1
+    }
   },
   "117020610": {
     "twitch": {
@@ -295,7 +316,11 @@
       "id": -1
     },
     "toggled": [],
-    "font": "bold"
+    "font": "bold",
+    "cs2": {
+      "name": "",
+      "id": -1
+    }
   },
   "141328522": {
     "twitch": {
@@ -359,6 +384,40 @@
     "toggled": [],
     "font": "bold"
   },
+  "151262560": {
+    "twitch": {
+      "channel": "lossalito",
+      "username": "Lossalito"
+    },
+    "runescape": {
+      "name": "",
+      "id": -1
+    },
+    "cs2": {
+      "id": 2008143529,
+      "name": "Lossa"
+    },
+    "toggled": [],
+    "font": "bold",
+    "game": "Counter-Strike"
+  },
+  "152863617": {
+    "twitch": {
+      "channel": "redone_tv",
+      "username": "redone_tv"
+    },
+    "runescape": {
+      "name": "",
+      "id": -1
+    },
+    "cs2": {
+      "name": "",
+      "id": -1
+    },
+    "toggled": [],
+    "font": "bold",
+    "game": ""
+  },
   "155825736": {
     "twitch": {
       "channel": "ktthelemon",
@@ -396,7 +455,11 @@
     },
     "toggled": [],
     "font": "bold",
-    "game": "Counter-Strike"
+    "game": "Counter-Strike",
+    "cs2": {
+      "name": "",
+      "id": -1
+    }
   },
   "192574918": {
     "twitch": {
@@ -459,7 +522,11 @@
     },
     "toggled": [],
     "font": "bold",
-    "game": "Counter-Strike"
+    "game": "Counter-Strike",
+    "cs2": {
+      "id": 438877306,
+      "name": "ChrilleEkberG"
+    }
   },
   "491679637": {
     "twitch": {
