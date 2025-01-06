@@ -16,6 +16,23 @@
     "font": "bold",
     "game": "Counter-Strike"
   },
+  "28965201": {
+    "twitch": {
+      "channel": "masterpipe83",
+      "username": "masterpipe83"
+    },
+    "runescape": {
+      "name": "",
+      "id": -1
+    },
+    "cs2": {
+      "name": "",
+      "id": -1
+    },
+    "toggled": [],
+    "font": "bold",
+    "game": "Counter-Strike"
+  },
   "38019896": {
     "twitch": {
       "channel": "heatoncs",
@@ -46,7 +63,11 @@
       "hugge",
       "dino"
     ],
-    "font": "bold"
+    "font": "bold",
+    "cs2": {
+      "name": "",
+      "id": -1
+    }
   },
   "57810555": {
     "twitch": {
@@ -78,19 +99,20 @@
   },
   "65381354": {
     "twitch": {
-      "channel": "pingisb0rd",
-      "username": "Pingisb0rd"
+      "channel": "punishd1",
+      "username": "Punishd1"
     },
     "runescape": {
       "name": "",
       "id": -1
     },
-    "toggled": [],
-    "font": "bold",
     "cs2": {
       "id": 802695411,
       "name": "PunishD"
-    }
+    },
+    "toggled": [],
+    "font": "bold",
+    "game": "Counter-Strike"
   },
   "71333591": {
     "twitch": {
@@ -183,7 +205,10 @@
       "name": "",
       "id": -1
     },
-    "toggled": [],
+    "toggled": [
+      "cscommands",
+      "rscommands"
+    ],
     "font": "bold",
     "game": "Software and Game Development"
   },
@@ -461,6 +486,23 @@
       "id": -1
     }
   },
+  "180604126": {
+    "twitch": {
+      "channel": "adamskiifn",
+      "username": "adamskiifn"
+    },
+    "runescape": {
+      "name": "",
+      "id": -1
+    },
+    "cs2": {
+      "id": 2807021472,
+      "name": "adamskii"
+    },
+    "toggled": [],
+    "font": "bold",
+    "game": "Counter-Strike"
+  },
   "192574918": {
     "twitch": {
       "channel": "lovvel_",
@@ -471,7 +513,11 @@
       "id": -1
     },
     "toggled": [],
-    "font": "bold"
+    "font": "bold",
+    "cs2": {
+      "name": "",
+      "id": -1
+    }
   },
   "211128304": {
     "twitch": {
@@ -497,7 +543,11 @@
     "toggled": [
       "commands"
     ],
-    "font": "bold"
+    "font": "bold",
+    "cs2": {
+      "name": "",
+      "id": -1
+    }
   },
   "413797152": {
     "twitch": {
@@ -527,6 +577,23 @@
       "id": 438877306,
       "name": "ChrilleEkberG"
     }
+  },
+  "468106723": {
+    "twitch": {
+      "channel": "matissetec",
+      "username": "MatisseTec"
+    },
+    "runescape": {
+      "name": "",
+      "id": -1
+    },
+    "cs2": {
+      "name": "",
+      "id": -1
+    },
+    "toggled": [],
+    "font": "default",
+    "game": "Software and Game Development"
   },
   "491679637": {
     "twitch": {
@@ -697,6 +764,40 @@
       "id": 1882505739,
       "name": "KloakBengt"
     }
+  },
+  "770392237": {
+    "twitch": {
+      "channel": "oojsan",
+      "username": "OOJSAN"
+    },
+    "runescape": {
+      "name": "",
+      "id": -1
+    },
+    "cs2": {
+      "name": "",
+      "id": -1
+    },
+    "toggled": [],
+    "font": "bold",
+    "game": "Counter-Strike"
+  },
+  "881097329": {
+    "twitch": {
+      "channel": "ronjalovisah",
+      "username": "ronjalovisah"
+    },
+    "runescape": {
+      "name": "",
+      "id": -1
+    },
+    "cs2": {
+      "id": 1079865068,
+      "name": "Ronja"
+    },
+    "toggled": [],
+    "font": "bold",
+    "game": "Counter-Strike"
   },
   "902152197": {
     "twitch": {

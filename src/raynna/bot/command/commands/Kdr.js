@@ -6,7 +6,7 @@ class Kdr {
 
     constructor() {
         this.name = 'Kdr';
-        this.triggers = ["stats", "kd", "ratio", "krd"];
+        this.triggers = ["stats", "kd", "ratio", "krd", "elo"];
         this.settings = new Settings();
         this.game = "Counter-Strike";
     }

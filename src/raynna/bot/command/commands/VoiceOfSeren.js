@@ -13,7 +13,7 @@ class VoiceOfSeren {
 
     async execute(tags, channel, argument, client, isBotModerator) {
         try {
-            const result = await extractVoSDistricts("https://runescape.wiki/w/Voice_of_Seren"); // Extract the desired content
+            const result = await extractVoSDistricts("https://runescape.wiki/w/Voice_of_Seren");
             return result
                 ? result
                 : "Couldn't extract district information.";
@@ -28,23 +28,17 @@ async function extractVoSDistricts(url) {
     const browser = await puppeteer.launch({ headless: true });
     const page = await browser.newPage();
 
-    // Navigate to the provided URL
     await page.goto(url, { waitUntil: 'domcontentloaded' });
 
-    // Get the full HTML of the page to check for the structure
     const htmlContent = await page.content();
 
-    // Wait for the VoS-district elements to load
     await page.waitForSelector('.VoS-district', { timeout: 3000 });
 
-    // Log all divs on the page to check for the structure of the district divs
     const divs = await page.$$eval('div', divs => divs.map(div => div.outerHTML));
 
-    // Extract the district names from the VoS-district divs
     const districtNames = await page.evaluate(() => {
         const districts = document.querySelectorAll('.VoS-district');
 
-        // Debug: log the district divs found
         console.log("Found district divs:", districts.length);
 
         return Array.from(districts).map(district => {
@@ -55,12 +49,10 @@ async function extractVoSDistricts(url) {
         });
     });
 
-    // If no districts are found, log a message
     if (districtNames.length === 0) {
         console.log("No districts found.");
     }
 
-    // Print the current active districts
     console.log('Current active districts:', districtNames);
 
     await browser.close();

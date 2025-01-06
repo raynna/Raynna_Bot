@@ -107,10 +107,10 @@ class Weather {
                     let weatherResponse = this.formatWeatherResponse(weatherData);
                     return `${weatherResponse}`;
                 } catch (error) {
-                    return `Unable to find weather for ${city}. Please check the location and try again.`;
+                    return `No location found ${city}.`;
                 }
             } else {
-                return `Unable to find weather for ${city}, ${country}. Please check the location and try again.`;
+                return `No location found ${city}.`;
             }
         }
     }

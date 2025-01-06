@@ -18,6 +18,19 @@ class Ask {
         });
     }
 
+    resetConversation(channel, username) {
+        if (this.conversations[channel][username]) {
+            this.conversations[channel][username] = [];
+            return true;
+        }
+        return false;
+    }
+
+    resetAllConversations(channel) {
+        return !!this.conversations[channel];
+
+    }
+
     saveConversation(channel, username, userMessage, botResponse) {
         if (!this.conversations[channel]) {
             this.conversations[channel] = {};
@@ -61,6 +74,15 @@ class Ask {
 
         if (!userMessage) {
             return `Please provide a question after !ask.`;
+        }
+
+        if (userMessage.toLowerCase() === "reset") {
+            const reset = this.resetConversation(channel, username);
+            if (reset) {
+                return `I have now reset your conversation with me!`;
+            } else {
+                return `You don't have any conversation with me saved.`;
+            }
         }
 
         this.resetConversationIfInactive(channel, username);
