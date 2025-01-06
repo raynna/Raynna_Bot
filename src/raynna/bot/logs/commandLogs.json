@@ -1,13 +1,13 @@
 {
-  "totalCommands": 557,
-  "uniqueUserCount": 39,
+  "totalCommands": 599,
+  "uniqueUserCount": 40,
   "mostUsedCommand": {
     "command": "ask",
-    "count": 359
+    "count": 397
   },
   "mostActiveUser": {
     "user": "eskeminha",
-    "totalCommands": 156
+    "totalCommands": 174
   },
   "mostActiveChannel": {
     "channel": "itsoik",
@@ -18,18 +18,18 @@
     "2025-01-03": 105,
     "2025-01-04": 299,
     "2025-01-05": 65,
-    "2025-01-06": 53
+    "2025-01-06": 95
   },
   "commandsThisWeek": {
     "2025-W1": 439,
-    "2025-W2": 118
+    "2025-W2": 160
   },
   "commandsThisMonth": {
-    "2025-01": 557
+    "2025-01": 599
   },
   "userLogs": {
     "raynnacs": {
-      "totalCommands": 242
+      "totalCommands": 262
     },
     "imraz": {
       "totalCommands": 7
@@ -68,7 +68,7 @@
       "totalCommands": 3
     },
     "eskeminha": {
-      "totalCommands": 156
+      "totalCommands": 174
     },
     "itsoik": {
       "totalCommands": 24
@@ -83,7 +83,7 @@
       "totalCommands": 3
     },
     "maadrhym": {
-      "totalCommands": 11
+      "totalCommands": 12
     },
     "addeet": {
       "totalCommands": 22
@@ -137,21 +137,24 @@
       "totalCommands": 2
     },
     "matissetec": {
-      "totalCommands": 1
+      "totalCommands": 3
     },
     "zebriahkarr": {
       "totalCommands": 1
     },
     "happykralle": {
       "totalCommands": 1
+    },
+    "syynister": {
+      "totalCommands": 1
     }
   },
   "channels": {
     "raynnacs": {
-      "totalCommands": 81,
+      "totalCommands": 83,
       "specificCommands": {
         "gather": 1,
-        "ask": 28,
+        "ask": 30,
         "99s": 1,
         "120s": 1,
         "pc": 1,
@@ -185,9 +188,9 @@
       }
     },
     "1linneaa": {
-      "totalCommands": 73,
+      "totalCommands": 74,
       "specificCommands": {
-        "dino": 3,
+        "dino": 4,
         "stats": 24,
         "ask": 13,
         "kdr": 1,
@@ -313,10 +316,13 @@
       }
     },
     "matissetec": {
-      "totalCommands": 27,
+      "totalCommands": 66,
       "specificCommands": {
-        "ask": 26,
-        "weather": 1
+        "ask": 62,
+        "weather": 1,
+        "users": 1,
+        "skill": 1,
+        "match": 1
       }
     }
   }

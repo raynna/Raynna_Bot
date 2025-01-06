@@ -91,12 +91,13 @@ class Ask {
         const conversationHistory = this.getConversation(channel, username);
 
         try {
+            const date = new Date();
             const responseData = await this.openai.chat.completions.create({
                 model: 'chatgpt-4o-latest',
                 messages: [
                     {
                         role: 'system',
-                        content: 'Respond to the user while keeping the answer under 200 characters.'
+                        content: `Respond to the user while keeping the answer under 200 characters. Current Date is: ${date}`
                     },
                     ...conversationHistory,
                     {
