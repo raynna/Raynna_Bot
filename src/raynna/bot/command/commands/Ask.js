@@ -97,7 +97,7 @@ class Ask {
                 messages: [
                     {
                         role: 'system',
-                        content: `Respond to the user while keeping the answer under 200 characters. Current Date is: ${date}`
+                        content: `Current Date is ${date}, Respond to the user while keeping the answer under 200 characters.`
                     },
                     ...conversationHistory,
                     {

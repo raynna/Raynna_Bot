@@ -1,9 +1,9 @@
 {
-  "totalCommands": 599,
+  "totalCommands": 603,
   "uniqueUserCount": 40,
   "mostUsedCommand": {
     "command": "ask",
-    "count": 397
+    "count": 401
   },
   "mostActiveUser": {
     "user": "eskeminha",
@@ -18,18 +18,18 @@
     "2025-01-03": 105,
     "2025-01-04": 299,
     "2025-01-05": 65,
-    "2025-01-06": 95
+    "2025-01-06": 99
   },
   "commandsThisWeek": {
     "2025-W1": 439,
-    "2025-W2": 160
+    "2025-W2": 164
   },
   "commandsThisMonth": {
-    "2025-01": 599
+    "2025-01": 603
   },
   "userLogs": {
     "raynnacs": {
-      "totalCommands": 262
+      "totalCommands": 266
     },
     "imraz": {
       "totalCommands": 7
@@ -316,9 +316,9 @@
       }
     },
     "matissetec": {
-      "totalCommands": 66,
+      "totalCommands": 70,
       "specificCommands": {
-        "ask": 62,
+        "ask": 66,
         "weather": 1,
         "users": 1,
         "skill": 1,
