@@ -97,7 +97,7 @@ async function removeChannel(channel) {
 
 async function addLog(channel, username, command) {
     try {
-        const logFilePath = path.resolve(__dirname, '..', '..', '..', '..', 'commandLogs.json');
+        const logFilePath = path.resolve(__dirname, '..', 'logs', 'commandLogs.json');
         const now = new Date();
         const todayKey = now.toISOString().split('T')[0];
         const weekKey = `${now.getFullYear()}-W${getWeekNumber(now)}`;
@@ -111,7 +111,6 @@ async function addLog(channel, username, command) {
 
         const normalizedChannel = channel.startsWith('#') ? channel.slice(1).toLowerCase() : channel.toLowerCase();
 
-        // Initialize fields if missing
         logData.totalCommands = logData.totalCommands || 0;
         logData.uniqueUserCount = logData.uniqueUserCount || 0;
         logData.mostUsedCommand = logData.mostUsedCommand || {};
@@ -124,27 +123,22 @@ async function addLog(channel, username, command) {
         logData.channels = logData.channels || {}; // New channel data
         logData.channels[normalizedChannel] = logData.channels[normalizedChannel] || { totalCommands: 0, specificCommands: {} };
 
-        // Increment global stats
         logData.totalCommands++;
         logData.commandsToday[todayKey] = (logData.commandsToday[todayKey] || 0) + 1;
         logData.commandsThisWeek[weekKey] = (logData.commandsThisWeek[weekKey] || 0) + 1;
         logData.commandsThisMonth[monthKey] = (logData.commandsThisMonth[monthKey] || 0) + 1;
 
-        // Increment channel-specific stats
         logData.channels[normalizedChannel].totalCommands++;
         logData.channels[normalizedChannel].specificCommands[command] = (logData.channels[normalizedChannel].specificCommands[command] || 0) + 1;
 
-        // Increment user-specific stats
         const isNewUser = !logData.userLogs[username];
         logData.userLogs[username] = logData.userLogs[username] || { totalCommands: 0 };
         logData.userLogs[username].totalCommands++;
 
-        // Increment unique user count if this is a new user
         if (isNewUser) {
             logData.uniqueUserCount++;
         }
 
-        // Validation checks
         const userCommands = Object.values(logData.userLogs).reduce((sum, user) => sum + user.totalCommands, 0);
         const channelCommands = Object.values(logData.channels).reduce((sum, channel) => sum + channel.totalCommands, 0);
         const calculatedUniqueUserCount = Object.keys(logData.userLogs).length;
@@ -158,12 +152,10 @@ async function addLog(channel, username, command) {
                 calculatedUniqueUserCount
             });
 
-            // Correct the totals if necessary
             logData.totalCommands = Math.max(userCommands, channelCommands);
             logData.uniqueUserCount = calculatedUniqueUserCount; // Correct the unique user count
         }
 
-        // Find the most used command across all channels
         const allCommands = Object.entries(logData.channels).map(([key, value]) => value.specificCommands);
         const allCommandsFlattened = allCommands.reduce((acc, commands) => {
             Object.entries(commands).forEach(([cmd, count]) => {
@@ -175,22 +167,18 @@ async function addLog(channel, username, command) {
         const mostUsedCommand = Object.entries(allCommandsFlattened).reduce((max, [cmd, count]) => count > max.count ? { command: cmd, count } : max, { command: '', count: 0 });
 
         const creatorChannel = process.env.CREATOR_CHANNEL.toLowerCase();
-        // Find the most active user across all users
         const mostActiveUser = Object.entries(logData.userLogs)
             .filter(([user]) => user.toLowerCase() !== creatorChannel) // Exclude creator channel if matching
             .reduce((max, [user, { totalCommands }]) => totalCommands > max.totalCommands ? { user, totalCommands } : max, { user: '', totalCommands: 0 });
 
-        // Find the most active channel
         const mostActiveChannel = Object.entries(logData.channels)
             .filter(([channel]) => channel.toLowerCase() !== creatorChannel) // Exclude creator channel if matching
             .reduce((max, [channel, { totalCommands }]) => totalCommands > max.totalCommands ? { channel, totalCommands } : max, { channel: '', totalCommands: 0 });
 
-        // Update the most used command, most active user, and most active channel fields
         logData.mostUsedCommand = mostUsedCommand;
         logData.mostActiveUser = mostActiveUser;
         logData.mostActiveChannel = mostActiveChannel;
 
-        // Save updated log data
         await fs.promises.writeFile(logFilePath, JSON.stringify(logData, null, 2), 'utf-8');
     } catch (error) {
         console.error(error);
