@@ -167,7 +167,6 @@ class Settings {
     }
 
     async toggle(twitchId, command, triggers) {
-        console.log("toggle: " + command + ", triggers: " + triggers);
         await this.check(twitchId);
         const index = this.savedSettings[twitchId].toggled.indexOf(command);
         const disable = (index === -1);

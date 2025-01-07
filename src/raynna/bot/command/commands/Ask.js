@@ -6,7 +6,7 @@ class Ask {
 
     constructor() {
         this.name = 'Ask';
-        this.triggers = ['question', 'heybot'];
+        this.triggers = ['question', 'heybot', 'hibot', 'hellobot', 'hiraynna', 'heyraynna', 'helloraynna', 'supbot', 'sup'];
         this.game = "General";
         this.apiKey = process.env.OPENAI_KEY;
         this.conversations = {};

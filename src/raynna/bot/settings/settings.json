@@ -114,6 +114,58 @@
     "font": "bold",
     "game": "Counter-Strike"
   },
+  "67547968": {
+    "twitch": {
+      "channel": "gurkinator_",
+      "username": "gurkinator_"
+    },
+    "runescape": {
+      "name": "",
+      "id": -1
+    },
+    "cs2": {
+      "id": 1246735435,
+      "name": "gurkinator"
+    },
+    "toggled": [
+      "averageexperience",
+      "averagelevel",
+      "clan",
+      "clues",
+      "combat",
+      "dropstoday",
+      "dropsyesterday",
+      "easyrank",
+      "eliterank",
+      "hardrank",
+      "lastmonth",
+      "lastweek",
+      "lastyear",
+      "masterrank",
+      "mediumrank",
+      "month",
+      "news",
+      "nintynines",
+      "onetwenties",
+      "pricecheck",
+      "questpoints",
+      "quests",
+      "rscommands",
+      "runescore",
+      "skill",
+      "today",
+      "total",
+      "twohundredmill",
+      "voiceofseren",
+      "week",
+      "wiki",
+      "wildernessevent",
+      "year",
+      "yesterday"
+    ],
+    "font": "bold",
+    "game": "Counter-Strike"
+  },
   "71333591": {
     "twitch": {
       "channel": "chevalricrs",
@@ -125,7 +177,11 @@
     },
     "toggled": [],
     "font": "bold",
-    "game": ""
+    "game": "",
+    "cs2": {
+      "name": "",
+      "id": -1
+    }
   },
   "78501398": {
     "twitch": {
@@ -149,7 +205,11 @@
       "id": -1
     },
     "toggled": [],
-    "font": "bold"
+    "font": "bold",
+    "cs2": {
+      "name": "",
+      "id": -1
+    }
   },
   "83260968": {
     "twitch": {
@@ -188,8 +248,8 @@
     "font": "bold",
     "game": "",
     "cs2": {
-      "name": "",
-      "id": -1
+      "id": 3477799500,
+      "name": "Linnea"
     }
   },
   "93645775": {
@@ -206,8 +266,50 @@
       "id": -1
     },
     "toggled": [
+      "averageexperience",
+      "averagelevel",
+      "clues",
+      "combat",
+      "dropstoday",
+      "dropsyesterday",
+      "easyrank",
+      "eliterank",
+      "hardrank",
+      "lastmonth",
+      "lastweek",
+      "lastyear",
+      "masterrank",
+      "mediumrank",
+      "month",
+      "news",
+      "nintynines",
+      "onetwenties",
+      "pricecheck",
+      "questpoints",
+      "quests",
+      "rscommands",
+      "runescore",
+      "skill",
+      "today",
+      "total",
+      "twohundredmill",
+      "voiceofseren",
+      "week",
+      "wiki",
+      "wildernessevent",
+      "year",
+      "yesterday",
       "cscommands",
-      "rscommands"
+      "gather",
+      "kdr",
+      "lastmatch",
+      "latestban",
+      "latestbans",
+      "match",
+      "mostkilled",
+      "mostkilledby",
+      "steam",
+      "clan"
     ],
     "font": "bold",
     "game": "Software and Game Development"
@@ -383,7 +485,11 @@
       "id": -1
     },
     "toggled": [],
-    "font": "bold"
+    "font": "bold",
+    "cs2": {
+      "id": 3166065274,
+      "name": "Stakarn"
+    }
   },
   "146316667": {
     "twitch": {
@@ -604,7 +710,42 @@
       "id": 1616518952,
       "name": "Iron Raynna"
     },
-    "toggled": [],
+    "toggled": [
+      "clan",
+      "averageexperience",
+      "averagelevel",
+      "clues",
+      "combat",
+      "dropstoday",
+      "dropsyesterday",
+      "easyrank",
+      "eliterank",
+      "hardrank",
+      "lastmonth",
+      "lastweek",
+      "lastyear",
+      "masterrank",
+      "mediumrank",
+      "month",
+      "news",
+      "nintynines",
+      "onetwenties",
+      "pricecheck",
+      "questpoints",
+      "quests",
+      "rscommands",
+      "runescore",
+      "skill",
+      "today",
+      "total",
+      "twohundredmill",
+      "voiceofseren",
+      "week",
+      "wiki",
+      "wildernessevent",
+      "year",
+      "yesterday"
+    ],
     "font": "bold",
     "game": "RuneScape",
     "cs2": {
@@ -810,7 +951,11 @@
     },
     "toggled": [],
     "font": "bold",
-    "game": "Counter-Strike"
+    "game": "Counter-Strike",
+    "cs2": {
+      "name": "",
+      "id": -1
+    }
   },
   "43465526392": {
     "twitch": {

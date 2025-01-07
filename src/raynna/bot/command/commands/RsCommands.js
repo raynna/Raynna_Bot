@@ -7,7 +7,7 @@ class RsCommands {
         this.triggers = ["runescapecommands", "rs3commands"];
         this.commands = require('../Commands').getInstance();
         this.settings = new Settings();
-        this.game = "General";
+        this.game = "RuneScape";
     }
 
     async execute(tags, channel, argument, client, isBotModerator) {

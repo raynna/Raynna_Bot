@@ -7,7 +7,7 @@ class CsCommand {
         this.triggers = ["counterstrikecommands", "csgocommands", "cs2commands", "esplaycommands"];
         this.commands = require('../Commands').getInstance();
         this.settings = new Settings();
-        this.game = "General";
+        this.game = "Counter-Strike";
     }
 
     async execute(tags, channel, argument, client, isBotModerator) {

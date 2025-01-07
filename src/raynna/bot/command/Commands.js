@@ -189,8 +189,12 @@ class Commands {
     }
 
     static formatCommandList(commands) {
-        return commands.length > 0 ? commands.map(command => `!${command.toLowerCase()}`).join(', ') : 'None';
+        const flattenedCommands = commands.flat().filter(command => typeof command === 'string');
+        return flattenedCommands.length > 0
+            ? flattenedCommands.map(command => `!${command.toLowerCase()}`).join(', ')
+            : 'None';
     }
+
 
 
     static findCommandClassByTrigger(trigger, validCommands) {
@@ -213,6 +217,7 @@ class Commands {
 
 
     async isBlockedCommand(commandInstance, channel) {
+        this.settings.savedSettings = await this.settings.loadSettings();
         const channelWithoutHash = channel.startsWith('#') ? channel.replace('#', '').toLowerCase() : channel.toLowerCase();
         const {data: twitch, errorMessage: error} = await getData(RequestType.TwitchUser, channelWithoutHash);
         if (error) {
@@ -224,8 +229,15 @@ class Commands {
         }
         const {id: twitchId} = twitch.data[0];
         await this.settings.check(twitchId);
-        const commandName = commandInstance.name;
-        return commandName && (this.settings.savedSettings[twitchId].toggled.includes(commandName.toLowerCase()) || this.settings.savedSettings[twitchId].toggled.includes(`!${commandName.toLowerCase()}`));
+        const commandName = commandInstance.name?.toLowerCase();
+        if (!commandName) {
+            console.error('Invalid command name:', commandInstance.name);
+            return false;
+        }
+
+        const toggledCommands = this.settings.savedSettings[twitchId]?.toggled || [];
+
+        return toggledCommands.includes(commandName) || toggledCommands.includes(`!${commandName}`);
     }
 
     isModeratorCommand(commandInstance) {

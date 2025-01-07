@@ -243,7 +243,7 @@ client.on('message', async (channel, tags, message, self) => {
                         await info(`Command execute on channel: ${channel}`, `${playerIsMod ? `Mod: ` : isStreamer ? `Streamer: ` : `Viewer: `}${tags.username} has used the command: ${command}`);
                         let result = await commandInstance.execute(tags, channel, argument, client, await isBotModerator(client, channel));
                         if (result) {
-                            console.log(`Result: ${result}`);
+                            //console.log(`Result: ${result}`);
                             if (!commands.isAvoidTag(commandInstance)) {
                                 result += ` @${tags.username}`;
                             }
