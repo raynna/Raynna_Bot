@@ -1,9 +1,9 @@
 {
-  "totalCommands": 812,
-  "uniqueUserCount": 62,
+  "totalCommands": 842,
+  "uniqueUserCount": 65,
   "mostUsedCommand": {
     "command": "ask",
-    "count": 490
+    "count": 499
   },
   "mostActiveUser": {
     "user": "eskeminha",
@@ -19,18 +19,18 @@
     "2025-01-04": 299,
     "2025-01-05": 65,
     "2025-01-06": 172,
-    "2025-01-07": 136
+    "2025-01-07": 166
   },
   "commandsThisWeek": {
     "2025-W1": 439,
-    "2025-W2": 373
+    "2025-W2": 403
   },
   "commandsThisMonth": {
-    "2025-01": 812
+    "2025-01": 842
   },
   "userLogs": {
     "raynnacs": {
-      "totalCommands": 391
+      "totalCommands": 398
     },
     "imraz": {
       "totalCommands": 7
@@ -105,7 +105,7 @@
       "totalCommands": 1
     },
     "onegunkid163": {
-      "totalCommands": 3
+      "totalCommands": 7
     },
     "officialpsykfall": {
       "totalCommands": 1
@@ -192,19 +192,19 @@
       "totalCommands": 2
     },
     "gurkinator_": {
-      "totalCommands": 7
+      "totalCommands": 15
     },
     "icanicke": {
       "totalCommands": 1
     },
     "moggwee": {
-      "totalCommands": 1
+      "totalCommands": 3
     },
     "damunken": {
       "totalCommands": 3
     },
     "kylllingen": {
-      "totalCommands": 4
+      "totalCommands": 8
     },
     "mussebox": {
       "totalCommands": 2
@@ -214,6 +214,15 @@
     },
     "femman_": {
       "totalCommands": 2
+    },
+    "zumaontop": {
+      "totalCommands": 1
+    },
+    "afrikasandra": {
+      "totalCommands": 3
+    },
+    "malteisafish": {
+      "totalCommands": 1
     }
   },
   "channels": {
@@ -257,10 +266,10 @@
       }
     },
     "1linneaa": {
-      "totalCommands": 84,
+      "totalCommands": 88,
       "specificCommands": {
         "dino": 7,
-        "stats": 26,
+        "stats": 30,
         "ask": 15,
         "kdr": 1,
         "kd": 1,
@@ -440,10 +449,10 @@
       }
     },
     "gurkinator_": {
-      "totalCommands": 58,
+      "totalCommands": 84,
       "specificCommands": {
-        "stats": 17,
-        "ask": 23,
+        "stats": 25,
+        "ask": 32,
         "mostkilled": 2,
         "mostkilledby": 1,
         "csname": 1,
@@ -451,12 +460,17 @@
         "bengt": 1,
         "hugge": 1,
         "heybot": 2,
-        "toggle": 4,
+        "toggle": 5,
         "today": 1,
         "quests": 1,
         "clan": 1,
         "match": 1,
-        "weather": 1
+        "weather": 3,
+        "modinfo": 1,
+        "feedback": 1,
+        "winstreak": 1,
+        "wins": 2,
+        "commands": 1
       }
     }
   }

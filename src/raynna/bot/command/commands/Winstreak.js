@@ -2,11 +2,11 @@ const {getData, RequestType} = require("../../requests/Request");
 const Settings = require("../../settings/Settings");
 const {minigameIndex} = require("../../utils/MinigamesUtils");
 
-class Kdr {
+class Winstreak {
 
     constructor() {
-        this.name = 'Kdr';
-        this.triggers = ["stats", "kd", "ratio", "krd", "elo"];
+        this.name = 'Winstreak';
+        this.triggers = ["wins", "bestwinstreak", "w%"];
         this.settings = new Settings();
         this.game = "Counter-Strike";
     }
@@ -44,15 +44,14 @@ class Kdr {
             const { kills, deaths, rounds, damage_dealt } = cs_fields;
             const ratio = deaths !== 0 ? (kills / deaths).toFixed(2) : "N/A";
 
-            const { matches, wins, losses, elo, reported, max_win_streak } = game_stats;
-            const winRatio = matches !== 0 ? ((wins / matches) * 100).toFixed(2) + "%" : "N/A";
+            const { wins, win_streak, max_win_streak } = game_stats;
 
             const avgDamagePerRound = rounds !== 0 ? (damage_dealt / rounds).toFixed(2) : "N/A";
-            return `${player.username}'s: Elo: ${elo}, Kills: ${kills}, Deaths: ${deaths}, Ratio: ${ratio}, Damage/Round: ${avgDamagePerRound}, Matches: ${game_stats.matches}, Win%: ${winRatio}, Best winstreak: ${max_win_streak}, Reports: ${reported}`
+            return `${player.username}'s: Winstreak: ${win_streak} (Best: ${max_win_streak}), Total wins: ${wins}.`
         } catch (error) {
             console.log(`An error has occurred while executing command ${this.name}`, error);
         }
     }
 }
 
-module.exports = Kdr;
+module.exports = Winstreak;
