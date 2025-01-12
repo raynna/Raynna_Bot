@@ -1,4 +1,21 @@
 {
+  "22958834": {
+    "twitch": {
+      "channel": "nooblet",
+      "username": "Nooblet"
+    },
+    "runescape": {
+      "name": "",
+      "id": -1
+    },
+    "cs2": {
+      "name": "",
+      "id": -1
+    },
+    "toggled": [],
+    "font": "bold",
+    "game": "Old School RuneScape"
+  },
   "25415809": {
     "twitch": {
       "channel": "tiimwork",
@@ -81,9 +98,24 @@
     "toggled": [
       "emotes",
       "botinfo",
-      "cmd"
+      "cmd",
+      "cscommands",
+      "gather",
+      "kdr",
+      "lastmatch",
+      "latestban",
+      "latestbans",
+      "match",
+      "mostkilled",
+      "mostkilledby",
+      "steam",
+      "winstreak"
     ],
-    "font": "bold"
+    "font": "bold",
+    "cs2": {
+      "name": "",
+      "id": -1
+    }
   },
   "57878968": {
     "twitch": {
@@ -96,6 +128,23 @@
     },
     "toggled": [],
     "font": "bold"
+  },
+  "63232377": {
+    "twitch": {
+      "channel": "libbzer",
+      "username": "Libbzer"
+    },
+    "runescape": {
+      "name": "",
+      "id": -1
+    },
+    "cs2": {
+      "name": "",
+      "id": -1
+    },
+    "toggled": [],
+    "font": "bold",
+    "game": "Counter-Strike"
   },
   "65381354": {
     "twitch": {
@@ -167,6 +216,23 @@
     "font": "bold",
     "game": "Counter-Strike"
   },
+  "68319500": {
+    "twitch": {
+      "channel": "eskeminha",
+      "username": "Eskeminha"
+    },
+    "runescape": {
+      "name": "",
+      "id": -1
+    },
+    "cs2": {
+      "name": "",
+      "id": -1
+    },
+    "toggled": [],
+    "font": "bold",
+    "game": ""
+  },
   "71333591": {
     "twitch": {
       "channel": "chevalricrs",
@@ -211,6 +277,58 @@
       "name": "",
       "id": -1
     }
+  },
+  "82345727": {
+    "twitch": {
+      "channel": "ibraofc",
+      "username": "ibraofc"
+    },
+    "runescape": {
+      "name": "",
+      "id": -1
+    },
+    "cs2": {
+      "id": 1502538194,
+      "name": "ibraofc"
+    },
+    "toggled": [
+      "averageexperience",
+      "averagelevel",
+      "clan",
+      "clues",
+      "combat",
+      "dropstoday",
+      "dropsyesterday",
+      "easyrank",
+      "eliterank",
+      "hardrank",
+      "lastmonth",
+      "lastweek",
+      "lastyear",
+      "masterrank",
+      "mediumrank",
+      "month",
+      "news",
+      "nintynines",
+      "onetwenties",
+      "pricecheck",
+      "questpoints",
+      "quests",
+      "rscommands",
+      "runescore",
+      "skill",
+      "today",
+      "total",
+      "twohundredmill",
+      "voiceofseren",
+      "week",
+      "wiki",
+      "wildernessevent",
+      "year",
+      "yesterday"
+    ],
+    "font": "bold",
+    "game": "Counter-Strike"
   },
   "83260968": {
     "twitch": {
@@ -312,7 +430,7 @@
       "steam",
       "clan"
     ],
-    "font": "bold",
+    "font": "default",
     "game": "Software and Game Development"
   },
   "100786482": {
@@ -384,7 +502,11 @@
       "name": "Sarah Janey"
     },
     "toggled": [],
-    "font": "bold"
+    "font": "bold",
+    "cs2": {
+      "name": "",
+      "id": -1
+    }
   },
   "127302375": {
     "twitch": {
@@ -485,7 +607,42 @@
       "name": "",
       "id": -1
     },
-    "toggled": [],
+    "toggled": [
+      "averageexperience",
+      "averagelevel",
+      "clan",
+      "clues",
+      "combat",
+      "dropstoday",
+      "dropsyesterday",
+      "easyrank",
+      "eliterank",
+      "hardrank",
+      "lastmonth",
+      "lastweek",
+      "lastyear",
+      "masterrank",
+      "mediumrank",
+      "month",
+      "news",
+      "nintynines",
+      "onetwenties",
+      "pricecheck",
+      "questpoints",
+      "quests",
+      "rscommands",
+      "runescore",
+      "skill",
+      "today",
+      "total",
+      "twohundredmill",
+      "voiceofseren",
+      "week",
+      "wiki",
+      "wildernessevent",
+      "year",
+      "yesterday"
+    ],
     "font": "bold",
     "cs2": {
       "id": 3166065274,
@@ -501,8 +658,24 @@
       "name": "",
       "id": -1
     },
-    "toggled": [],
-    "font": "bold"
+    "toggled": [
+      "cscommands",
+      "gather",
+      "kdr",
+      "lastmatch",
+      "latestban",
+      "latestbans",
+      "match",
+      "mostkilled",
+      "mostkilledby",
+      "steam",
+      "winstreak"
+    ],
+    "font": "bold",
+    "cs2": {
+      "name": "",
+      "id": -1
+    }
   },
   "147039284": {
     "twitch": {

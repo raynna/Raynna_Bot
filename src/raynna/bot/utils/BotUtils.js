@@ -20,7 +20,7 @@ async function changeChannel(channel) {
             return error;
         }
         if (!twitch.data || twitch.data.length === 0) {
-            return `Something went from getting this twitch, no data`;
+            return `Couldn't find twitch channel with name ${channel}.`;
         }
         const {id: id, login: login, display_name: username} = twitch.data[0];
         const {data: status, errorMessage: statusError} = await getData(RequestType.StreamStatus, channelWithoutHash);
@@ -28,16 +28,31 @@ async function changeChannel(channel) {
             console.log(statusError);
             return statusError;
         }
-        const { game_name } = status.data[0];
+        let response = "";
+        let category = "";
+        let remove = false;
+
         settings.savedSettings = await settings.loadSettings();
         if (settings.savedSettings[id]) {
+            remove = true;
             await settings.remove(id);
-            console.log(`Bot removed from channel: ${login} (id: ${id}).`);
-            return `Bot removed from channel: ${login} (id: ${id}).`;
+            response += `Bot removed from channel: ${login} (id: ${id})`;
+        } else {
+            response += `Bot registered on channel: ${login} (id: ${id})`;
+            await settings.save(id, login, username);
         }
-        await settings.save(id, login, username, game_name);
-        console.log(`Bot registered on channel: ${login} (id: ${id}) with game: ${game_name}.`);
-        return `Bot registered on channel: ${login} (id: ${id}) with game: ${game_name}.`;
+        if (status && status.data && status.data.length > 0) {
+            const {game_name} = status.data[0];
+            category = game_name;
+            response += ` with category: ${category}`
+        }
+        if (remove) {
+            await settings.remove(id);
+        } else {
+            await settings.save(id, login, username, category);
+        }
+        console.log(response);
+        return response;
     } catch (error) {
         console.log(error);
     }
@@ -217,32 +232,21 @@ async function addChannel(channel) {
             return statusError;
         }
 
-        // Handle stream offline case
-        if (status && status.data && status.data.length > 0) {
-            const { game_name } = status.data[0];
+        let response = "";
+        let category = "";
+        settings.savedSettings = await settings.loadSettings();
 
-            settings.savedSettings = await settings.loadSettings();
-            if (settings.savedSettings[id] && settings.savedSettings[id].twitch.channel) {
-                console.log(`Twitch channel ${settings.savedSettings[id].twitch.channel} is already registered on the bot.`);
-                return `Twitch channel ${settings.savedSettings[id].twitch.channel} is already registered on the bot.`;
-            }
-
-            await settings.save(id, login, username, game_name);
-            console.log(`Bot registered on channel: ${login} (id: ${id}) with game: ${game_name}.`);
-            return `Bot registered on channel: ${login} (id: ${id}) with game: ${game_name}.`;
-
-        } else {
-            settings.savedSettings = await settings.loadSettings();
-            if (settings.savedSettings[id] && settings.savedSettings[id].twitch.channel) {
-                console.log(`Twitch channel ${settings.savedSettings[id].twitch.channel} is already registered on the bot.`);
-                return `Twitch channel ${settings.savedSettings[id].twitch.channel} is already registered on the bot.`;
-            }
-
-            // If stream is offline, just save without the game_name
-            await settings.save(id, login, username, "");
-            console.log(`Bot registered on channel: ${login} (id: ${id}). Stream is offline.`);
-            return `Bot registered on channel: ${login} (id: ${id}). Stream is offline.`;
+        if (settings.savedSettings[id] && settings.savedSettings[id].twitch.channel) {
+            return `Twitch channel ${settings.savedSettings[id].twitch.channel} is already registered on the bot.`;
         }
+        response += `Bot registered on channel: ${login} (id: ${id})`
+        if (status && status.data && status.data.length > 0) {
+           const {game_name} = status.data[0];
+           category = game_name;
+           response += ` with category: ${category}`;
+        }
+        await settings.save(id, login, username, category);
+        return response;
     } catch (error) {
         console.log(error);
     }
