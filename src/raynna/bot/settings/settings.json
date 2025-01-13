@@ -86,6 +86,23 @@
       "id": -1
     }
   },
+  "50750562": {
+    "twitch": {
+      "channel": "kimsomfan",
+      "username": "kimsomfan"
+    },
+    "runescape": {
+      "name": "",
+      "id": -1
+    },
+    "cs2": {
+      "name": "",
+      "id": -1
+    },
+    "toggled": [],
+    "font": "bold",
+    "game": ""
+  },
   "57810555": {
     "twitch": {
       "channel": "whitegrimreaper_",

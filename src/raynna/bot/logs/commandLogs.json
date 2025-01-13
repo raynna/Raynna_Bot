@@ -1,17 +1,17 @@
 {
-  "totalCommands": 1627,
-  "uniqueUserCount": 110,
+  "totalCommands": 1721,
+  "uniqueUserCount": 113,
   "mostUsedCommand": {
     "command": "ask",
-    "count": 1029
+    "count": 1092
   },
   "mostActiveUser": {
     "user": "eskeminha",
-    "totalCommands": 206
+    "totalCommands": 209
   },
   "mostActiveChannel": {
     "channel": "itsoik",
-    "totalCommands": 681
+    "totalCommands": 687
   },
   "commandsToday": {
     "2025-01-02": 35,
@@ -24,19 +24,20 @@
     "2025-01-09": 47,
     "2025-01-10": 29,
     "2025-01-11": 59,
-    "2025-01-12": 487
+    "2025-01-12": 514,
+    "2025-01-13": 67
   },
   "commandsThisWeek": {
     "2025-W1": 439,
     "2025-W2": 701,
-    "2025-W3": 487
+    "2025-W3": 581
   },
   "commandsThisMonth": {
-    "2025-01": 1627
+    "2025-01": 1721
   },
   "userLogs": {
     "raynnacs": {
-      "totalCommands": 649
+      "totalCommands": 692
     },
     "imraz": {
       "totalCommands": 7
@@ -75,7 +76,7 @@
       "totalCommands": 6
     },
     "eskeminha": {
-      "totalCommands": 206
+      "totalCommands": 209
     },
     "itsoik": {
       "totalCommands": 93
@@ -84,7 +85,7 @@
       "totalCommands": 11
     },
     "poopsied00dle": {
-      "totalCommands": 3
+      "totalCommands": 4
     },
     "lazytwitchh": {
       "totalCommands": 3
@@ -144,10 +145,10 @@
       "totalCommands": 10
     },
     "matissetec": {
-      "totalCommands": 7
+      "totalCommands": 20
     },
     "zebriahkarr": {
-      "totalCommands": 1
+      "totalCommands": 5
     },
     "happykralle": {
       "totalCommands": 1
@@ -168,7 +169,7 @@
       "totalCommands": 11
     },
     "woosaaahh": {
-      "totalCommands": 43
+      "totalCommands": 49
     },
     "kezuski": {
       "totalCommands": 2
@@ -198,7 +199,7 @@
       "totalCommands": 6
     },
     "gurkinator_": {
-      "totalCommands": 81
+      "totalCommands": 84
     },
     "icanicke": {
       "totalCommands": 1
@@ -219,7 +220,7 @@
       "totalCommands": 2
     },
     "femman_": {
-      "totalCommands": 3
+      "totalCommands": 4
     },
     "zumaontop": {
       "totalCommands": 1
@@ -234,7 +235,7 @@
       "totalCommands": 2
     },
     "kloakbengt": {
-      "totalCommands": 5
+      "totalCommands": 13
     },
     "akasvampen": {
       "totalCommands": 1
@@ -252,7 +253,7 @@
       "totalCommands": 13
     },
     "kimsomfan": {
-      "totalCommands": 1
+      "totalCommands": 7
     },
     "fretttson": {
       "totalCommands": 3
@@ -364,14 +365,23 @@
     },
     "olliver631": {
       "totalCommands": 1
+    },
+    "ibraofc": {
+      "totalCommands": 3
+    },
+    "milo3kk": {
+      "totalCommands": 1
+    },
+    "helm1nen": {
+      "totalCommands": 2
     }
   },
   "channels": {
     "raynnacs": {
-      "totalCommands": 150,
+      "totalCommands": 160,
       "specificCommands": {
         "gather": 1,
-        "ask": 62,
+        "ask": 72,
         "99s": 1,
         "120s": 1,
         "pc": 1,
@@ -476,9 +486,9 @@
       }
     },
     "itsoik": {
-      "totalCommands": 681,
+      "totalCommands": 687,
       "specificCommands": {
-        "ask": 628,
+        "ask": 634,
         "weather": 22,
         "toggle": 19,
         "general": 1,
@@ -562,15 +572,15 @@
       }
     },
     "matissetec": {
-      "totalCommands": 95,
+      "totalCommands": 133,
       "specificCommands": {
-        "ask": 87,
+        "ask": 123,
         "weather": 2,
         "users": 1,
         "skill": 1,
         "match": 1,
         "dino": 1,
-        "heybot": 2
+        "heybot": 4
       }
     },
     "rimbodejaneiro": {
@@ -622,7 +632,7 @@
       }
     },
     "gurkinator_": {
-      "totalCommands": 215,
+      "totalCommands": 217,
       "specificCommands": {
         "stats": 107,
         "ask": 61,
@@ -630,7 +640,7 @@
         "mostkilledby": 1,
         "csname": 1,
         "dino": 1,
-        "bengt": 1,
+        "bengt": 2,
         "hugge": 1,
         "heybot": 2,
         "toggle": 5,
@@ -646,23 +656,26 @@
         "commands": 2,
         "Ask": 3,
         "cscommands": 1,
-        "gather": 1
+        "gather": 1,
+        "sara": 1
       }
     },
     "ibraofc": {
-      "totalCommands": 24,
+      "totalCommands": 62,
       "specificCommands": {
-        "stats": 3,
+        "stats": 14,
         "csname": 1,
-        "match": 1,
+        "match": 2,
         "lastgame": 3,
         "toggle": 1,
-        "heybot": 6,
-        "bengt": 2,
-        "sara": 1,
+        "heybot": 16,
+        "bengt": 4,
+        "sara": 3,
         "feedback": 1,
         "commands": 3,
-        "cscommands": 2
+        "cscommands": 2,
+        "ask": 11,
+        "addme": 1
       }
     },
     "whitegrimreaper_": {
