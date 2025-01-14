@@ -78,7 +78,18 @@
     },
     "toggled": [
       "hugge",
-      "dino"
+      "dino",
+      "cscommands",
+      "gather",
+      "kdr",
+      "lastmatch",
+      "latestban",
+      "latestbans",
+      "match",
+      "mostkilled",
+      "mostkilledby",
+      "steam",
+      "winstreak"
     ],
     "font": "bold",
     "cs2": {
@@ -567,11 +578,27 @@
       "username": "Parally"
     },
     "runescape": {
+      "id": 329919,
+      "name": "Parallyy"
+    },
+    "toggled": [
+      "cscommands",
+      "gather",
+      "kdr",
+      "lastmatch",
+      "latestban",
+      "latestbans",
+      "match",
+      "mostkilled",
+      "mostkilledby",
+      "steam",
+      "winstreak"
+    ],
+    "font": "default",
+    "cs2": {
       "name": "",
       "id": -1
-    },
-    "toggled": [],
-    "font": "bold"
+    }
   },
   "140293496": {
     "twitch": {
@@ -954,7 +981,11 @@
       "id": -1
     },
     "toggled": [],
-    "font": "bold"
+    "font": "bold",
+    "cs2": {
+      "name": "",
+      "id": -1
+    }
   },
   "506925489": {
     "twitch": {
@@ -1113,6 +1144,23 @@
     "toggled": [],
     "font": "bold",
     "game": "Counter-Strike"
+  },
+  "825951214": {
+    "twitch": {
+      "channel": "thoughtxdaughter",
+      "username": "ThoughtxDaughter"
+    },
+    "runescape": {
+      "name": "",
+      "id": -1
+    },
+    "cs2": {
+      "name": "",
+      "id": -1
+    },
+    "toggled": [],
+    "font": "bold",
+    "game": "Software and Game Development"
   },
   "881097329": {
     "twitch": {

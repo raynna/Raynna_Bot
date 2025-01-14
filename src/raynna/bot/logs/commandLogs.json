@@ -1,9 +1,9 @@
 {
-  "totalCommands": 1721,
-  "uniqueUserCount": 113,
+  "totalCommands": 1837,
+  "uniqueUserCount": 121,
   "mostUsedCommand": {
     "command": "ask",
-    "count": 1092
+    "count": 1161
   },
   "mostActiveUser": {
     "user": "eskeminha",
@@ -11,7 +11,7 @@
   },
   "mostActiveChannel": {
     "channel": "itsoik",
-    "totalCommands": 687
+    "totalCommands": 688
   },
   "commandsToday": {
     "2025-01-02": 35,
@@ -25,19 +25,20 @@
     "2025-01-10": 29,
     "2025-01-11": 59,
     "2025-01-12": 514,
-    "2025-01-13": 67
+    "2025-01-13": 91,
+    "2025-01-14": 92
   },
   "commandsThisWeek": {
     "2025-W1": 439,
     "2025-W2": 701,
-    "2025-W3": 581
+    "2025-W3": 697
   },
   "commandsThisMonth": {
-    "2025-01": 1721
+    "2025-01": 1837
   },
   "userLogs": {
     "raynnacs": {
-      "totalCommands": 692
+      "totalCommands": 769
     },
     "imraz": {
       "totalCommands": 7
@@ -52,7 +53,7 @@
       "totalCommands": 23
     },
     "norman_996": {
-      "totalCommands": 2
+      "totalCommands": 4
     },
     "mallan": {
       "totalCommands": 2
@@ -64,7 +65,7 @@
       "totalCommands": 1
     },
     "raralaroro": {
-      "totalCommands": 1
+      "totalCommands": 2
     },
     "niko_hest": {
       "totalCommands": 2
@@ -121,7 +122,7 @@
       "totalCommands": 1
     },
     "cheer__up": {
-      "totalCommands": 2
+      "totalCommands": 6
     },
     "paxiboyy": {
       "totalCommands": 2
@@ -157,7 +158,7 @@
       "totalCommands": 20
     },
     "zorbcck": {
-      "totalCommands": 2
+      "totalCommands": 8
     },
     "iamxave": {
       "totalCommands": 2
@@ -199,7 +200,7 @@
       "totalCommands": 6
     },
     "gurkinator_": {
-      "totalCommands": 84
+      "totalCommands": 85
     },
     "icanicke": {
       "totalCommands": 1
@@ -217,13 +218,13 @@
       "totalCommands": 9
     },
     "korv26": {
-      "totalCommands": 2
+      "totalCommands": 4
     },
     "femman_": {
       "totalCommands": 4
     },
     "zumaontop": {
-      "totalCommands": 1
+      "totalCommands": 3
     },
     "afrikasandra": {
       "totalCommands": 3
@@ -250,7 +251,7 @@
       "totalCommands": 2
     },
     "punishd1": {
-      "totalCommands": 13
+      "totalCommands": 18
     },
     "kimsomfan": {
       "totalCommands": 7
@@ -316,7 +317,7 @@
       "totalCommands": 1
     },
     "1denkan": {
-      "totalCommands": 1
+      "totalCommands": 2
     },
     "tobiasj1": {
       "totalCommands": 1
@@ -374,18 +375,42 @@
     },
     "helm1nen": {
       "totalCommands": 2
+    },
+    "litz3r": {
+      "totalCommands": 1
+    },
+    "abbeblatte55": {
+      "totalCommands": 1
+    },
+    "hhuugg3": {
+      "totalCommands": 1
+    },
+    "fejko": {
+      "totalCommands": 1
+    },
+    "cerendipity": {
+      "totalCommands": 2
+    },
+    "parally": {
+      "totalCommands": 1
+    },
+    "jakeb94": {
+      "totalCommands": 5
+    },
+    "juiceman1055": {
+      "totalCommands": 3
     }
   },
   "channels": {
     "raynnacs": {
-      "totalCommands": 160,
+      "totalCommands": 186,
       "specificCommands": {
         "gather": 1,
-        "ask": 72,
+        "ask": 97,
         "99s": 1,
         "120s": 1,
         "pc": 1,
-        "changelist": 17,
+        "changelist": 18,
         "commands": 3,
         "general": 1,
         "modcommands": 1,
@@ -486,9 +511,9 @@
       }
     },
     "itsoik": {
-      "totalCommands": 687,
+      "totalCommands": 688,
       "specificCommands": {
-        "ask": 634,
+        "ask": 635,
         "weather": 22,
         "toggle": 19,
         "general": 1,
@@ -502,18 +527,18 @@
       }
     },
     "punishd1": {
-      "totalCommands": 92,
+      "totalCommands": 103,
       "specificCommands": {
         "weather": 1,
         "v": 1,
-        "ask": 55,
+        "ask": 60,
         "csname": 1,
         "heybot": 4,
         "gather": 1,
         "elo": 1,
         "lastgame": 3,
         "toggle": 1,
-        "stats": 11,
+        "stats": 17,
         "winstreak": 2,
         "mostkilled": 5,
         "mostkilledby": 4,
@@ -542,15 +567,16 @@
       }
     },
     "ronjalovisah": {
-      "totalCommands": 12,
+      "totalCommands": 14,
       "specificCommands": {
-        "stats": 2,
+        "stats": 3,
         "csname": 1,
         "lastgame": 5,
         "cscommands": 1,
         "general": 1,
         "ask": 1,
-        "feedback": 1
+        "feedback": 1,
+        "gather": 1
       }
     },
     "adamskiifn": {
@@ -565,10 +591,16 @@
       }
     },
     "moistbean": {
-      "totalCommands": 7,
+      "totalCommands": 31,
       "specificCommands": {
-        "ask": 6,
-        "weather": 1
+        "ask": 20,
+        "weather": 1,
+        "today": 1,
+        "heybot": 4,
+        "skill": 1,
+        "rscommands": 1,
+        "toggle": 2,
+        "questpoints": 1
       }
     },
     "matissetec": {
@@ -597,7 +629,7 @@
       }
     },
     "stakarn": {
-      "totalCommands": 78,
+      "totalCommands": 83,
       "specificCommands": {
         "heybot": 4,
         "bengt": 2,
@@ -606,8 +638,8 @@
         "ask": 25,
         "csname": 1,
         "stats": 10,
-        "Elo": 2,
-        "elo": 4,
+        "Elo": 3,
+        "elo": 8,
         "cscommands": 1,
         "gather": 1,
         "mostkilldby": 4,
@@ -632,9 +664,9 @@
       }
     },
     "gurkinator_": {
-      "totalCommands": 217,
+      "totalCommands": 220,
       "specificCommands": {
-        "stats": 107,
+        "stats": 110,
         "ask": 61,
         "mostkilled": 5,
         "mostkilledby": 1,
@@ -715,6 +747,29 @@
       "totalCommands": 2,
       "specificCommands": {
         "stats": 2
+      }
+    },
+    "thoughtxdaughter": {
+      "totalCommands": 1,
+      "specificCommands": {
+        "heybot": 1
+      }
+    },
+    "parally": {
+      "totalCommands": 41,
+      "specificCommands": {
+        "quests": 1,
+        "heybot": 15,
+        "ask": 22,
+        "toggle": 1,
+        "rsname": 1,
+        "today": 1
+      }
+    },
+    "drincompetentgamer": {
+      "totalCommands": 2,
+      "specificCommands": {
+        "ask": 2
       }
     }
   }

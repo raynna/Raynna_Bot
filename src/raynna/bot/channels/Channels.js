@@ -4,6 +4,7 @@ const settings = new Settings();
 const botUtils = require('../utils/BotUtils');
 
 const { info } = require('../log/Logger');
+const {get} = require("axios");
 
 let connectedChannels = [];
 

@@ -41,7 +41,7 @@ async function reconnectBot() {
     }
 }
 
-const reconnectInterval = 900 * 1000; // 15 minutes
+const reconnectInterval = 1800 * 1000; // 15 minutes
 setInterval(async () => {
     await reconnectBot();
 }, reconnectInterval);
@@ -80,6 +80,7 @@ client.on('join', (channel, username, self) => {
         console.error('An error occurred in the join event listener:', error);
     }
 });
+
 
 const regexpCommand = new RegExp(/^!([a-zA-Z0-9]+)(?:\s+)?([\s\S]*)?/);
 const messageCounts = {};
