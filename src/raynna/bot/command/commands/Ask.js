@@ -5,6 +5,7 @@ const {getData, RequestType} = require("../../requests/Request");
 const puppeteer = require('puppeteer');
 const fs = require('fs');
 const path = require('path');
+const Settings = require("../../settings/Settings");
 
 class Ask {
 
@@ -101,17 +102,32 @@ class Ask {
             console.log(`Returning cached bio for ${channel}`);
             return this.bioCache[channel].bio;
         }
-        const browser = await puppeteer.launch();
-        const page = await browser.newPage();
 
+        let browser;
         try {
+            browser = await puppeteer.launch();
+            const page = await browser.newPage();
+
             // Navigate to the Twitch channel
-            await page.goto(`https://www.twitch.tv/${channel.toLowerCase()}/about`, {
+            const response = await page.goto(`https://www.twitch.tv/${channel.toLowerCase()}/about`, {
                 waitUntil: 'domcontentloaded',
+                timeout: 30000, // Adjust timeout as needed
             });
 
-            // Wait for panels to load
-            await page.waitForSelector('.channel-panels-container');
+            // Check for a 404 or error page
+            if (response.status() === 404) {
+                console.log(`Channel ${channel} does not exist.`);
+                return null;
+            }
+
+            // Wait for panels to load (set a shorter timeout to fail fast)
+            const panelSelector = '.channel-panels-container';
+            try {
+                await page.waitForSelector(panelSelector, { timeout: 15000 }); // Shorter timeout
+            } catch {
+                console.log(`Panels not found for ${channel}. Possible empty or inactive channel.`);
+                return null;
+            }
 
             // Extract all panel content
             const panels = await page.evaluate(() => {
@@ -120,29 +136,64 @@ class Ask {
                     .filter(text => text.length > 0); // Include only non-empty panels
             });
 
-            await browser.close();
-
             if (panels.length > 0) {
-
-                // Combine all panels into a single bio string (optional)
                 const fullBio = panels.join('\n\n');
                 this.bioCache[channel] = {
                     bio: fullBio,
                     timestamp: currentTime,
                 };
                 this.saveBioCache();
-                console.log("Full Bio:", fullBio);
-                return fullBio; // Return the full aggregated bio
+                console.log(`Full Bio for ${channel}:`, fullBio);
+                return fullBio;
             } else {
-                console.log("Couldn't find a suitable bio.");
+                console.log(`No panels found for ${channel}.`);
                 return null;
             }
         } catch (error) {
-            console.error("Error fetching the streamer's bio:", error);
-            await browser.close();
-            return null;
+            if (error.name === 'TimeoutError') {
+                console.error(`Timeout error while fetching bio for ${channel}:`, error);
+            } else {
+                console.error(`Error fetching bio for ${channel}:`, error);
+            }
+            return null; // Return null if there's an error
+        } finally {
+            if (browser) {
+                await browser.close(); // Ensure browser is closed even if an error occurs
+            }
         }
     }
+
+
+
+    async getAllStreamerBiosFromSettings() {
+        const settings = new Settings();
+        const savedSettings = await settings.loadSettings();
+        const bios = {};
+        const currentTime = Date.now();
+
+        for (const data in savedSettings) {
+            const channel = savedSettings[data].twitch?.channel;
+            if (this.bioCache[channel] && (currentTime - this.bioCache[channel].timestamp) < this.cacheTimeout) {
+                console.log(`Using cached bio for ${channel}`);
+                bios[channel] = this.bioCache[channel].bio;
+                continue;
+            }
+
+            try {
+                const bio = await this.getStreamerBio(channel);
+                if (bio) {
+                    bios[channel] = bio;
+                } else {
+                    console.log(`No bio found for ${channel}, skipping.`);
+                }
+            } catch (error) {
+                console.error(`Failed to fetch bio for ${channel}:`, error);
+            }
+        }
+
+        return bios;
+    }
+
 
     async getBotResponse(bio, twitch, channel, username, conversationHistory, userMessage) {
         const date = new Date();
@@ -215,7 +266,15 @@ class Ask {
         if (!userMessage) {
             return `Please provide a question after !ask.`;
         }
+        if (userMessage.toLowerCase() === "updatebios") {
+            const allBios = await this.getAllStreamerBiosFromSettings();
+            return `Updated all bios for all users.`;
+        }
 
+        // Existing logic for other commands
+        if (!userMessage) {
+            return `Please provide a question after !ask.`;
+        }
         if (userMessage.toLowerCase() === "reset") {
             const reset = this.resetConversation(channel, username);
             if (reset) {

@@ -1,9 +1,9 @@
 {
-  "totalCommands": 1837,
-  "uniqueUserCount": 121,
+  "totalCommands": 1864,
+  "uniqueUserCount": 125,
   "mostUsedCommand": {
     "command": "ask",
-    "count": 1161
+    "count": 1168
   },
   "mostActiveUser": {
     "user": "eskeminha",
@@ -26,19 +26,19 @@
     "2025-01-11": 59,
     "2025-01-12": 514,
     "2025-01-13": 91,
-    "2025-01-14": 92
+    "2025-01-14": 119
   },
   "commandsThisWeek": {
     "2025-W1": 439,
     "2025-W2": 701,
-    "2025-W3": 697
+    "2025-W3": 724
   },
   "commandsThisMonth": {
-    "2025-01": 1837
+    "2025-01": 1864
   },
   "userLogs": {
     "raynnacs": {
-      "totalCommands": 769
+      "totalCommands": 776
     },
     "imraz": {
       "totalCommands": 7
@@ -74,7 +74,7 @@
       "totalCommands": 2
     },
     "redone_tv": {
-      "totalCommands": 6
+      "totalCommands": 7
     },
     "eskeminha": {
       "totalCommands": 209
@@ -200,13 +200,13 @@
       "totalCommands": 6
     },
     "gurkinator_": {
-      "totalCommands": 85
+      "totalCommands": 87
     },
     "icanicke": {
       "totalCommands": 1
     },
     "moggwee": {
-      "totalCommands": 8
+      "totalCommands": 9
     },
     "damunken": {
       "totalCommands": 4
@@ -236,7 +236,7 @@
       "totalCommands": 2
     },
     "kloakbengt": {
-      "totalCommands": 13
+      "totalCommands": 15
     },
     "akasvampen": {
       "totalCommands": 1
@@ -266,7 +266,7 @@
       "totalCommands": 1
     },
     "sandholmen": {
-      "totalCommands": 4
+      "totalCommands": 8
     },
     "err0na": {
       "totalCommands": 3
@@ -275,7 +275,7 @@
       "totalCommands": 25
     },
     "bakeydood": {
-      "totalCommands": 6
+      "totalCommands": 7
     },
     "kurtish136": {
       "totalCommands": 1
@@ -293,7 +293,7 @@
       "totalCommands": 3
     },
     "cousie23": {
-      "totalCommands": 4
+      "totalCommands": 9
     },
     "prisonm1kee": {
       "totalCommands": 2
@@ -399,14 +399,26 @@
     },
     "juiceman1055": {
       "totalCommands": 3
+    },
+    "azyx_swe": {
+      "totalCommands": 1
+    },
+    "officialmentra": {
+      "totalCommands": 1
+    },
+    "dhugge": {
+      "totalCommands": 1
+    },
+    "filip85persson": {
+      "totalCommands": 1
     }
   },
   "channels": {
     "raynnacs": {
-      "totalCommands": 186,
+      "totalCommands": 189,
       "specificCommands": {
         "gather": 1,
-        "ask": 97,
+        "ask": 100,
         "99s": 1,
         "120s": 1,
         "pc": 1,
@@ -527,11 +539,11 @@
       }
     },
     "punishd1": {
-      "totalCommands": 103,
+      "totalCommands": 106,
       "specificCommands": {
         "weather": 1,
         "v": 1,
-        "ask": 60,
+        "ask": 63,
         "csname": 1,
         "heybot": 4,
         "gather": 1,
@@ -629,7 +641,7 @@
       }
     },
     "stakarn": {
-      "totalCommands": 83,
+      "totalCommands": 85,
       "specificCommands": {
         "heybot": 4,
         "bengt": 2,
@@ -637,9 +649,9 @@
         "mostkilled": 10,
         "ask": 25,
         "csname": 1,
-        "stats": 10,
+        "stats": 11,
         "Elo": 3,
-        "elo": 8,
+        "elo": 9,
         "cscommands": 1,
         "gather": 1,
         "mostkilldby": 4,
@@ -664,15 +676,15 @@
       }
     },
     "gurkinator_": {
-      "totalCommands": 220,
+      "totalCommands": 239,
       "specificCommands": {
-        "stats": 110,
-        "ask": 61,
+        "stats": 126,
+        "ask": 62,
         "mostkilled": 5,
         "mostkilledby": 1,
         "csname": 1,
         "dino": 1,
-        "bengt": 2,
+        "bengt": 3,
         "hugge": 1,
         "heybot": 2,
         "toggle": 5,
@@ -689,7 +701,7 @@
         "Ask": 3,
         "cscommands": 1,
         "gather": 1,
-        "sara": 1
+        "sara": 2
       }
     },
     "ibraofc": {
