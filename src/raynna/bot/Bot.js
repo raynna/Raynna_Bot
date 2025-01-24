@@ -82,6 +82,60 @@ client.on('join', (channel, username, self) => {
 });
 
 
+async function checkCustomCommands(tags, channel, message) {
+    if (message.toLowerCase().startsWith("announce")) {
+        if (tags.username.toLowerCase() !== process.env.CREATOR_CHANNEL.toLowerCase()) {
+            return false;
+        }
+        const announcement = message.slice("announce".length).trim() || "No reason";
+        for (const connected of connectedChannels) {
+            //const isModerator = await isBotModerator(client, connected);
+            //if (isModerator) {
+            await sendMessage(client, connected, `Announcement from ${tags.username}: ${announcement}`);
+            //}
+        }
+        return true;
+    }
+    if (message.toLowerCase().startsWith("writeto")) {
+        if (tags.username.toLowerCase() !== process.env.CREATOR_CHANNEL.toLowerCase()) {
+            return false;
+        }
+        const parts = message.slice("writeto".length).trim().split(" ");
+        const username = parts[0];
+        const streamerMessage = parts.slice(1).join(" ");
+        await sendMessage(client, username, `Message from ${tags.username}: ${streamerMessage}`);
+        return true;
+    }
+    if (message.toLowerCase().startsWith("say ")) {
+        const playerIsMod = tags.mod
+        const isStreamer = channel.slice(1).toLowerCase() === tags.username.toLowerCase();
+        const isCreator = tags.username.toLowerCase() === process.env.CREATOR_CHANNEL;
+        if (!isCreator && !isStreamer && !playerIsMod) {
+            return false;
+        }
+        const parts = message.slice("say".length).trim().split(" ");
+        const streamerMessage = parts.slice(0).join(" ");
+        await sendMessage(client, channel, `${streamerMessage}`);
+        return true;
+    }
+    if (message.toLowerCase().startsWith("stopbot")) {
+        if (tags.username.toLowerCase() !== process.env.CREATOR_CHANNEL.toLowerCase()) {
+            return false;
+        }
+        const reason = message.slice("stopbot".length).trim() || "No reason";
+
+        for (const connected of connectedChannels) {
+            const isModerator = await isBotModerator(client, connected);
+            if (isModerator) {
+                await sendMessage(client, connected, `Bot was force closed by ${tags.username}. Reason: ${reason}`);
+            }
+        }
+        await client.disconnect();
+        process.exit(0);
+        return true;
+    }
+}
+
 const regexpCommand = new RegExp(/^!([a-zA-Z0-9]+)(?:\s+)?([\s\S]*)?/);
 const messageCounts = {};
 const messageTimestamps = {};
@@ -101,107 +155,21 @@ client.on('message', async (channel, tags, message, self) => {
             }
 
             if (!cooldowns[tags.username]) {
-                cooldowns[tags.username] = {};
+                cooldowns[tags.username] = {lastUsed: 0, activeCooldowns: []};
             }
-
-            if (!cooldowns[tags.username][channel]) {
-                cooldowns[tags.username][channel] = 0;
-            }
-
-            const currentTime = Date.now();
-            const timeDifference = currentTime - messageTimestamps[tags.username];
-
+            //console.log(`currentTime & messageTimestamps for user ${tags.username}: ${Date.now() - messageTimestamps[tags.username]}`);
+            const timeDifference = Date.now() - messageTimestamps[tags.username];
             if (timeDifference < 30000 && messageCounts[tags.username] >= 20) {
                 console.log(`Rate limit exceeded for user ${tags.username}`);
                 return;
             }
-
             if (timeDifference >= 30000) {
-                messageTimestamps[tags.username] = currentTime;
+                messageTimestamps[tags.username] = Date.now();
                 messageCounts[tags.username] = 1;
             } else {
                 messageCounts[tags.username]++;
             }
-            if (message.toLowerCase().startsWith("announce")) {
-                if (tags.username.toLowerCase() !== process.env.CREATOR_CHANNEL.toLowerCase()) {
-                    return;
-                }
-                const announcement = message.slice("announce".length).trim() || "No reason";
-                for (const connected of connectedChannels) {
-                    //const isModerator = await isBotModerator(client, connected);
-                    //if (isModerator) {
-                        await sendMessage(client, connected, `Announcement from ${tags.username}: ${announcement}`);
-                    //}
-                }
-                return;
-            }
-            if (message.toLowerCase().startsWith("writeto")) {
-                if (tags.username.toLowerCase() !== process.env.CREATOR_CHANNEL.toLowerCase()) {
-                    return;
-                }
-                const parts = message.slice("writeto".length).trim().split(" ");
-                const username = parts[0];
-                const streamerMessage = parts.slice(1).join(" ");
-                await sendMessage(client, username, `Message from ${tags.username}: ${streamerMessage}`);
-                return;
-            }
-            if (message.toLowerCase().startsWith("say ")) {
-                const playerIsMod = tags.mod
-                const isStreamer = channel.slice(1).toLowerCase() === tags.username.toLowerCase();
-                const isCreator = tags.username.toLowerCase() === process.env.CREATOR_CHANNEL;
-                if (!isCreator && !isStreamer && !playerIsMod) {
-                    return;
-                }
-                const parts = message.slice("say".length).trim().split(" ");
-                const streamerMessage = parts.slice(0).join(" ");
-                await sendMessage(client, channel, `${streamerMessage}`);
-                return;
-            }
-            if (message.toLowerCase().startsWith("stopbot")) {
-                if (tags.username.toLowerCase() !== process.env.CREATOR_CHANNEL.toLowerCase()) {
-                    return;
-                }
-                const reason = message.slice("stopbot".length).trim() || "No reason";
-
-                for (const connected of connectedChannels) {
-                    const isModerator = await isBotModerator(client, connected);
-                    if (isModerator) {
-                        await sendMessage(client, connected, `Bot was force closed by ${tags.username}. Reason: ${reason}`);
-                    }
-                }
-                await client.disconnect();
-                process.exit(0);
-                return;
-            }
-            if (message.toLowerCase().startsWith("restartbot")) {
-                if (tags.username.toLowerCase() !== process.env.CREATOR_CHANNEL.toLowerCase()) {
-                    return;
-                }
-                const reason = message.slice("restartbot".length).trim() || "No reason";
-
-                for (const connected of connectedChannels) {
-                    const isModerator = await isBotModerator(client, connected);
-                    if (isModerator) {
-                        await sendMessage(client, connected, `Reconnecting bot by ${tags.username}. Reason: ${reason}`);
-                    }
-                }
-                await reconnectBot();
-                for (const connected of connectedChannels) {
-                    const isModerator = await isBotModerator(client, connected);
-                    if (isModerator) {
-                        await sendMessage(client, connected, `Bot has been reconnected.`);
-                    }
-                }
-                return;
-            }
-            if (message.toLowerCase().startsWith("reconnect")) {
-                if (tags.username.toLowerCase() !== process.env.CREATOR_CHANNEL.toLowerCase()) {
-                    return;
-                }
-                const reason = message.slice("reconnect".length).trim() || "No reason";
-                await sendMessage(client, channel, `Reconnecting bot..`);
-                await reconnectBot();
-                await sendMessage(client, channel, `Bot is now connected.`);
+            if (await checkCustomCommands(tags, channel, message)) {
                 return;
             }
             const match = message.match(regexpCommand);
@@ -212,16 +180,21 @@ client.on('message', async (channel, tags, message, self) => {
                 const commandInstance = commands.commands[commandTrigger];
                 if (commandInstance && typeof commandInstance.execute === 'function') {
                     try {
+                        const userCooldown = cooldowns[tags.username];
+
+                            let currentTime = Date.now();
+                            if (currentTime - userCooldown.lastUsed < 3000) {
+                                console.log(`Command cooldown active for user ${tags.username}.`);
+                                return;
+                            }
+                            if (userCooldown.activeCooldowns.length > 0) {
+                                console.log(`User ${tags.username} has pending cooldowns in other channels`);
+                                return;
+                            }
                         const playerIsMod = tags.mod
                         const isStreamer = channel.slice(1).toLowerCase() === tags.username.toLowerCase();
                         const isCreator = tags.username.toLowerCase() === process.env.CREATOR_CHANNEL;
-			            const botIsModerator = await isBotModerator(client, channel);
-                        //cooldown to avoid spammed commands from same user
-                        const commandCooldown = cooldowns[tags.username][channel];
-                        if (commandCooldown && currentTime - commandCooldown < 3000) {
-                            console.log(`Command cooldown active for user ${tags.username}`);
-                            return;
-                        }
+                        const botIsModerator = await isBotModerator(client, channel);
                         //avoid blocked commands by user
                         if (await commands.isBlockedCommand(commandInstance, channel)) {
                             console.log(`Command ${command} is blocked in channel ${channel}`);
@@ -240,9 +213,18 @@ client.on('message', async (channel, tags, message, self) => {
                                 return;
                             }
                         }
-                        cooldowns[tags.username][channel] = currentTime;
+                        currentTime = Date.now();
+                        userCooldown.lastUsed = currentTime;
+                        console.log(`New lastUsed for ${tags.username} ${currentTime}`)
+                        userCooldown.activeCooldowns.push(channel);
+                        setTimeout(() => {
+                            const idx = userCooldown.activeCooldowns.indexOf(channel);
+                            if (idx > -1) {
+                                userCooldown.activeCooldowns.splice(idx, 1);
+                            }
+                        }, 3000);
                         await info(`Command execute on channel: ${channel}`, `${playerIsMod ? `Mod: ` : isStreamer ? `Streamer: ` : `Viewer: `}${tags.username} has used the command: ${command}`);
-                        let result = await commandInstance.execute(tags, channel, argument, client, await isBotModerator(client, channel));
+                        let result = await commandInstance.execute(tags, channel, argument, client, botIsModerator);
                         if (result) {
                             //console.log(`Result: ${result}`);
                             if (!commands.isAvoidTag(commandInstance)) {

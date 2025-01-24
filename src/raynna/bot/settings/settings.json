@@ -114,6 +114,23 @@
     "font": "bold",
     "game": ""
   },
+  "56388706": {
+    "twitch": {
+      "channel": "kreativofc",
+      "username": "kREATIVOFC"
+    },
+    "runescape": {
+      "name": "",
+      "id": -1
+    },
+    "cs2": {
+      "name": "",
+      "id": -1
+    },
+    "toggled": [],
+    "font": "bold",
+    "game": ""
+  },
   "57810555": {
     "twitch": {
       "channel": "whitegrimreaper_",
@@ -155,7 +172,11 @@
       "id": -1
     },
     "toggled": [],
-    "font": "bold"
+    "font": "bold",
+    "cs2": {
+      "name": "",
+      "id": -1
+    }
   },
   "63232377": {
     "twitch": {
@@ -201,46 +222,10 @@
       "id": -1
     },
     "cs2": {
-      "id": 1246735435,
-      "name": "gurkinator"
+      "name": "",
+      "id": -1
     },
-    "toggled": [
-      "averageexperience",
-      "averagelevel",
-      "clan",
-      "clues",
-      "combat",
-      "dropstoday",
-      "dropsyesterday",
-      "easyrank",
-      "eliterank",
-      "hardrank",
-      "lastmonth",
-      "lastweek",
-      "lastyear",
-      "masterrank",
-      "mediumrank",
-      "month",
-      "news",
-      "nintynines",
-      "onetwenties",
-      "pricecheck",
-      "questpoints",
-      "quests",
-      "rscommands",
-      "runescore",
-      "skill",
-      "today",
-      "total",
-      "twohundredmill",
-      "voiceofseren",
-      "week",
-      "wiki",
-      "wildernessevent",
-      "year",
-      "yesterday",
-      "steam"
-    ],
+    "toggled": [],
     "font": "bold",
     "game": "Counter-Strike"
   },
@@ -358,30 +343,6 @@
     "font": "bold",
     "game": "Counter-Strike"
   },
-  "83260968": {
-    "twitch": {
-      "channel": "xroseyposeyx",
-      "username": "xRoseyPoseyx"
-    },
-    "runescape": {
-      "id": 2764391883,
-      "name": "xRoseyPosiex"
-    },
-    "toggled": [],
-    "font": "default"
-  },
-  "83285315": {
-    "twitch": {
-      "channel": "dungtutor",
-      "username": "DungTutor"
-    },
-    "runescape": {
-      "name": "",
-      "id": -1
-    },
-    "toggled": [],
-    "font": "bold"
-  },
   "84895439": {
     "twitch": {
       "channel": "1linneaa",
@@ -448,7 +409,6 @@
       "yesterday",
       "cscommands",
       "gather",
-      "kdr",
       "lastmatch",
       "latestban",
       "latestbans",
@@ -460,18 +420,6 @@
     ],
     "font": "default",
     "game": "Software and Game Development"
-  },
-  "100786482": {
-    "twitch": {
-      "channel": "whitfin",
-      "username": "whitfin"
-    },
-    "runescape": {
-      "name": "",
-      "id": -1
-    },
-    "toggled": [],
-    "font": "bold"
   },
   "100957167": {
     "twitch": {
@@ -548,22 +496,27 @@
     "toggled": [],
     "font": "bold"
   },
-  "129134957": {
+  "128945279": {
     "twitch": {
-      "channel": "its_rigged_m8",
-      "username": "its_rigged_m8"
+      "channel": "7licious",
+      "username": "7licious"
     },
     "runescape": {
       "name": "",
       "id": -1
     },
+    "cs2": {
+      "name": "",
+      "id": -1
+    },
     "toggled": [],
-    "font": "bold"
+    "font": "bold",
+    "game": ""
   },
-  "132082909": {
+  "129134957": {
     "twitch": {
-      "channel": "teakeh",
-      "username": "Teakeh"
+      "channel": "its_rigged_m8",
+      "username": "its_rigged_m8"
     },
     "runescape": {
       "name": "",
@@ -628,6 +581,23 @@
     "toggled": [],
     "font": "bold"
   },
+  "141445019": {
+    "twitch": {
+      "channel": "honkoh",
+      "username": "honkoh"
+    },
+    "runescape": {
+      "name": "",
+      "id": -1
+    },
+    "cs2": {
+      "name": "",
+      "id": -1
+    },
+    "toggled": [],
+    "font": "bold",
+    "game": ""
+  },
   "141651249": {
     "twitch": {
       "channel": "tangoalphamango",
@@ -640,7 +610,11 @@
     "toggled": [
       "pricecheck"
     ],
-    "font": "bold"
+    "font": "bold",
+    "cs2": {
+      "name": "",
+      "id": -1
+    }
   },
   "145498937": {
     "twitch": {
@@ -777,7 +751,11 @@
       "id": -1
     },
     "toggled": [],
-    "font": "bold"
+    "font": "bold",
+    "cs2": {
+      "name": "",
+      "id": -1
+    }
   },
   "160956273": {
     "twitch": {
@@ -1010,18 +988,6 @@
     "font": "bold",
     "game": ""
   },
-  "559016232": {
-    "twitch": {
-      "channel": "uneedme15",
-      "username": "Uneedme15"
-    },
-    "runescape": {
-      "name": "",
-      "id": -1
-    },
-    "toggled": [],
-    "font": "bold"
-  },
   "561066744": {
     "twitch": {
       "channel": "ltsmaluwa",
@@ -1032,7 +998,11 @@
       "id": -1
     },
     "toggled": [],
-    "font": "bold"
+    "font": "bold",
+    "cs2": {
+      "name": "",
+      "id": -1
+    }
   },
   "587584543": {
     "twitch": {
@@ -1056,7 +1026,11 @@
       "name": "N5W"
     },
     "toggled": [],
-    "font": "bold"
+    "font": "bold",
+    "cs2": {
+      "name": "",
+      "id": -1
+    }
   },
   "675764127": {
     "twitch": {
@@ -1192,21 +1166,8 @@
     "font": "bold",
     "game": "Counter-Strike",
     "cs2": {
-      "name": "",
-      "id": -1
+      "id": 3230609769,
+      "name": "Rimbo"
     }
-  },
-  "43465526392": {
-    "twitch": {
-      "channel": "",
-      "username": ""
-    },
-    "runescape": {
-      "name": "",
-      "id": -1
-    },
-    "toggled": [],
-    "font": "bold",
-    "game": "Counter-Strike"
   }
 }

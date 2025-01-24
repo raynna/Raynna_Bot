@@ -189,6 +189,39 @@ const RequestType = {
         name: 'ESPLAY_GATHERS',
         link: 'https://esplay.com/api/gather/list?game_id=1'
     },
+    ESPLAY_TOURNAMENTLIST: {
+        name: 'ESPLAY_TOURNAMENTLIST',
+        link: 'https://esplay.com/api/tournament/list?game_id=1&country_id=0'
+    },
+    ESPLAY_TOURNAMENTDETAILS: {
+        name: 'ESPLAY_TOURNAMENTDETAILS',
+        link: `https://esplay.com/api/tournament/get?slug={slug}`,
+        values: ['{slug}']
+    },
+    ESPLAY_TOURNAMENTDETAILS_WITH_SPACE: {
+        name: 'ESPLAY_TOURNAMENTDETAILS',
+        link: `https://esplay.com/api/tournament/get?slug={slug}&space_id={spaceId}`,
+        values: ['{slug}', '{spaceId}']
+    },
+    ESPLAY_TOURNAMENTBRACKETS: {
+        name: 'ESPLAY_TOURNAMENTBRACKETS',
+        link: `https://esplay.com/api/tournament/brackets?id={id}`,
+        values: ['{id}']
+    },
+    ESPLAY_TOURNAMENTMATCHES: {
+        name: 'ESPLAY_TOURNAMENTMATCHES',
+        link: `https://esplay.com/api/tournament/matches?id={id}`,
+        values: ['{id}']
+    },
+    ESPLAY_TOURNAMENTTEAMS: {
+        name: 'ESPLAY_TOURNAMENTTEAMS',
+        link: `https://esplay.com/api/tournament/participants?id={id}`,
+        values: ['{id}']
+    },
+    ESPLAY_TEAM: {
+        name: 'ESPLAY_TEAM',
+        link: `https://esplay.com/api/team/get?name=force%20majeure&game_id=1`,
+    },
     VoiceOfSeren: {
             name: 'Voice of Seren',
             link: 'https://runescape.wiki/w/Voice_of_Seren',
