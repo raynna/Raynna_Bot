@@ -1,198 +1,382 @@
 {
-  "esplaycom": {
-    "bio": "Esplay är en ny plattform som revolutionerar sättet vi utövar och njuter av CS på, bara för Sverige. Den nya matchmaking- och turneringsplattformen Esplay erbjuder en smidig upplevelse för spelare på alla nivåer där man kan spela lite mer avslappnat med sina vänner, eller ta sig hela vägen upp mot eliten i de större turneringarna. Vi uppmuntrar dig att testa spela i vår Matchmaking, kör en Gather och testa gå med i ett Space.",
-    "timestamp": 1736825675856
+  "pytonormtv": {
+    "bio": "Hello Pytonorm here and i'm from Sweden Been playing games since i can remember and now stream for fun because i love gaming, i also love streaming , i try to keep the stream up 10 h day , aslong i have viewers and people that like what they see i will keep streaming I want to show that gaming is for everyone who has passion and wants to play You dont have to be a certain age to play, gaming is for everyone Games i currently play CS2 REPO Minecraft LOL Valheim Sometimes random games with friends Discord Min Discord social Twitter Commands Lista med commands lurk Om du känner för att lurka watc",
+    "custombio": null,
+    "timestamp": 1745888107735
   },
-  "parally": {
-    "bio": "Name: Kayla Age: 26 Hobby: Full-time streamer Game: RuneScape since April 2021",
-    "timestamp": 1736825675856
+  "urboidakota": {
+    "bio": "I'm Dakota The one and only New York 29 years old 18 years on RuneScape Certified ex sad boi Any gifters I like cars, the gym, memes, music, and video games Best playlist in the RuneScape 3 category MOST things said on my stream are for entertainment purposes and rage bait I try to stick to this schedule but sometimes I don't Monday, Wednesday, Friday, Saturday 8pm to whenever Tuesday 5050 I will if I can probably not ThursdaySunday Off My main game is RuneScape 3 but sometimes I'll play something else Donations are appreciated but never necessary They help extra to pay the bills and just simp",
+    "custombio": null,
+    "timestamp": 1745889360868
   },
-  "drincompetentgamer": {
-    "bio": "Hobby: Gaming",
-    "timestamp": 1736825874889
+  "nife6": {
+    "bio": "No Information",
+    "custombio": null,
+    "timestamp": 1745890391440
   },
-  "nooblet": {
-    "bio": "Name: Not provided Age: 27 Location: Minnesota Game: Runescape since 2006 Rig: AMD Ryzen 5 5600x 32GB RAM Asus GTX 1080 Strix 2TB SSD 6TB HDD Corsair TXM Gold 650W Webcam: Logitech C920 Mic: Audio-Technica AT2020",
-    "timestamp": 1736847244386
-  },
-  "tiimwork": {
-    "bio": "Name: Tim Age: 33 Location: Sweden Hobby: Poetry Games: CS2 Dota 2 Hearthstone WoW SoD Rig: MSI GeForce RTX 4070 Intel Core i7 13700F 32GB RAM Logitech C920e Webcam Keyboard Corsair K55 Xtrfy M4 Mouse",
-    "timestamp": 1736847248069
-  },
-  "masterpipe83": {
-    "bio": "Name: Not provided Age: 41 Hobby: Gaming Family: Father of four Rig: Not provided",
-    "timestamp": 1736847251948
-  },
-  "moistbean": {
-    "bio": "Name: Chris Hobby: Gaming Rig: Nvidia RTX 2070 Super Intel i5-10600K 16GB RAM 128GB M.2 SSD 2 Monitors",
-    "timestamp": 1736996938535
-  },
-  "kimsomfan": {
-    "bio": "Name: Kim Age: 27 Games: CS League of Legends",
-    "timestamp": 1736847261141
-  },
-  "whitegrimreaper_": {
-    "bio": "Name: White Age: 29 Location: Seattle Hobby: Gaming DnD Rig: 5800X3D MSI 4090 Suprim Liquid X 32GB RAM 2 Monitors Mic: Rode Procaster",
-    "timestamp": 1736847264224
-  },
-  "kram_yelooc": {
-    "bio": "Music by Approaching Nirvana",
-    "timestamp": 1736847266891
-  },
-  "libbzer": {
-    "bio": "Name: Liban Nickname: Libbe Libbz Hobbies: Gaming Football Location: Stockholm Languages: English Swedish",
-    "timestamp": 1736847269360
-  },
-  "punishd1": {
-    "bio": "PC Setup: CPU AMD Ryzen 7 5800X3D GPU GeForce RTX 3060 Ti RAM 16GB Case Corsair iCUE 4000X RGB",
-    "timestamp": 1736847272020
-  },
-  "gurkinator_": {
-    "bio": "Giveaway every Tuesday CPU Intel I5 13600K GPU GeForce GTX 4070ti RAM 32GB Keyboard Corsair K95 Platinum Headset Steelseries Arctis 7 Plus Mouse Razer Deathadder v3 Pro Sensitivity 0.73 Resolution 1280x960",
-    "timestamp": 1736847274540
-  },
-  "eskeminha": {
-    "bio": "PC Setup: Motherboard Gigabyte B650M Gaming X AX Memory 32GB DDR5 CPU AMD Ryzen 7 7800X3D GPU MSI GeForce RTX 4070Ti Monitor LG 65 inch 4k TV Keyboard Logitech MX Keys Mouse Logitech MX Master 3S Headset HyperX Cloud II Mic Razer Seiren",
-    "timestamp": 1736847277112
-  },
-  "chevalricrs": {
-    "bio": "Name: Chevalric Nickname: Chev or Daan Games: RuneScape 3 Pokémon RPGs PC Setup: CPU AMD Ryzen 7 3700X GPU GeForce GTX 1660 Super RAM 32GB Mouse SteelSeries Rival 310 Keyboard Razer Ornata Chroma Monitor Acer Nitro XV273X 28 inch Mic Devine M-Mic USB Webcam FHD Camera Timezone: GMT Activities: Streaming Gaming Community Building",
-    "timestamp": 1736847280476
-  },
-  "duckonatruck": {
-    "bio": "Name: Jesper Nickname: Duck Age: 26 Location: Sweden Games: CS Hobbies: Gaming",
-    "timestamp": 1736847284450
-  },
-  "cakez77": {
-    "bio": "Name: Cakez Age: Not specified Hobbies: Programming, gaming, game development Games: Gothic 1-3, Skyrim, POE, They Are Billions Setup: CPU: AMD Ryzen 7 3700X GPU: GeForce RTX 4060 Ti RAM: 32GB DDR4 Mainboard: ROG STRIX B550-F Gaming Mic: Shure SM7B Interface: Yamaha AG03",
-    "timestamp": 1736847288042
-  },
-  "ibraofc": {
-    "bio": "Name: Sebastian Age: 33 Location: Göteborg, Sweden Ethnicity: Lebanese/Swedish",
-    "timestamp": 1736847291779
-  },
-  "1linneaa": {
-    "bio": "Name: Linnéa Age: 31 Hobbies: Gaming Games: CS, League of Legends, World of Warcraft",
-    "timestamp": 1736847357735
-  },
-  "itsoik": {
-    "bio": "Name: Leif Age: 33 Height: 200cm Location: Oslo, Norway Hobbies: AI, 3D printing, streaming Setup: Monitors: Samsung G9 Neo 49  240Hz, Asus VG27B 24  165Hz, Wacom Cintiq 22  GPU: Nvidia RTX ASUS TUF 3090TI OC CPU: Ryzen 9 3900X RAM: G.skill Trident Z 32GB Peripherals: Ergodox EZ keyboard, Logitech G502 Lightspeed Mic: SHURE SM7B Misc: Elgato StreamDeck, GoXLR, Sony Alpha5100 cameras",
-    "timestamp": 1736942709968
-  },
-  "corrovt": {
-    "bio": "Name: CORRO Hobbies: Gaming, music Location: Sweden Games: Retro and horror games",
-    "timestamp": 1736847395246
-  },
-  "soulbug": {
-    "bio": "Name: Alma Age: 25 Location: Sweden Hobbies: Gaming, chill streams",
-    "timestamp": 1736847406221
-  },
-  "rsn_jesper": {
-    "bio": "Name: Jesper Hobbies: Streaming Setup: Not specified",
-    "timestamp": 1736847442354
-  },
-  "danthespoon": {
-    "bio": "Hobbies: Gaming, card games (Magic The Gathering, Hearthstone, Final Fantasy Trading Card Game) Games: Runescape Setup: GPU: Nvidia GeForce GTX 1050 Ti CPU: Intel Core i9-10900K RAM: 32GB Monitors: 3x 32in curved monitors",
-    "timestamp": 1736847445393
-  },
-  "tangoalphamango": {
-    "bio": "Name: Tango, Age: 27, Hobbies: Speedrunning and listening to video game soundtracks. PC: OMEN 30L Gaming Desktop, NVIDIA GeForce RTX 3080, Intel Core i9-10850K, 32GB RAM, 1TB SSD, 2TB HDD. Headphones: Astro A40s. Mouse: SteelSeries Aerox 9 Wireless. Keyboard: ROCCAT Pyro Mechanical. Microphone: SUDOTACK USB. Games: Lego Star Wars, Modern Warfare, Mario Kart 8 Deluxe.",
-    "timestamp": 1736847445393
-  },
-  "stakarn": {
-    "bio": "Name: Rikard, Hobbies: Streaming mornings, CPU: AMD Ryzen 7 5800X, GPU: GeForce RTX 3070, RAM: G.SKILL 16GB, Mouse: Xtrfy m4 wireless, Keyboard: Svive Triton RGB, Headset: Logitech PRO X, Monitor: SharkGaming 240Hz.",
-    "timestamp": 1736847445393
-  },
-  "tubbzfl": {
-    "bio": "Age: 24, Hobbies: Content creation since 2015, Games: RuneScape. PC: AMD Ryzen 5 3600X, Nvidia GTX 2060, 16GB RAM, 250GB SSD, 500GB HDD, 1TB SSD. Mic: Blue Snowball. Married to @AppleExtract.",
-    "timestamp": 1736847445393
-  },
-  "staciij": {
-    "bio": "Name: Stacii, Location: UK. Games: RuneScape.",
-    "timestamp": 1736847445393
-  },
-  "lossalito": {
-    "bio": "Name: Niklas, Games: CS2, Fortnite. PC: Intel Core i9-9900K, MSI GeForce RTX 3070, 32GB RAM, Samsung 980 SSD. Monitor: ASUS VG248QE, Mouse: Xtrfy M4 RGB, Keyboard: Tesoro Excalibur V2, Headset: HyperX Cloud Flight, Mic: Røde NT-USB.",
-    "timestamp": 1736847445393
-  },
-  "redone_tv": {
-    "bio": "Name: Emanuel, Age: 35, Location: Stockholm. Games: Throne and Liberty. PC: Intel Core i7-9700K, NVIDIA RTX 2080TI, 32GB RAM, Samsung 860 EVO SSD.",
-    "timestamp": 1736847445393
-  },
-  "ktthelemon": {
-    "bio": "Name: Katie (Kt), Games: RuneScape, CS:GO, League of Legends.",
-    "timestamp": 1736847445393
-  },
-  "zingstah": {
-    "bio": "Name: Dhir, Location: Texas, Age: Over 30. Hobbies: Clue scrolling in RuneScape 3. PC: Z790 DDR5, Intel i9-14900K, Nvidia RTX 4060 Ti, 32GB RAM. Mic: Maono. Monitors: KOORUI 1440P, Sceptre 1080P.",
-    "timestamp": 1736847445393
-  },
-  "adamskiifn": {
-    "bio": "PC: AMD Ryzen 9 3900X, ASUS GeForce RTX 2060, MSI B550 Gaming Plus, Mouse: Logitech G Pro Superlight, Keyboard: Apex 7 TKL, Headset: Logitech G Pro X.",
-    "timestamp": 1736847445393
-  },
-  "rsbeckyy": {
-    "bio": "Name: Becky, Location: New Zealand. Hobbies: Horse riding, hiking, painting. Games: RuneScape 3. PC: Ryzen 2600, RTX 3060, 16GB RAM.",
-    "timestamp": 1736847445393
-  },
-  "beard_hub": {
-    "bio": "Darren 31 years old from OK/US. Married to Kait. Love to Game mainly play MMO's. Started streaming in 2021. Diagnosed with T&B Cell Blood and Bone marrow Lymphoma in 2019, survived intense treatment. CPU: AMD Ryzen 9 7950X3D, GPU: NVIDIA GeForce RTX 3080 Ti, RAM: 64GB Corsair Vengeance DDR5, Monitors: 3x 34  Omen, Peripherals: Shure SM7B Mic, Elgato Facecam Pro 4k, Logitech G600 Mouse."
-  },
-  "chrilleekberg": {
-    "bio": "Older than 40, born and raised in Motala + Stockholm, Sweden. CPU: AMD 7800x3d, GPU: RTX 4080, Stream powered by laptop with RTX 3070. Gear from SteelSeries: Arctic Nova Pro wireless, Apex Pro TKL keyboard, Aerox 3 wireless mouse. Donations appreciated."
-  },
-  "matissetec": {
-    "bio": "Building matissetec.dev for AI artwork workflow management. Languages: Python, C#, Vue. Programs: Comfyui, Chataigne, Unity. Stream setup: 3 PCs, 4 monitors, Nexigo 60fps 1080 camera, Blue Yeti mics, Kinesis keyboard."
-  },
-  "mcnee92": {
-    "bio": "McNee, 32 years old, loves RuneScape and doing clues."
-  },
-  "ltsmaluwa": {
-    "bio": "Johanna, age unknown, from Sweden, plays CS on Esportal. CPU: Intel Core i5 10400, GPU: NVIDIA GTX 1650 SUPER, RAM: 16GB. Follow my boyfriend on Twitch at https://www.twitch.tv/esportal_whoopsy."
-  },
-  "godjamot": {
-    "bio": "27yo, streaming RuneScape. 4/20 friendly, loves Rap/Hip-Hop, EDM, Rock. Pets: Zuko (dog), Louise (cat). Favorite color: Orange/Purple. Quest cape, Reaper title, 120 all skills, 200M XP, 66/71 Golden Clue Chaser Title."
-  },
-  "n5wmob": {
-    "bio": "Australian RS3 clan, welcoming all. Mobtato, loves RS3, people, and singing. CPU: AMD Ryzen 5 5600X, GPU: RTX 4090, RAM: 16GB. Monitors: MSI 32-inch, LG 29-inch (x2). Keyboard: SteelSeries, Mouse: MX Master 3."
-  },
-  "0rland0smith": {
-    "bio": "Stream RuneScape, scuffed clue hunting/PVM. Graphics: NVIDIA GeForce RTX 3070, RAM: 16GB DDR4, CPU: Intel i7-12700F, Storage: 1TB SSD. Monitors: MSI MAG301CR2 30  curved, MSI G24C4 24  curved. Mic: HyperX Quadcast, Headset: SteelSeries ARCTIS 9X."
-  },
-  "eltophat": {
-    "bio": "TopHat, favorite games: Hollow Knight, Zelda. Streams when bored."
-  },
-  "2hard2kill20": {
-    "bio": "Trent, aka 2hard2kill. Played RS3 since classic. CPU: Intel i7-12700F, GPU: RTX 3060, RAM: 16GB."
-  },
-  "dextrog": {
-    "bio": "Dex/Lizzie, 23, full-time university student, variety streamer. Stream start: 10/30/2021. Maxed: 3/9/24."
-  },
-  "kloakbengt": {
-    "bio": "Sara, 33, plays CS2 on Esplay."
-  },
-  "oojsan": {
-    "bio": "Playing CS2 at Esplay."
-  },
-  "thoughtxdaughter": {
-    "bio": "Come say hi on Discord, TikTok, Instagram, Pinterest, Youtube."
-  },
-  "ronjalovisah": {
-    "bio": "Ronja from south Sweden, plays Counter-Strike. CPU: AMD Ryzen 7 5700G, GPU: RTX 3060, Monitor: MSI 27  165Hz, Mouse: Logitech G Pro X, Keyboard: HyperX Alloy Origins."
-  },
-  "rimbodejaneiro": {
-    "bio": "Jenna (Rimbo), mom of two, loves gaming, plays CS2 on Esplay. CPU: Intel i5-13400F, GPU: Radeon RX 6750 XT, Monitor: HyperX Alloy 2, Mouse: Logitech Pro X Superlight."
-  },
-  "honkoh": {
-    "bio": "Business inquiries: honk1rs@hotmail.com"
-  },
-  "kreativofc": {
-    "bio": "Name: Jesper 'kREATIV' Sedendahl Born in Bollnäs, moved to Stockholm at 4 Lived with my mom until I moved to Umeå to finish school as a Car Painter Full-time caster and video editor at ESEN Studios"
-  },
-  "7licious": {
-    "bio": "Name: Tilde Age: 23 From: Sweden Counter-Strike player Biggest passion: My dog Colin, 3 years old"
+  "platinumhelixx": {
+    "bio": "No Information",
+    "custombio": null,
+    "timestamp": 1745890409829
   },
   "raynnacs": {
-    "bio": "Name: Andreas aka Raynna Age: 28 From: Värmland, Sweden, Creator of Raynna_Bot, Games: Counter-strike, Runescape"
+    "bio": "My name is Andreas, 28 years old from Sweden, Värmland Gamer Programmer, most known for Raynna_Bot I Play Counterstrike, Runescape, Apex Legends and some other games Creator of Raynna_Bot commands If you would like to support me, just giving a follow is greatly appreciated, so donations are not expected from you, but you can donate anything that you feel would improve the stream in any way iitzhugge Logitech C922 Pro Webcam iitzhugge Nvidia GTX 1080 semlanrite Ak47 Redline Trade Offer Link To register this bot to your channel, you can type addme After you registered the bot you have to vip or ",
+    "custombio": null,
+    "timestamp": 1745890449392
+  },
+  "blazingford": {
+    "bio": "No Information",
+    "custombio": null,
+    "timestamp": 1745891715586
+  },
+  "causanova": {
+    "bio": "HELLO THERE My name is Causa Nova, glad you could stop by This channel is all about chill vibes, games music, fine brews buds, and G R O W T H RS, Rust, Marbles, whatever, HECK, you might catch us playing minesweeper IF YOU AINT FOLLOWING, DROP A TITT I MEAN A FOLLOW Contests and giveaways are held every month for followers If you wanna support Causa directly, shoot him just a tip OR CLICK ON SHEP THE SERATONIN FOX Cheers Our current long term goals Begin establishing a nonprofit organization for aiding homelessness, children's education, and environmental improvement ALL IN ONE Setup cooking ",
+    "custombio": null,
+    "timestamp": 1745892002450
+  },
+  "massey1369": {
+    "bio": "No Information",
+    "custombio": null,
+    "timestamp": 1745892266389
+  },
+  "logiatros": {
+    "bio": "No Information",
+    "custombio": null,
+    "timestamp": 1745893995485
+  },
+  "senseu": {
+    "bio": "ethnicity half korean, half danish 100 AMERICAN age I appreciate any and all donations Any donation will go towards improving the stream quality",
+    "custombio": null,
+    "timestamp": 1745894581442
+  },
+  "titttyrs": {
+    "bio": "Alienware Aurora I77700k 16gb ram 1tb harddrive nvidia gtx 1060 256 ssd drive 700w evga power supply",
+    "custombio": null,
+    "timestamp": 1745895035730
+  },
+  "stakarn": {
+    "bio": "Förväntas inte, men uppskattas otroligt mycket Men om du donerar,kom ihåg att samtliga donationer inte är återbetalningsbara För att donera via streamlabs så kan du trycka på bilden här ovanför Vill ni donera skins så går det bra att göra det också, bara att trycka här Ni är bäst Hade gött hajj Twitter Instagram Steam my mail is staaakarngmailcom CPU AMD Ryzen 7 5800X GPU GeForce RTX 3070 RAM GSKILL 16GB Mouse Xtrfy m4 wireless Keyboard Svive Triton RGB Headset Logitech PRO X Gaming Monitor SharkGaming 240hz Rikard här, Försöker streama så mycket som möjligt Som det ser ut just nu så streamar ",
+    "custombio": null,
+    "timestamp": 1745909498425
+  },
+  "parre92": {
+    "bio": "No Information",
+    "custombio": null,
+    "timestamp": 1745909911769
+  },
+  "redone_tv": {
+    "bio": "tryck på bilden kommer du till mitt space Hallå mitt underbara commuity 3 nu är det dags för sommarens hetaste LAN i jönköpning med min rabattkod redonetv ger dig 20 på ditt köp hoppas vi ses där swish direkt till mig GPU navida geforce RTX 2080TI Internminne Corsair 32GB 2x16GB DDR4 3200MHz CPU Intel Core i7 9700K 36 GHz Sdd Samsung 860 EVO 1TB PSUCorsair TX 750w Gold moderkortASUS ROG STRIX Z390F GAMING fläktar Corsair LL Series LL120 RGB Svart 3pack med kontroller Mus Asus ROG Gladius II Origin Tangentbord Razer ornata v2 Redone21901 välkommen till redone många säger fel det är faktiskt int",
+    "custombio": null,
+    "timestamp": 1745910064019
+  },
+  "ibraofc": {
+    "bio": "Namn Sebastian Ålder 33år ung Stad Göteborg Etnicitet LibanonSverige",
+    "custombio": null,
+    "timestamp": 1745911008857
+  },
+  "pajlada": {
+    "bio": "if you need to contact me, DM me on Discord My username is pajlada and my userid is 85699361769553920 I develop and run my bot in a bunch of cool streams, check out a full list of the bots I run on pajbotcom The bots are custom made, and their source code is available on github Click the image above to donate Huge thanks to my supporters, NeverLuckyInThisGame, Webaxe1, Forsenlol, Tuna_Chunks_In_Brine, BrennonNotice, TheMysil, ObservationEE, Dynglars, Battle_Finger, Flunkiz, Dimension1337, John Snus, Draketen, Marxgorm, Leppunen, Krakenbul follow me on twitter by clicking the image above xD tha",
+    "custombio": null,
+    "timestamp": 1745912728816
+  },
+  "nooblet": {
+    "bio": "hi You're probably here for Mickey anyway Or use this HERE Don't feel like you need to give anything to me This is just here for anyone who wants to support the stream further and I appreciate it Disclaimer All donations are nonrefundable and by clicking donate, you agree that this is your money, as well as not to refund it Top Tips 1 discard_200m 156969 wwwww 2 Derparnieux 1515 noobletHeart 3 Kaane 886 4 Aziz 85037 5 xXFallinFearsXx 780 6 mrbrendon999 77061 7 SilentWalrus1 71205 8 Stingeli 57387 9 Skyriderdragoon 46506 10 Melloorr 42392 Biffy Bud 2 Q How old are you and where are you from A I",
+    "custombio": null,
+    "timestamp": 1745912733965
+  },
+  "tiimwork": {
+    "bio": "Im a blue eyed ginger which is 1 of the popularity of the world flex i've always loved video games and still does it, and still remember the old golden eye on Nintendo 64 even today I stream everyday usually, if i dont do it, something is wrong P i love the streaming and is hoping to grow an awesome community around my stream I like the write poetry aswell which i do alot, so i hope you enjoy your stay And bless your soul Age 33 Name Tim Live Sweden I PLAY CS2, Dota 2, Hearthstone, WoW SoD Im playing other games aswell but this is what i play the most 1 No flaming 2 Allowed languages EnglishSw",
+    "custombio": null,
+    "timestamp": 1745912738385
+  },
+  "karleygg": {
+    "bio": "Only if u feel like it Ingame Settings Res 1080 x 1080 43 Stretched Logitech Superlight 800DPi 2,7 ingame Steelseries Apex PRO Logitech PRO X WIRELESS Razer Gigantus V2 PC SPECS AOC 180 hz 05 ms 27 tum Intel Core i7 14700F 2000 GB SSD 1 TB HDD 16 GB RAM Grafik NVIDIA GeForce RTX 4070 Super 750 Watt DDR5 16 Channel Rules Respect me and my mods Do not ask for mod Keep the chat in english and swedish Do not type in ALL CAPS Do not post links unless permitted If you're permitted and your link is inappropriate, you will be banned No spamming No racism and sexism Most Important Be nice and have fun",
+    "custombio": null,
+    "timestamp": 1745912742650
+  },
+  "masterpipe83": {
+    "bio": "Completely voluntary On the other hand, it is really appreciated if you want to support my stream Trying to give back as much as possible in the form of giveaways Thanks Briefly about me 41 year old father of 2 boys We are a real sport familyEsport including where the boys plays more or less My youngest boy is the one who invests whole heartedly in his gaming and possesses great talent in csgo in particular MaiL09, commit it to memory Start streaming and think and hope I can entertain someone out there If you have more questions, just ask them in the chat and I will answer See you soon This gu",
+    "custombio": null,
+    "timestamp": 1745912746906
+  },
+  "julija0": {
+    "bio": "Julija0 here, 25 years old and lives in Sweden, Malmö I try to stream as often as I can Contact juliaewehotmailcom DONATE BY CLICKING ON THE PICTURE DONATIONS ARE NOT REFUNDABLE Vill du donera med swish Använd denna länken så dyker det upp på streamen httpshihatiojulifknja0 INSTAGRAM STEAM YOUTUBE Snapchat JuliFKNja0 TOP 5 300 ZupreehN 7629 GIFTED 200SUBS LEGEND BoomDust 837 Shakethatladyup 560 200 GIFTED SUBS Staventv 450 TheSwedishGoat 361,84 Q Where do you live A Sweden, Malmö Q When did you start stream A August 2015 if I remember correctly Q What have you studied A Bachelor's degree in me",
+    "custombio": null,
+    "timestamp": 1745912755978
+  },
+  "joakimxjansson": {
+    "bio": "The stream is completely free to watch, if you really want to, you can donate to support the stream All donations are non refundable Im a 28 year old guy from Sweden that like to chill with my dog Pelle Playing Slots and CS2 In the future i plan to IRL stream aswell Instagram TikTok Threads No hate 3 No spam 3 Be nice 3 HP Omen laptop as stream PC Gaming PC Chassie Corsair 570x crystal Graphic card RTX 2080 Processor INTEL I78700K Motherboard Asus maximus X Hero RAM 32GB Corsair vengeance 3200mhz Camera Sony A5100",
+    "custombio": null,
+    "timestamp": 1745912760373
+  },
+  "moistbean": {
+    "bio": "Hey, my name's Chris and i'd like to share my crazy experiences with you all We play a variety of games and my 8 years of stream has taught me one thing I'm terrible at them all Thanks for taking the time to read and watch my stream, I appreciate every view Please consider supporting me and the stream All donations are non refundable Thank you COOLERMASTER HAF 912 PLUS MID TOWER GAMING CASE Nvidia RTX 2070 Super Intel i5 10600K 46GHz MSI Z490 Tomahawk Motherboard 16Gb Ballistix DDR4 RAM Plextor PXG128M6e 128GB M2 SSD Windows 10 Home Premium 64Bit CORSAIR 750W CX750 SERIES POWER SUPPLY Corsair ",
+    "custombio": null,
+    "timestamp": 1745912764472
+  },
+  "wazzy": {
+    "bio": "Hey, I'm Wazzy I mostly stream high level content in RuneScape Stick around it'll be fun Feel free to ask questions or even give me tips and I'll try to answer them as best I can I've been streaming for a couple of years now and I've learned a lot along the way so hopefully you enjoy your stay here as well Occasionally we play other games, such as League of Legends, Dark Souls, Sekiro, Jump King, as well as some story games like Life is Strange and Detroit Become Human If you feel like being an incredibly generous person, click on the picture of my old dog to do just that Thank you to anyone w",
+    "custombio": null,
+    "timestamp": 1745912774222
+  },
+  "kimsomfan": {
+    "bio": "Mitt namn är Kim, 27 år gammal som precis börjat streama Kommer spela CS, League of legends Inget speciellt schema för tillfället, streamar när jag har tid och lust Donations are very appreciated and only donate if you can afford to do so, they are NONREFUNDABLE Inget toxic i chatten Var trevliga Bara för att jag är toxic behöver inte ni vara det Brutna regler leder till ban",
+    "custombio": null,
+    "timestamp": 1745912778692
+  },
+  "kreativofc": {
+    "bio": "Hi My name is Jesper kREATIV Sedendahl Gamer, Caster and really funny Born in Bollnäs and moved to Stockholm when i was around 4 years old Lived with my mom most of my years until i moved up north to Umeå to finish school as an Car Painter Moved back after school to start my esports career as an caster for Publiclir, later got picked up from exQPAD King of Nordic and now i got a fulltime job as a caster and video editor at ESEN Studios My Stream is my way of having some calm times with the viewers If you have anything you're wondering about, just ask me in the chat This is a donation button so",
+    "custombio": null,
+    "timestamp": 1745912787416
+  },
+  "whitegrimreaper_": {
+    "bio": "Name White Age 29 Location Seattle Bellevue, WA My Specs NEW PC Case Meshify 2 CPU 5800X3D CPU Cooler NHD15 MOBO Gigabyte X570 AORUS Pro Wifi RAM Crucial Ballistix RGB 2x16GB GPU MSI 4090 Suprim Liquid X PSU EVGA Supernova G3 850 Drives Sabrent Rocket Q4 2TB, Seagate IronWolf NAS 10TB, Samsung 860 Pro 2TB Keyboard KBD8X MKII with Boba U4T and SA Knight King Mouse Special Edition Glorious Model 0, Razer Naga Trinity for RS3 Mic Rode Procaster through a FetHead into a Focusrite Scarlett 2i2 Headphones Sennheiser HD6XX Monitors LG 27GL850 2, LG 34WN80C 2 During DD streams Map and Map Assets by 2M",
+    "custombio": null,
+    "timestamp": 1745912791024
+  },
+  "kram_yelooc": {
+    "bio": "Music by Approaching Nirvana httpyoutubecomuserapproachingnirvana Check them out on iTunes httpbitly1aw7TkY",
+    "custombio": null,
+    "timestamp": 1745912794546
+  },
+  "libbzer": {
+    "bio": "ENGLISH My name is Liban and my nickname is ''LibbeLibbz'' On my spare time, I spend a lot of time on gaming and football SWEDISH Jag heter Liban men går under namnet LibbeLibbz här på alla medier, är en grabb från Stockholm som brinner starkt för gaming och fotboll age rank social subs youtube uptime settings discord Warlock 550 Oliver 100 Acorex 80 PernilleThomassen 71 Moon 60 1smarre 56 Silee 25 Aref 20 Japanish 25 Argoliz 12 Jackson 10 Jag uppskattar verkligen VARJE enskild donation Donera är helt frivilligt För att donera via PayPal eller kontokort, tryck på donate knappen så kommer du vi",
+    "custombio": null,
+    "timestamp": 1745912798390
+  },
+  "punishd1": {
+    "bio": "CPU AMD Ryzen 7 5800X3D GPU GeForce RTX 3060 Ti GAMING Z RAM 16GB Corsair Vengeance DDR4 CASE Corsair iCUE 4000X RGB Svart Donationer via PayPal kan göras här, dom uppskattas otroligt mycket Kom ihåg att donationer inte är återbetalningsbara",
+    "custombio": null,
+    "timestamp": 1745912802270
+  },
+  "gurkinator_": {
+    "bio": "Donationer är inget som är obligatoriskt eller förväntas, men mottages med stor tacksamhet Donationer är inget som är obligatoriskt eller förväntas, men mottages med stor tacksamhet Klicka på bilden för att komma direkt till min merchstore, där du hittar massor av grymma grejer Vi har allt från Hoodies och tröjor Perfekta för att representera vår community med stil Mobilskal Skydda din mobil med något riktigt unikt Och mycket mer Varje köp stöder kanalen och hjälper mig att fortsätta skapa content plus att du får något riktigt snyggt att visa upp Tusen tack för att du kollar in shoppen Klicka ",
+    "custombio": null,
+    "timestamp": 1745912806387
+  },
+  "eskeminha": {
+    "bio": "Support the streamer Mobo Gigabyte B650M Gaming X AX Memory 32GB Corsair Dominator DDR5 CPU AMD Ryzen 7 7800X3D 8Core Processor 420GHz Cooling Custom Watercooler Main Storage M2 2Tb Corsair MP600 PRO XT Extra SSD 4x 240GB HyperX Savage VGA MSI Geforce RTX 4070Ti Ventus 3x Monitor LG 65 4k TV Power EVGA Supernova 1600 G2 Keyb Logitech MX Keys S Full Size Keypad Razer Orbweaver Mouse Logitech MX Master 3S Headset HyperX Cloud II Mic Razer Seiren Case Cooler Master Cosmos II YouTube Subscribe",
+    "custombio": null,
+    "timestamp": 1745912810876
+  },
+  "chevalricrs": {
+    "bio": "CPU AMD Ryzen 9 7900X 47 GHz 12Core Processor CPU Cooler be quiet Dark Rock 5 GPU MSI GAMING X SLIM GeForce RTX 4070 SUPER 12 GB Video Card Motherboard MSI MAG B650 TOMAHAWK WIFI ATX AM5 Motherboard Memory Corsair Vengeance 64 GB 2 x 32 GB DDR56400 CL32 Memory Storage Samsung 980 Pro 1 TB M22280 PCIe 40 X4 NVME Solid State Drive X2 Case Lian Li Lancool 207 ATX Mid Tower Case Power Supply Corsair RM850e 2023 850 W 80 Gold Certified Fully Modular ATX Power Supply Case Fan be quiet Silent Wings Pro 4 839 CFM 120 mm Fan Hi my name is Chevalric, but you can call me Chev or Daan D I mainly stream Ru",
+    "custombio": null,
+    "timestamp": 1745912815832
+  },
+  "duckonatruck": {
+    "bio": "Donations helps the stream grow I appreciate all the donations Baronen 100 3 networmswallgren92 800kr likesithotandbitter 61 3 Warlock 50 3 Bdog 40 Euro 3 TjNorris 3000 3 disco 2500 3 Baronen1 300 SEK 3 Wonder 15 3 Christan 10 3 Welcome My name is jesper also known as Duck I'm 26 years old and live in small town in sweden I play a lot of other games but will probably stream CS most of the time I try my best to be the best in cs but i suck nohate nobait",
+    "custombio": null,
+    "timestamp": 1745912824102
+  },
+  "cakez77": {
+    "bio": "If you want to send me stuff Packstation 141 48149 Muenster Postnumber 1072188658 I like programming all sorts of things but I really like programming and changing games In almost every game I come across I would change a few things, I mean who wouldn't My favorite games are Gothic 13, Skyrim, POE and They are Billions, I like challenging myself by playing on the hardest difficulty I also like adding rules to games to make them more interesting, for example 1 Life runs I program every day to one day finish and sell my first commercial game called Cakez TD and I will be documenting this journey",
+    "custombio": null,
+    "timestamp": 1745912828210
+  },
+  "1linneaa": {
+    "bio": "Skulle betyda otroligt mycket om ni ville joina mitt space på esplay Jag kommer att lägga upp gathers där Samt ha Ladders och lite annat i den Uppdaterar där med kommande Giveaways Klicka bara på bilden och sedan gå med Välkommen hem Använd kod linnea för 10 off på all merch My name is Linna Im 31 Years old Short amoste a dwarfie Kind Blond II mostly play CS, but sometimes also League of Legends Just started playing some World of Warcraft again Much appreciated, helps the stream Donations are non refundable Be nice to eachother No politics No sexism No racism",
+    "custombio": null,
+    "timestamp": 1745912833007
+  },
+  "itsoik": {
+    "bio": "Bomb Around Awailable on Steam ItsOik is affiliated with Jetbrains and has been provided with licences to give away Once a month you will have a chance to get a 12 month licence for a Jetbrains IDE of your choice Join the discord for more info or askdo giveaway in chat Proud member of the Coworking Coding Club YouTube Discord itsOikcom My first title on steam We have to dig deeper A tabletop game developed by 2 persons in 7 weeks for a school project as a mod for Tabletop Simulator cocreator psyayavt We Have To Dig Deeper Subscribe to get access to a bunch of emotes a big thankyou click here, ",
+    "custombio": null,
+    "timestamp": 1745912836837
+  },
+  "corrovt": {
+    "bio": "credits starting up screen art AsterWisteriaVT Hi, Im CORRO a zombie streamer and signed musician from Sweden I love retro games and anything horror or chaos ADHD warning Oshi mark Art tag CorroArt Business inquiries sponsorships corrovtgmailcom bluesky updates and brainrot instagram same but with photos spotify my music all links join my monster squad at the discord",
+    "custombio": null,
+    "timestamp": 1745912841691
+  },
+  "sarahdominist": {
+    "bio": "Live roughly 23pm UK time",
+    "custombio": null,
+    "timestamp": 1745912850473
+  },
+  "soulbug": {
+    "bio": "Hello My name is Alma I'm 25 years old and from Sweden My channel is chill very much laid back so if you vibe with that ur very welcome to chilllurk here Sometimes you'll find me streaming with music only I have no set streaming schedule and like to do it whenever I'm in the mood for it Join my discord List of commands aod croesus telos enrage discord followage mouse No excessive spamming Ask for permission if you want to post a link Just follow the terms of service tone down on the toxicity Feel free to subscribe if you enjoy the content If you enjoy the content and would like to support the ",
+    "custombio": null,
+    "timestamp": 1745912854932
+  },
+  "7licious": {
+    "bio": "Joina mitt space Här blir de gottegibb, turneringar, givaways osv My name is Tilde and I am 24 years old from Sweden Im a counterstrike player Outside of cs, my biggest passion is my dog, Colin He is 4 years old Want to support me in a way that directly affects the channel and content creator more so than a donation Then subscribing is your next step R1zing 2200 Xime 1,270 Nallepuh19 1,103 Dnkendounts 797 Bot_Ongest 715 Thank you so much for all the kind donations Click on the picture to donate through Paypal or debit Thank you for wanting to support my content though a donation, Donations are",
+    "custombio": null,
+    "timestamp": 1745912859123
+  },
+  "parally": {
+    "bio": "I'm Kayla aka Parally I'm a 27 year old fulltime streamer and fulltime dumbass, and having a blast with both I've been streaming since January of 2021 when I started with variety, but have been mainly RuneScape since April of 2021 with a bit of variety here and there Parally PO Box 37 Cottage Grove, WI 53527 I go live around 6307pm CT No streams Sundays or Wednesdays unless otherwise specified Donations are not at all required, but if you would like to support the stream further, feel free to click the banner above or here Thank you so much for the support Disclaimer Donations are nonrefundabl",
+    "custombio": null,
+    "timestamp": 1745912868082
+  },
+  "rsn_jesper": {
+    "bio": "MinkenTv 60000 Cirenz donated 20000 HzxxRS 4500 danyycsgo 3000 Smurku 2000 TheBelgian 1000 sHalfNightKnight donated 700 OlenKeisari donated 700 rusianantte 169 emil247k donated 100 RullaKepap donated 100 Blazejumperz donated 100 Commands Sr Uptime level Discord Youtube Songlist Currentsong YellowF Warden Telos Nex Rax Qbddeath Archcalc Archalarm OutLast i update my streaming page over time I'm sorry if there is a mistake in the text thanks for all support",
+    "custombio": null,
+    "timestamp": 1745912872846
+  },
+  "danthespoon": {
+    "bio": "Hey guys I primarily used to play a lot of card games like Magic The Gathering, Hearthstone, Final Fantasy Trading Card Game fftcg, and the like going to national and international tournaments and the like Ask me about worlds for fftcg p But now hear I am streaming runescape to you guys another game I enjoy immensely I'm always looking to improbve the way i stream so please feel free to give me tips on how to improve my stream Not necessary but if you wanted to tip me you can do it here Please keep things mature, don't disrespect anyone here and most importantly have fun Graphics card Nvidia G",
+    "custombio": null,
+    "timestamp": 1745912877069
+  },
+  "honkoh": {
+    "bio": "No Information",
+    "custombio": null,
+    "timestamp": 1745912881651
+  },
+  "tangoalphamango": {
+    "bio": "Hi My name is Tango Speedrunner, Pokemon Lover and the occasional retro gamer I'm 28 years old, I play a variety of games and listen to video game soundtracks Current PB times below RuneScaper since 06 Welcome to the channel Lego Star Wars The Complete Saga Prequels Any PB 12329 RTA AllStar Summit 10m 58s RTA Bonny Greens PB 10m 14s RTA Bowser Highlands PB 10m 51s Mario Kart 8 Deluxe 48 Tracks 150cc items PB 21223 Mario Kart 8 Deluxe 48 Tracks DLC 150cc Items PB 21653 Mario Kart 8 Deluxe 96 Tracks 150cc Items PB 43628 Modern Warfare 2 Remastered Any Recruit PB 20600 Call of Duty 4 Modern Warfa",
+    "custombio": null,
+    "timestamp": 1745912890482
+  },
+  "tubbzfl": {
+    "bio": "16 Feb 2024 99 Summoning 18th Feb 2024 120 Necromancy 120 Invention 19th Feb 2024 99 Prayer 152 combat level 14th March 2024 500 ArchGlacor 25th May 2024 99 Fletching 21st June 2024 200 Zammy Solo 23rd June 2024 300 Zammy Solo 12th July 2024 120 Defence 30th July 2024 Vorkath Green Logged 6th Aug 2024 99 Cooking 19th Sept 2024 1000 ArchGlacor 24th Sept 2024 Priff Elder Olvs 28th Sept 2024 Hardmode Zuk Cape 2nd April 2025 Created HCIM Be Respectful to everyone Obviously No racism, no homophobic comments, no religious slurs etc No advertising or selfpromotion English Only Please Advice is allowe",
+    "custombio": null,
+    "timestamp": 1745912894858
+  },
+  "staciij": {
+    "bio": "Hey, my name is Stacii A young lass based in the UK You'll most likely find me playing RuneScape however I might stream other things from time to time Business Enquiries staciijtvgmailcom The standard rules I guess No Racism No Hate Speech Try and keep politics to a minimum Respect everyone Banter is good, banter is great but if its obvious its getting to someone please stop No backseating unless its requested Please and thanks 3 HEY, I see you looking to donate I will never EVER ask for a donation however if you wish to donate I would be very appreciative and I will send ALL the virtual hugs ",
+    "custombio": null,
+    "timestamp": 1745912899518
+  },
+  "lossalito": {
+    "bio": "Namn Niklas Spel CS2, Fortnite Sveriges kanske sämsta pc spelare alla spel inkluderad Klicka på bilden för att donera Alla donationer uppskattas otroligt mycket och det är helt frivilligt att donera, så tänk innan du donerar Donationerna går oftast tillbaks till mina följare i form av giveaways eller liknande OBS INGA ÅTERKÖP Legender som har giftat subs chucknoirris 42st eagle25125 30st simonpersson13 20st burningh8 10st Olssonjohan 10st Skiyte 10st kattenkalle1 1st Top 3 som subbat längst 18 mån chucknoirris 12 mån simonpersson13 9 mån mackethenoob Som prenumerant får du några super trevliga",
+    "custombio": null,
+    "timestamp": 1745912903689
+  },
+  "ktthelemon": {
+    "bio": "Haaiiiiii my name is Katie Kt and I play all sorts of games 3 Varying between runescape, cs go and league of legends",
+    "custombio": null,
+    "timestamp": 1745912907883
+  },
+  "zingstah": {
+    "bio": "Hey new friend, The name is Dhir, I currently reside in Texas everythingisbiggerintexas I've mainly played RuneScape 3 but would definitely ATTEMPT to play variety games 1xweek soon A big cluer a decent pvmer, if I do say so myself, heh I listen to a wide variety of music, so recommend me something if you stream, let me know so I can support you too Thank you for cheering me on and following on other platforms, I am motivated the some of these pics take you to my socials btw coffeeaddict rs3addict zingstah Zerotolerance for discrimination or bullying be inclusive Be respectful of others, and b",
+    "custombio": null,
+    "timestamp": 1745912912160
+  },
+  "4starball": {
+    "bio": "Art By Bonifah Art by Bonifah Art by Bonifah Yellow Party Hat Achieved 060123 Green Party Hat Upgrade 090323 Purple Party Hat Upgrade 260623 Red Party Hat Upgrade 051023 Quest Cape 181123 Comp Cape 291223 Twitch Partner 090124 Master Quest cape 300824 Trim Comp 300824",
+    "custombio": null,
+    "timestamp": 1745912916440
+  },
+  "esplaycom": {
+    "bio": "Esplay är en ny plattform som revolutionerar sättet vi utövar och njuter av CS på, bara för Sverige Den nya matchmaking och turneringsplattformen Esplay erbjuder en smidig upplevelse för spelare på alla nivåer där man kan spela lite mer avslappnat med sina vänner, eller ta sig hela vägen upp mot eliten i de större turneringarna Vi uppmuntrar dig att testa spela i vår Matchmaking, kör en Gather och testa gå med i ett Space Verifiera dig med BankID och få tillgång till Prime Matchmaking Drops Super Gathers och mer Du som verifierad kan också välja att spela mot eller med endast verifierade spela",
+    "custombio": null,
+    "timestamp": 1745912921036
+  },
+  "adamskiifn": {
+    "bio": "Donations are NOT required They are used to make the stream better and are much appreciated 3 nonrefundable Paypal Mouse Logitech G Pro Superlight Keyboard Apex PRO TKL GEN 3 Headset Logitech G Pro X Webcam Logitech streamcam Desk Arozzi Gaming Desk Graphics Card ASUS GeForce RTX 2060 DUAL EVO Advanced Processor AMD Ryzen 9 3900X Motherboard MSI MPG B550 GAMING PLUS NO SPEAKING ABOUT RELIGION OR CONTROVERSIAL TOPICS NO weird Flirting NO Racism or hurtful comments NO SelfPromoting NO toxicity or Drama NO excessive spamming Keep the chat ONLY IN SWEDISH ENGLISH I decide who I play with Subscribe",
+    "custombio": null,
+    "timestamp": 1745912925373
+  },
+  "rsbeckyy": {
+    "bio": "My about pannels, stream overlay, starting soon and BRB screens made by Woutiiee httpstwittercomWoutiiee My 8 animated emotes are made by TheNyxed httpstwittercomTheNyxed Welcome to my channel Glad you could pop in My name is Becky, and I'm from New Zealand I mostly play and stream Runescape3 Outside of gaming I enjoy horse riding and hiking, and sometimes do the odd bit of painting discord insta steam twitter snapchat chair delicious f iron lurk uptime yikes boo brain socials gem tune woot party dance countryroads chickenfried I have a discord server for my twitch channel where I make announc",
+    "custombio": null,
+    "timestamp": 1745912933915
+  },
+  "chrilleekberg": {
+    "bio": "I'm older than 40 and still have plenty of years left for fun in this world Borned and raised in Motala Stockholm in Sweden For serious business inquiries, please email chrilleekberglivese Thanks to elgato for providing me with really good and necesary gear as Streamdeck Facecam Pro 4k Capturecard 4K X Donations are HIGHLY appreciated and much welcomed Please duly note that donations are not refundable httpspaypalmechrilleekbergcountryxSElocalexsv_SE Introducing STREAM ON DEMAND Use the donation page on this side and write the x amount of hours u want me to be online Pricing as follow 12pm12am",
+    "custombio": null,
+    "timestamp": 1745912941483
+  },
+  "matissetec": {
+    "bio": "I am building out a webpage called matissetecdev which is about creating a workflow management tool for ai artwork The types of things you can do is image creation, animated emote creation, and all sorts of other fun I build games every so often when itsoik is cool with carrying me on their team I enjoy making integrations for viewer on twitch Allowing the streamer to have a more robust and interesting stream setup and integration of these into games, like clickable minimaps How does this current setup I have work Lots of different parts Languages python C vue html css ts Programs Comfyui Chat",
+    "custombio": null,
+    "timestamp": 1745912945350
+  },
+  "drincompetentgamer": {
+    "bio": "Check out more videos from this game and many, MANY others YouTube Support the channel by becoming a Patron Continue the conversation, get stream updates, and more by joining our Discord If you are feeling generous, use this link to give me a tip and help support the channel Thank you Want some Dr Incompetent Merch for your office white elephant gift exchange Are you looking to confuse strangers with your shirts and hats Stop on in",
+    "custombio": null,
+    "timestamp": 1745912949503
+  },
+  "mcnee92": {
+    "bio": "My Name is McNee a 33 Year old pizza loving RuneScape Streamer I love this game and really enjoy doing clues You are an extension of the community, treat others how you want to be treated Don't harass other users This includes racism, homophobia, sexism etc Use common sense and do not be an idiot",
+    "custombio": null,
+    "timestamp": 1745912953735
+  },
+  "aaztween": {
+    "bio": "W E L C O M E hi, welcome to The Coffee Grove you can call me aaztween or aaz i'm an official Once Human Content Creator i love to game, explore, yap and have a cozy environment to come back to after a long day of girl bossing i hope you find some warmth in this coffee grove enjoy your stay all gifts contributions send an alert onstream D I S C O R D you're invited to join the coffee grove please note this server is 18 only C R E D I T S i make my own art for stream when you subscribe to my channel you are showing your support to my streamcommunity art i could not have achieved this without th",
+    "custombio": null,
+    "timestamp": 1745912957790
+  },
+  "ltsmaluwa": {
+    "bio": "Feel free to donate, it would mean the world to me HUGS xoxo Name Johanna Age Those who know knows From Sweden Game Mostly l play cs2 Go and check out my amazing boyfriend httpswwwtwitchtvesportal_whoopsy No bullying No racism Treat others as you would like to be treated No nasty comments CPU Intel Core i5 10400 RAM DDR4 SDRAM 16 GB Motherboard LENOVO 370A U3E1 GPU NVIDIA GeForce GTX 1650 SUPER Screen 1 AOC 25 25G3ZM Screen 2 AOC 24 G2460PF Mouse Logitech G G603 Keyboard HyperX Alloy Core RGB Headset HyperX cloud 2 gun metal",
+    "custombio": null,
+    "timestamp": 1745912962205
+  },
+  "godjamot": {
+    "bio": "farifx from Fiverr absolutely KILLS it Panel Link to view his profile 3 28yo November, 8th Streaming to Save Runescape VERY 420 Friendly 2 Pets, 1 dog Zuko 1 cat Louise RapHipHip, EDM, Rock Fav Color OrangePruple Whiskey Beer Beard Gang 13 Years Strong RuneScape Nerd Pokemon Nerd Suicune is Fav Anime Nerd 2024goals sus discord pvm lurk clues cluetrainer anime raid subraid Quest Cape 2016current Reaper Title 122623 120 2729 Skills 200M 1129 Skills Currently 44B Total XP 6671 Towards Golden the Clue Chaser Title Third Age Piece from Base Title 1141 Boss Logs Complete Completionist, MQC, GReaper,",
+    "custombio": null,
+    "timestamp": 1745912965973
+  },
+  "n5wmob": {
+    "bio": "Monday 3pm Tuesday 3pm Wednesday 7pm Sunday 5pm Check Schedule section above near the about section An Australian based clan whom welcome anyone, Where topics will be based on a Anything goes system But also work as a team This clan is for those Runescape members wanting to just enjoy the game and spend time with friends Find us on Discord Add clan leader on discord and ask for an invite N5W Things you need to bring to our clan Sense of Humor A heart of gold Respect Let it go attitude This seems like you Do you feel that you need a down to earth clan that is just here to have a bit of fun Ask ",
+    "custombio": null,
+    "timestamp": 1745912970167
+  },
+  "0rland0smith": {
+    "bio": "Hello thank you for stopping by my page I have played Runescape on and off for a fair few years I am very bad at the game and not afraid to admit it I love to help as many people as possible and mainly stream Scuffed Clue HuntingPVM Stream times will vary as manage a full time career Follow me on Socials for more info when I'm going live Active user so be sure to to come follow me on here httpstwittercom0rland0Smith To those that wish to further support the channel could subscribe via TTV when live for a small fee however DO NOT PANIC Don't forget to link your Amazon Prime account with Twitch ",
+    "custombio": null,
+    "timestamp": 1745912974729
+  },
+  "eltophat": {
+    "bio": "Ahoy I'm TopHat nice to meet you I randomly show up and do dumb things on the internet when I'm bored Hope you enjoy your stay Feel Free to ask any questions during stream but here are some for free Why did you start streaming I really needed a excuse to feel productive playing games XD What's your favorite color well there's a lot of green on the channel maybe purple What games do you like a lot of them but hollow knight and Zelda are probably my favorite No Need To But If You Do I Really Do Appreciate It",
+    "custombio": null,
+    "timestamp": 1745912978863
+  },
+  "2hard2kill20": {
+    "bio": "Hey Guys and Gals, My names Trent or also known better as 2hard2kill like most people i have a love for gaming one of those games is Rs3, i have been playing since classic and still love it till this day and would love to share that with you Be Kind Respect others Include everyone no bullying, sexism, racism, homophobia or other hate based chat no ethnic, sexual, religious, disability, agist or transphobic slurs Processor 12th Gen IntelR CoreTM i712700F 210 GHz Ram 16GB Nividia GeForce RTX 3060 12th Gen Intelr CoreTM 1712700F Donations of any kind are not expected, however any donations are gr",
+    "custombio": null,
+    "timestamp": 1745912983073
+  },
+  "dextrog": {
+    "bio": "Hi everyone You can call me Dex or Lizzie I'm a 23 year old, fulltime university student so I stream around my school schedule I'm mostly a variety streamer but I love my comfy games Started Streaming 10302021 Maxed 3924 Onstream alert You can also do it privately Donations go toward improving the stream Top Donos demon_kingkingster 20 23costa 10 deadgirl 5 buhzerq5",
+    "custombio": null,
+    "timestamp": 1745912986912
+  },
+  "kloakbengt": {
+    "bio": "Donationer är väldigt uppskattat men behövs inte Kom ihåg att donationer är nonrefundable Kom in i värmen i min SPACE på Esplay HÄR",
+    "custombio": null,
+    "timestamp": 1745912990996
+  },
+  "evelinamadsenn": {
+    "bio": "Använd min kod för 20 off på din ticket till GLITCHED 2025 Use coupon Werren10 Use my coupon 1EVELINA I'm playing cs2 at Esplay",
+    "custombio": null,
+    "timestamp": 1745912995290
+  },
+  "thoughtxdaughter": {
+    "bio": "No Information",
+    "custombio": null,
+    "timestamp": 1745912999666
+  },
+  "legiorapax1": {
+    "bio": "Any donations although not necessary would be greatly appreciated again not necessary",
+    "custombio": null,
+    "timestamp": 1745913008179
+  },
+  "ronjalovisah": {
+    "bio": "My name is Ronja I'm from south Sweden and i speak both swedish and english in my streams I've played a lot of computer games since I was a little kid and always liked it a little bit too much I started playing CounterStrike when i bought my PC last year and that's the game i usually stream CounterStrike is also my first FPS game ever From the beginning I started streaming because my friends wanted to see me fail on CounterStrike I'm a shy person who's not able to talk to myself but if you write in my chat you'll break the wall and I'll be more than happy to talk to you, sometimes a little bit",
+    "custombio": null,
+    "timestamp": 1745913012513
+  },
+  "rimbodejaneiro": {
+    "bio": "Jag är en mamma till två små barn Ni kan kalla mig Jenna eller Rimbo Helt klart gaming beroende Har två barn, två hundar och två katter Spelar för det mesta CS2 på Esplay men lite fortnite och andra spel slinker också in Instagram RimboDeJaneiroCS TikTok RImboDeJaneiro Email Rimbodejaneirogmailcom Vill du istället donera via Paypal så kan du göra det här Donationer är inte ett måste men uppskattas enormt mycket Kom ihåg att inga donationer återbetalas Tryck på bilden för att joina min discordkanal Vill du donera via Swish tryck på bilden ovan Donationer är inte ett måste men uppskattas enormt ",
+    "custombio": null,
+    "timestamp": 1745913016760
+  },
+  "andis88": {
+    "bio": "Vill ni donera via Swish så gör ni det via denna länk OBS Ni måste använda Mobil kameran httpshihatioandis88 minimum 10kr följ dina donationer via leaderboarden tänk på att du måste använda samma namn donationen syns på streamen CSKejsaren är det snabbaste och säkraste sättet att sälja dina skins i Norden Du behöver inte längre oroa dig för att bli lurad sälj dina skins snabbt och säkert till ett nordiskt företag För samarbete, kontakta andis88streaminghotmailcom 37 år gammal Jag älskar att spela datorspel Spelar främst CS2, Men jag spelar även andra spel på streamen också Donation är inget må",
+    "custombio": null,
+    "timestamp": 1745914370550
+  },
+  "pud888": {
+    "bio": "Being part of this Discord server will help you notify when i go live No racism, sexism, or homophobia, we aren't about that No slurs pls No marketing services ty No religious or political discussion were here to game And lastly, no spoilers to games or movies Thanks guys",
+    "custombio": null,
+    "timestamp": 1745918930732
+  },
+  "itssimmewth": {
+    "bio": "No Information",
+    "custombio": null,
+    "timestamp": 1745919524209
   }
 }

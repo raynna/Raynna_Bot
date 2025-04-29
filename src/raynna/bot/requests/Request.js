@@ -145,13 +145,21 @@ const RequestType = {
         },
         link: `https://esplay.com/api/ban/list`
     },
+	ESPLAY_CURRENT_LIVE_MATCH: {
+		name: 'ESPLAY_CURRENT_LIVE_MATCH',
+		errors: {
+		},
+		link: `https://esplay.com/api/profile/playstate/current?id={id}`,
+		values: ['{id}']
+		
+	},
     ESPLAY_CURRENT_MATCH: {
         name: 'ESPLAY_CURRENT_MATCH',
         errors: {
             notFound: "This player does not exist on ESPlay",
             badRequest: 'Bad Request',
         },
-        link: `https://esplay.com/api/profile/match/current?id={id}`,
+        link: `https://esplay.com/api/match/get?id={id}`,
         values: ['{id}']
     },
     ESPLAY_MATCHLIST: {

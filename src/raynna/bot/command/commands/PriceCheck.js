@@ -61,50 +61,75 @@ class PriceCheck {
     }
 
     async execute(tags, channel, argument, client, isBotModerator) {
-        try {
-            let itemName = argument ? argument.trim() : "";
-            if (!itemName) {
-                return `You didn't enter a valid RuneScape Item`;
-            }
+    try {
+        let itemName = argument ? argument.trim() : "";
+        if (!itemName) {
+            return `You didn't enter a valid RuneScape Item`;
+        }
+
+        // First, attempt to fetch the exact item name from the DB
+        let itemFound = false;
+        let shortcutItemName = itemName;
+        
+        const { data: db, errorMessage: message } = await getData(RequestType.ItemDB, itemName.split(" ").join("%20"));
+        
+        // If no exact match is found, check against the triggers
+        if (!db[0] || !db) {
             for (const shortcut of shortcuts) {
                 for (const trigger of shortcut.triggers) {
-                    if (itemName.toLowerCase().includes(trigger)) {
-                        itemName = shortcut.name.split(" ").join("%20");
+                    if (itemName.toLowerCase() === trigger) {
+                        itemFound = true;
+                        shortcutItemName = shortcut.name.split(" ").join("%20");
                         break;
                     }
                 }
+                if (itemFound) break; // Exit loop once a match is found
             }
-            const { data: db, errorMessage: message } = await getData(RequestType.ItemDB, itemName.split(" ").join("%20"));
-            if (message) {
-                return message;
-            }
-            if (!db[0] || !db) {
-                return `Couldn't find any valid RuneScape item name: ${itemName.replace("%20", " ")}`;
-            }
-            console.log(JSON.stringify(db));
-            const { id, value, tradeable } = db[0];
-            let alchValue = Math.floor(value * 0.60);
-            if (alchValue < 1) {
-                alchValue = 1;
-            }
-            if (!tradeable) {
-                return `Item ${db[0].name} is an untradeable item, Alchemy value: ${alchValue} gp.`;
-            }
-            const { data: item, errorMessage: itemMessage } = await getData(RequestType.ItemLookup, id);
-            if (itemMessage) {
-                return itemMessage;
-            }
-            console.log(JSON.stringify(item));
-            const { name, current, day30, day90, day180 } = item.item;
-            if (!current) {
-                return `Couldn't find current data for ${name}`;
-            }
-            const { price } = current;
-            return `${name}, Price: ${price} gp, Changes in days: 30 (${day30.change}), 90 (${day90.change}), 180 (${day180.change}), Alchemy value: ${alchValue} gp`;
-        } catch (error) {
-            console.log(`An error has occurred while executing command ${this.name}`, error);
+        } else {
+            itemFound = true; // Exact item found in DB
         }
+
+        if (!itemFound) {
+            return `Couldn't find any valid RuneScape item name: ${itemName.replace("%20", " ")}`;
+        }
+
+        // Now fetch data based on the resolved itemName (either exact or trigger-based)
+        const { data: finalDb, errorMessage: finalMessage } = await getData(RequestType.ItemDB, shortcutItemName);
+        if (finalMessage) {
+            return finalMessage;
+        }
+        if (!finalDb[0] || !finalDb) {
+            return `Couldn't find any valid RuneScape item name: ${shortcutItemName.replace("%20", " ")}`;
+        }
+
+        const { id, value, tradeable } = finalDb[0];
+        let alchValue = Math.floor(value * 0.60);
+        if (alchValue < 1) {
+            alchValue = 1;
+        }
+
+        if (!tradeable) {
+            return `Item ${finalDb[0].name} is an untradeable item, Alchemy value: ${alchValue} gp.`;
+        }
+
+        const { data: item, errorMessage: itemMessage } = await getData(RequestType.ItemLookup, id);
+        if (itemMessage) {
+            return itemMessage;
+        }
+
+        const { name, current, day30, day90, day180 } = item.item;
+        if (!current) {
+            return `Couldn't find current data for ${name}`;
+        }
+
+        const { price } = current;
+        return `${name}, Price: ${price} gp, Changes in days: 30 (${day30.change}), 90 (${day90.change}), 180 (${day180.change}), Alchemy value: ${alchValue} gp`;
+        
+    } catch (error) {
+        console.log(`An error has occurred while executing command ${this.name}`, error);
     }
+}
+
 }
 
 module.exports = PriceCheck;

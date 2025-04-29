@@ -129,6 +129,11 @@ class Settings {
                     console.log(`Added cs2 settings for: ${twitchId}: ${JSON.stringify(this.savedSettings[twitchId].cs2)}`);
                     hasChanges = true;
                 }
+				if (!this.savedSettings[twitchId].gpt) {
+                    this.savedSettings[twitchId].gpt = {mood: "positive"};
+                    console.log(`Added mood settings for: ${twitchId}: ${JSON.stringify(this.savedSettings[twitchId].gpt)}`);
+                    hasChanges = true;
+                }
                 if (!this.savedSettings[twitchId].toggled || !Array.isArray(this.savedSettings[twitchId].toggled)) {
                     this.savedSettings[twitchId].toggled = [];
                     console.log(`Added toggle settings for: ${twitchId}: ${JSON.stringify(this.savedSettings[twitchId].toggled)}`);
@@ -165,6 +170,18 @@ class Settings {
         this.savedSettings[twitchId].cs2 = {id: id, name: name};
         await this.saveSettings();
     }
+	
+	async saveMood(twitchId, mood) {
+        await this.check(twitchId);
+        this.savedSettings[twitchId].gpt = {mood: mood};
+        await this.saveSettings();
+    }
+	
+	async saveFont(twitchId, font) {
+		await this.check(twitchId);
+		this.savedSettings[twitchId].font = font;
+		await this.saveSettings();
+	}
 
     async toggle(twitchId, command, triggers) {
         await this.check(twitchId);

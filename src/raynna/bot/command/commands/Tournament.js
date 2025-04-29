@@ -37,6 +37,9 @@ class Tournament {
             const now = Date.now() / 1000; // Current time in seconds
 
             // Filter tournaments by slug
+			if (slug === null) {
+				return `No tournament name was provided.`;
+			}	
             const matchingTournaments = tournamentList.filter(t =>
                 t.slug.toLowerCase().includes(slug.toLowerCase())
             );

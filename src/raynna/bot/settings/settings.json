@@ -1,4 +1,21 @@
 {
+  "11148817": {
+    "twitch": {
+      "channel": "pajlada",
+      "username": "pajlada"
+    },
+    "runescape": {
+      "name": "",
+      "id": -1
+    },
+    "cs2": {
+      "name": "",
+      "id": -1
+    },
+    "toggled": [],
+    "font": "bold",
+    "game": "Software and Game Development"
+  },
   "22958834": {
     "twitch": {
       "channel": "nooblet",
@@ -33,6 +50,79 @@
     "font": "bold",
     "game": "Counter-Strike"
   },
+  "25682676": {
+    "twitch": {
+      "channel": "karleygg",
+      "username": "KARLEYGG"
+    },
+    "runescape": {
+      "name": "",
+      "id": -1
+    },
+    "cs2": {
+      "id": 3732962653,
+      "name": "kARLEY"
+    },
+    "toggled": [
+      "averageexperience",
+      "averagelevel",
+      "clan",
+      "clues",
+      "combat",
+      "dropstoday",
+      "dropsyesterday",
+      "easyrank",
+      "eliterank",
+      "hardrank",
+      "lastmonth",
+      "lastweek",
+      "lastyear",
+      "masterrank",
+      "mediumrank",
+      "month",
+      "news",
+      "nintynines",
+      "onetwenties",
+      "pricecheck",
+      "questpoints",
+      "quests",
+      "rscommands",
+      "runescore",
+      "skill",
+      "today",
+      "total",
+      "twohundredmill",
+      "voiceofseren",
+      "week",
+      "wiki",
+      "wildernessevent",
+      "year",
+      "yesterday",
+      "tournament"
+    ],
+    "font": "bold",
+    "game": "Counter-Strike"
+  },
+  "26760639": {
+    "twitch": {
+      "channel": "causanova",
+      "username": "CausaNova"
+    },
+    "runescape": {
+      "name": "",
+      "id": -1
+    },
+    "cs2": {
+      "name": "",
+      "id": -1
+    },
+    "gpt": {
+      "mood": "angry"
+    },
+    "toggled": [],
+    "font": "bold",
+    "game": "RuneScape"
+  },
   "28965201": {
     "twitch": {
       "channel": "masterpipe83",
@@ -47,6 +137,61 @@
       "id": -1
     },
     "toggled": [],
+    "font": "bold",
+    "game": "Counter-Strike"
+  },
+  "37452555": {
+    "twitch": {
+      "channel": "andis88",
+      "username": "andis88"
+    },
+    "runescape": {
+      "name": "",
+      "id": -1
+    },
+    "cs2": {
+      "id": 862707073,
+      "name": "aNDIS88"
+    },
+    "gpt": {
+      "mood": "neutral"
+    },
+    "toggled": [
+      "averageexperience",
+      "averagelevel",
+      "clan",
+      "clues",
+      "combat",
+      "dropstoday",
+      "dropsyesterday",
+      "easyrank",
+      "eliterank",
+      "hardrank",
+      "lastmonth",
+      "lastweek",
+      "lastyear",
+      "masterrank",
+      "mediumrank",
+      "month",
+      "news",
+      "nintynines",
+      "onetwenties",
+      "pricecheck",
+      "questpoints",
+      "quests",
+      "rscommands",
+      "runescore",
+      "skill",
+      "today",
+      "total",
+      "twohundredmill",
+      "voiceofseren",
+      "week",
+      "wiki",
+      "wildernessevent",
+      "year",
+      "yesterday"
+    ],
     "font": "bold",
     "game": "Counter-Strike"
   },
@@ -66,6 +211,75 @@
     "toggled": [],
     "font": "bold",
     "game": "Counter-Strike"
+  },
+  "47376416": {
+    "twitch": {
+      "channel": "julija0",
+      "username": "Julija0"
+    },
+    "runescape": {
+      "name": "",
+      "id": -1
+    },
+    "cs2": {
+      "name": "",
+      "id": -1
+    },
+    "toggled": [],
+    "font": "bold",
+    "game": "Counter-Strike"
+  },
+  "47536262": {
+    "twitch": {
+      "channel": "joakimxjansson",
+      "username": "joakimxjansson"
+    },
+    "runescape": {
+      "name": "",
+      "id": -1
+    },
+    "cs2": {
+      "name": "",
+      "id": -1
+    },
+    "toggled": [
+      "averageexperience",
+      "averagelevel",
+      "clan",
+      "clues",
+      "combat",
+      "dropstoday",
+      "dropsyesterday",
+      "easyrank",
+      "eliterank",
+      "hardrank",
+      "lastmonth",
+      "lastweek",
+      "lastyear",
+      "masterrank",
+      "mediumrank",
+      "month",
+      "news",
+      "nintynines",
+      "onetwenties",
+      "pricecheck",
+      "questpoints",
+      "quests",
+      "rscommands",
+      "runescore",
+      "skill",
+      "today",
+      "total",
+      "twohundredmill",
+      "voiceofseren",
+      "week",
+      "wiki",
+      "wildernessevent",
+      "year",
+      "yesterday"
+    ],
+    "font": "bold",
+    "game": "Slots"
   },
   "48741210": {
     "twitch": {
@@ -97,10 +311,61 @@
       "id": -1
     }
   },
+  "49312952": {
+    "twitch": {
+      "channel": "dashdash",
+      "username": "DashDash"
+    },
+    "runescape": {
+      "name": "",
+      "id": -1
+    },
+    "cs2": {
+      "name": "",
+      "id": -1
+    },
+    "toggled": [],
+    "font": "bold",
+    "game": "RuneScape"
+  },
+  "49619460": {
+    "twitch": {
+      "channel": "wazzy",
+      "username": "Wazzy"
+    },
+    "runescape": {
+      "name": "",
+      "id": -1
+    },
+    "cs2": {
+      "name": "",
+      "id": -1
+    },
+    "toggled": [],
+    "font": "bold",
+    "game": "RuneScape"
+  },
   "50750562": {
     "twitch": {
       "channel": "kimsomfan",
       "username": "kimsomfan"
+    },
+    "runescape": {
+      "name": "",
+      "id": -1
+    },
+    "cs2": {
+      "name": "",
+      "id": -1
+    },
+    "toggled": [],
+    "font": "bold",
+    "game": ""
+  },
+  "51185178": {
+    "twitch": {
+      "channel": "le_mijares",
+      "username": "le_mijares"
     },
     "runescape": {
       "name": "",
@@ -176,6 +441,61 @@
     "cs2": {
       "name": "",
       "id": -1
+    }
+  },
+  "58234694": {
+    "twitch": {
+      "channel": "pytonormtv",
+      "username": "PytonormTV"
+    },
+    "runescape": {
+      "name": "",
+      "id": -1
+    },
+    "cs2": {
+      "id": 3066189453,
+      "name": "Pytonorm"
+    },
+    "toggled": [
+      "averageexperience",
+      "averagelevel",
+      "clan",
+      "clues",
+      "combat",
+      "dropstoday",
+      "dropsyesterday",
+      "easyrank",
+      "eliterank",
+      "hardrank",
+      "lastmonth",
+      "lastweek",
+      "lastyear",
+      "masterrank",
+      "mediumrank",
+      "month",
+      "news",
+      "nintynines",
+      "onetwenties",
+      "pricecheck",
+      "questpoints",
+      "quests",
+      "rscommands",
+      "runescore",
+      "skill",
+      "today",
+      "total",
+      "twohundredmill",
+      "voiceofseren",
+      "week",
+      "wiki",
+      "wildernessevent",
+      "year",
+      "yesterday"
+    ],
+    "font": "bold",
+    "game": "Counter-Strike",
+    "gpt": {
+      "mood": "negative"
     }
   },
   "63232377": {
@@ -262,6 +582,23 @@
       "name": "",
       "id": -1
     }
+  },
+  "73140219": {
+    "twitch": {
+      "channel": "rs_legos",
+      "username": "rs_legos"
+    },
+    "runescape": {
+      "name": "",
+      "id": -1
+    },
+    "cs2": {
+      "name": "",
+      "id": -1
+    },
+    "toggled": [],
+    "font": "bold",
+    "game": "RuneScape"
   },
   "78501398": {
     "twitch": {
@@ -433,7 +770,7 @@
     "toggled": [
       "dino"
     ],
-    "font": "bold",
+    "font": "default",
     "cs2": {
       "name": "",
       "id": -1
@@ -450,23 +787,6 @@
     },
     "toggled": [],
     "font": "bold"
-  },
-  "119453882": {
-    "twitch": {
-      "channel": "nilslegend",
-      "username": "NilsLegend"
-    },
-    "runescape": {
-      "name": "",
-      "id": -1
-    },
-    "cs2": {
-      "name": "",
-      "id": -1
-    },
-    "toggled": [],
-    "font": "bold",
-    "game": "Slots"
   },
   "123046275": {
     "twitch": {
@@ -579,7 +899,11 @@
       "id": -1
     },
     "toggled": [],
-    "font": "bold"
+    "font": "bold",
+    "cs2": {
+      "name": "",
+      "id": -1
+    }
   },
   "141445019": {
     "twitch": {
@@ -608,7 +932,21 @@
       "name": "RS Tango"
     },
     "toggled": [
-      "pricecheck"
+      "pricecheck",
+      "quests",
+      "questpoints",
+      "cscommands",
+      "gather",
+      "kdr",
+      "lastmatch",
+      "latestban",
+      "latestbans",
+      "match",
+      "mostkilled",
+      "mostkilledby",
+      "steam",
+      "tournament",
+      "winstreak"
     ],
     "font": "bold",
     "cs2": {
@@ -665,6 +1003,9 @@
     "cs2": {
       "id": 3166065274,
       "name": "Stakarn"
+    },
+    "gpt": {
+      "mood": "neutral"
     }
   },
   "146316667": {
@@ -771,6 +1112,36 @@
     ],
     "font": "bold"
   },
+  "168577152": {
+    "twitch": {
+      "channel": "4starball",
+      "username": "4StarBall"
+    },
+    "runescape": {
+      "name": "",
+      "id": -1
+    },
+    "cs2": {
+      "name": "",
+      "id": -1
+    },
+    "toggled": [
+      "cscommands",
+      "gather",
+      "kdr",
+      "lastmatch",
+      "latestban",
+      "latestbans",
+      "match",
+      "mostkilled",
+      "mostkilledby",
+      "steam",
+      "tournament",
+      "winstreak"
+    ],
+    "font": "bold",
+    "game": "RuneScape"
+  },
   "180011933": {
     "twitch": {
       "channel": "esplaycom",
@@ -821,6 +1192,39 @@
       "id": -1
     }
   },
+  "198276927": {
+    "twitch": {
+      "channel": "urboidakota",
+      "username": "UrBoiDakota"
+    },
+    "runescape": {
+      "id": 360298,
+      "name": "pigface"
+    },
+    "cs2": {
+      "name": "",
+      "id": -1
+    },
+    "toggled": [
+      "cscommands",
+      "gather",
+      "kdr",
+      "lastmatch",
+      "latestban",
+      "latestbans",
+      "match",
+      "mostkilled",
+      "mostkilledby",
+      "steam",
+      "tournament",
+      "winstreak"
+    ],
+    "font": "bold",
+    "game": "RuneScape",
+    "gpt": {
+      "mood": "rapper"
+    }
+  },
   "211128304": {
     "twitch": {
       "channel": "rsbeckyy",
@@ -832,24 +1236,6 @@
     },
     "toggled": [],
     "font": "bold"
-  },
-  "234808254": {
-    "twitch": {
-      "channel": "beard_hub",
-      "username": "Beard_Hub"
-    },
-    "runescape": {
-      "id": 363169,
-      "name": "POGO RS"
-    },
-    "toggled": [
-      "commands"
-    ],
-    "font": "bold",
-    "cs2": {
-      "name": "",
-      "id": -1
-    }
   },
   "413797152": {
     "twitch": {
@@ -906,48 +1292,16 @@
       "id": 1616518952,
       "name": "Iron Raynna"
     },
-    "toggled": [
-      "clan",
-      "averageexperience",
-      "averagelevel",
-      "clues",
-      "combat",
-      "dropstoday",
-      "dropsyesterday",
-      "easyrank",
-      "eliterank",
-      "hardrank",
-      "lastmonth",
-      "lastweek",
-      "lastyear",
-      "masterrank",
-      "mediumrank",
-      "month",
-      "news",
-      "nintynines",
-      "onetwenties",
-      "pricecheck",
-      "questpoints",
-      "quests",
-      "rscommands",
-      "runescore",
-      "skill",
-      "today",
-      "total",
-      "twohundredmill",
-      "voiceofseren",
-      "week",
-      "wiki",
-      "wildernessevent",
-      "year",
-      "yesterday"
-    ],
-    "font": "bold",
-    "game": "RuneScape",
     "cs2": {
       "id": 3006037612,
       "name": "Raynna"
-    }
+    },
+    "gpt": {
+      "mood": "positive"
+    },
+    "toggled": [],
+    "font": "default",
+    "game": ""
   },
   "504293747": {
     "twitch": {
@@ -988,6 +1342,23 @@
     "font": "bold",
     "game": ""
   },
+  "536788667": {
+    "twitch": {
+      "channel": "aaztween",
+      "username": "aaztween"
+    },
+    "runescape": {
+      "name": "",
+      "id": -1
+    },
+    "cs2": {
+      "name": "",
+      "id": -1
+    },
+    "toggled": [],
+    "font": "bold",
+    "game": "RuneScape: Dragonwilds"
+  },
   "561066744": {
     "twitch": {
       "channel": "ltsmaluwa",
@@ -1004,6 +1375,26 @@
       "id": -1
     }
   },
+  "566520662": {
+    "twitch": {
+      "channel": "pud888",
+      "username": "Pud888"
+    },
+    "runescape": {
+      "name": "",
+      "id": -1
+    },
+    "cs2": {
+      "name": "",
+      "id": -1
+    },
+    "gpt": {
+      "mood": "valley-girl"
+    },
+    "toggled": [],
+    "font": "bold",
+    "game": "RuneScape"
+  },
   "587584543": {
     "twitch": {
       "channel": "godjamot",
@@ -1014,7 +1405,11 @@
       "name": "OhNooWayyy"
     },
     "toggled": [],
-    "font": "bold"
+    "font": "bold",
+    "cs2": {
+      "name": "",
+      "id": -1
+    }
   },
   "669172013": {
     "twitch": {
@@ -1038,11 +1433,15 @@
       "username": "0rland0Smith"
     },
     "runescape": {
-      "name": "",
-      "id": -1
+      "id": 3463515075,
+      "name": "0rland0Smith"
     },
     "toggled": [],
-    "font": "bold"
+    "font": "bold",
+    "cs2": {
+      "name": "",
+      "id": -1
+    }
   },
   "678745276": {
     "twitch": {
@@ -1081,9 +1480,25 @@
     },
     "toggled": [
       "hugge",
-      "dino"
+      "dino",
+      "cscommands",
+      "gather",
+      "kdr",
+      "lastmatch",
+      "latestban",
+      "latestbans",
+      "match",
+      "mostkilled",
+      "mostkilledby",
+      "steam",
+      "tournament",
+      "winstreak"
     ],
-    "font": "italic"
+    "font": "italic",
+    "cs2": {
+      "name": "",
+      "id": -1
+    }
   },
   "746055686": {
     "twitch": {
@@ -1104,18 +1519,53 @@
   },
   "770392237": {
     "twitch": {
-      "channel": "oojsan",
-      "username": "OOJSAN"
+      "channel": "evelinamadsenn",
+      "username": "Evelinamadsenn"
     },
     "runescape": {
       "name": "",
       "id": -1
     },
     "cs2": {
-      "name": "",
-      "id": -1
+      "id": 3117877640,
+      "name": "Evelina"
     },
-    "toggled": [],
+    "toggled": [
+      "averageexperience",
+      "averagelevel",
+      "clan",
+      "clues",
+      "combat",
+      "dropstoday",
+      "dropsyesterday",
+      "easyrank",
+      "eliterank",
+      "hardrank",
+      "lastmonth",
+      "lastweek",
+      "lastyear",
+      "masterrank",
+      "mediumrank",
+      "month",
+      "news",
+      "nintynines",
+      "onetwenties",
+      "pricecheck",
+      "questpoints",
+      "quests",
+      "rscommands",
+      "runescore",
+      "skill",
+      "today",
+      "total",
+      "twohundredmill",
+      "voiceofseren",
+      "week",
+      "wiki",
+      "wildernessevent",
+      "year",
+      "yesterday"
+    ],
     "font": "bold",
     "game": "Counter-Strike"
   },
@@ -1135,6 +1585,23 @@
     "toggled": [],
     "font": "bold",
     "game": "Software and Game Development"
+  },
+  "828341419": {
+    "twitch": {
+      "channel": "legiorapax1",
+      "username": "LegioRapax1"
+    },
+    "runescape": {
+      "name": "",
+      "id": -1
+    },
+    "cs2": {
+      "name": "",
+      "id": -1
+    },
+    "toggled": [],
+    "font": "bold",
+    "game": "RuneScape"
   },
   "881097329": {
     "twitch": {

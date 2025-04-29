@@ -35,15 +35,22 @@ class Match {
                 return `Couldn't find player with name ${name}`;
             }
             const { cs_fields, game_stats, ban, id } = player;
-
-            const { data: match, errorMessage: matchError } = await getData(RequestType.ESPLAY_CURRENT_MATCH, id);
+			const { data: liveMatch, errorMessage: liveError } = await getData(RequestType.ESPLAY_CURRENT_LIVE_MATCH, id);
+			if (liveError) {
+				return liveError.replace('{id}', name);
+			}
+			const matchId = liveMatch.match.id;
+			if (matchId == null) {
+				return "error finding matchId";
+			}
+            const { data: match, errorMessage: matchError } = await getData(RequestType.ESPLAY_CURRENT_MATCH, matchId);
             if (matchError) {
-                return matchError.replace('{username}', name);
+                return matchError.replace('{id}', name);
             }
             if (!match) {
                 return `${player.username} isn't currently playing ESPlay.`;
             }
-            const { map_id, team, score_1, score_2 } = match;
+            const { map_id, team1_score, team2_score, users } = match;
 
             const { data: globals, errorMessage: globalsError } = await getData(RequestType.ESPLAY_GLOBALS);
             if (globalsError) {
@@ -53,18 +60,20 @@ class Match {
             const { maps } = globals;
             const map = maps.find(map => map.id === map_id);
             const mapName = map ? map.name : "Unknown Map";
-
-            if (score_1 !== undefined && score_2 !== undefined && team !== undefined) {
+			const currentUser = users.find(u => u.id === id);
+			const teamId = currentUser?.team;
+			console.log(`team1:${team1_score}, team2:${team2_score}`);
+            if (team1_score !== undefined && team2_score !== undefined && teamId !== undefined) {
                 let displayScore;
-                if (team === 1) {
-                    displayScore = `${score_1} : ${score_2}`;
-                } else if (team === 2) {
-                    displayScore = `${score_2} : ${score_1}`;
+                if (teamId === 1) {
+                    displayScore = `${team1_score} : ${team2_score}`;
+                } else if (teamId === 2) {
+                    displayScore = `${team2_score} : ${team1_score}`;
                 }
 
-                const status = (team === 1 && score_1 > score_2) || (team === 2 && score_2 > score_1)
+                const status = (teamId === 1 && team1_score > team2_score) || (teamId === 2 && team2_score > team1_score)
                     ? "winning"
-                    : score_1 === score_2 ? "tied"
+                    : team1_score === team2_score ? "tied"
                     : "losing";
 
                 return `${player.username} is currently in a match on ${mapName}, ${status} with a score of ${displayScore}.`;

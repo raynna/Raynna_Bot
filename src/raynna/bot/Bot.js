@@ -172,6 +172,31 @@ client.on('message', async (channel, tags, message, self) => {
             if (await checkCustomCommands(tags, channel, message)) {
                 return;
             }
+			const botIsModerator = await isBotModerator(client, channel);
+			if (message.toLowerCase().includes(`@${process.env.TWITCH_BOT_USERNAME.toLowerCase()}`)) {
+				if (!botIsModerator && tags.username.toLowerCase() !== process.env.CREATOR_CHANNEL.toLowerCase()) {
+							const isStreamer = channel.slice(1).toLowerCase() === tags.username.toLowerCase();
+                            if (isStreamer) {
+                                await sendMessage(client, channel, `Bot needs to be a VIP or Moderator to use commands.`);
+                            }
+                            return;
+                        }
+				const askCommand = commands.commands["ask"];
+				let cleanedMessage = message.replace(new RegExp(`@${process.env.TWITCH_BOT_USERNAME}`, 'ig'), '').trim();
+				    if (!cleanedMessage || cleanedMessage.length < 2) {
+						cleanedMessage = "Hej!";
+					}
+				let result = await askCommand.execute(tags, channel, cleanedMessage);
+                        if (result) {
+							if (!commands.isAvoidTag(askCommand)) {
+                                result += ` @${tags.username}`;
+                            }
+                            await sendMessage(client, channel, result, false);
+                            await addLog(channel, tags.username, 'ask-via-mention');
+                        }
+				
+				return;
+			}
             const match = message.match(regexpCommand);
             if (match) {
                 const [, command, argument] = match;
