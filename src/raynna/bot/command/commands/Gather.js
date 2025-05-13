@@ -36,23 +36,32 @@ class Gather {
             console.log(`An error has occurred while executing command ${this.name}`, error);
         }
     }
+	
+	async showGatherLobby(username, playerId, isBotModerator) {
+    try {
+        const { data: gatherList, errorMessage } = await getData(RequestType.ESPLAY_GATHERS);
+        if (errorMessage) {
+            return errorMessage;
+        }
 
-    async showGatherLobby(username, playerId, isBotModerator) {
-        try {
-            const { data: gatherList, errorMessage: errorMessage } = await getData(RequestType.ESPLAY_GATHERS);
-            if (errorMessage) {
-                return errorMessage;
+        let gather = null;
+		let hosting = false;
+        for (const g of gatherList) {
+            const { data: gatherDetails, errorMessage: gatherError } = await getData(RequestType.ESPLAY_GATHER, g.id);
+            if (gatherError || !gatherDetails || g.ended) continue;
+			
+            const isInGather = gatherDetails.users.some(user => user.id === playerId);
+            if (isInGather) {
+                gather = gatherDetails;
+				hosting = g.host_user_id === playerId;
+                break;
             }
-            const gather = gatherList.find(gather => gather.host.id === playerId);
-            if (!gather) {
-                return `${username} isn't currently hosting a gather.`;
-            }
-			if (gather.ended) {
-				return `${username} isn't currently hosting a gather.`;
-			}
+        }
 
-            const { picked_user_count, map_id, id, match_id } = gather;
+        if (gather) {
+            const { picked_user_count, map_id, id } = gather;
             const waiting = gather.size - picked_user_count;
+
             const { data: globals, errorMessage: globalsError } = await getData(RequestType.ESPLAY_GLOBALS);
             if (globalsError) {
                 return `Couldn't retrieve map data. ${globalsError}`;
@@ -61,39 +70,54 @@ class Gather {
             const { maps } = globals;
             const map = maps.find(map => map.id === map_id);
             const mapName = map ? map.name : "Unknown Map";
-
-            // Check if the player ID is in the gather list
             const playerLink = `https://www.esplay.com/g/${id}`;
-            const { data: liveMatch, errorMessage: liveError } = await getData(RequestType.ESPLAY_CURRENT_LIVE_MATCH, playerId);
-			if (liveError) {
-				return liveError.replace('{id}', username);
+
+            if (isBotModerator) {
+                return `${username} is currently ${hosting ? "hosting" : "in"} a gather: ${playerLink} ${mapName}, Waiting: ${waiting}, Picked: ${picked_user_count}/10`;
+            } else {
+                return `${username} is currently ${hosting ? "hosting" : "in"} a gather, ${mapName}, Waiting: ${waiting}, Picked: ${picked_user_count}/10`;
+            }
+        }
+
+        const { data: liveMatch, errorMessage: liveError } = await getData(RequestType.ESPLAY_CURRENT_LIVE_MATCH, playerId);
+        if (liveError) {
+            return liveError.replace('{id}', username);
+        }
+
+        if (liveMatch && liveMatch.match) {
+            const { team, id: matchId } = liveMatch.match;
+            if (!matchId) {
+                return "Error finding matchId";
+            }
+			const bracketId = liveMatch.match.bracket_id;
+			if (bracketId) {
+				return `${player.username} is currently in a bracket, disabled to avoid spoilers.`;
 			}
-			if (liveMatch.match) {
-			const { team: team, id: matchId } = liveMatch.match;
-			if (matchId == null) {
-				return "error finding matchId";
-				}
-                const { data: match, errorMessage: matchError } = await getData(RequestType.ESPLAY_CURRENT_MATCH, matchId);
+
+            const { data: match, errorMessage: matchError } = await getData(RequestType.ESPLAY_CURRENT_MATCH, matchId);
             if (matchError) {
-                return matchError.replace('{id}', name);
+                return matchError.replace('{id}', username);
             }
             if (!match) {
-                return `${player.username} isn't currently playing ESPlay.`;
+                return `${username} isn't currently playing ESPlay.`;
             }
-            const { map_id, team1_score, team2_score, users } = match;
 
+            const { map_id, team1_score, team2_score, users } = match;
             const { data: globals, errorMessage: globalsError } = await getData(RequestType.ESPLAY_GLOBALS);
             if (globalsError) {
                 return `Couldn't retrieve map data. ${globalsError}`;
             }
+
             const { maps } = globals;
             const map = maps.find(map => map.id === map_id);
-            const mapName = map ? map.name : "Unknown Map";
-			const currentUser = users.find(u => u.id === id);
-			const teamId = currentUser?.team;
-			console.log(`team1:${team1_score}, team2:${team2_score}, teamId: ${teamId}, team: ${team}`);
+            const mapName = map ? map.name : "Picking Map";
+
+            const currentUser = users.find(u => u.id === playerId);
+            const teamId = currentUser?.team;
+
             if (team1_score !== undefined && team2_score !== undefined && (teamId !== undefined || team !== undefined)) {
                 let displayScore;
+
                 if (teamId === 1 || team === 1) {
                     displayScore = `${team1_score} : ${team2_score}`;
                 } else if (teamId === 2 || team === 2) {
@@ -104,18 +128,19 @@ class Gather {
                     ? "winning"
                     : team1_score === team2_score ? "tied"
                     : "losing";
+
                 return `${username} is currently in a match on ${mapName}, ${status} with a score of ${displayScore}.`;
-				}
-            } else {
-                if (isBotModerator) {
-                    return `${username} is currently hosting a gather: ${playerLink} ${mapName}, Waiting: ${waiting}, Picked: ${picked_user_count}/10`;
-                }
-                return `${username} is currently hosting a gather, ${mapName}, Waiting: ${waiting}, Picked: ${picked_user_count}/10`;
             }
-        } catch (error) {
-            console.log(error);
         }
+
+        return `${username} isn't currently in a gather or a match.`;
+
+    } catch (error) {
+        console.error(error);
+        return "An unexpected error occurred while checking the lobby status.";
     }
+}
+
 }
 
 module.exports = Gather;

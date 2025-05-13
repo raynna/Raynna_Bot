@@ -5,6 +5,9 @@ const tmi = require("tmi.js");
 const Commands = require('./command/Commands');
 const commands = new Commands();
 
+const Settings = require('./settings/Settings');
+const settings = new Settings();
+
 const {isBotModerator, addChannel, registerGame} = require('./utils/BotUtils');
 
 const {updateChannels, connectedChannels} = require('./channels/Channels');
@@ -141,11 +144,20 @@ const messageCounts = {};
 const messageTimestamps = {};
 const cooldowns = {};
 let commandQueue = [];
+const pauseAttempts = {};
 
 client.on('message', async (channel, tags, message, self) => {
     try {
         const isNotBot = tags && tags.username && tags.username.toLowerCase() !== process.env.TWITCH_BOT_USERNAME;
+		const isOtherBot = tags && tags.username && (
+			tags.username.toLowerCase() === "nightbot" ||
+			tags.username.toLowerCase() === "streamelements" ||
+			tags.username.toLowerCase().includes("bot")
+);
         if (isNotBot) {
+			if (isOtherBot) {
+				return;
+			}
             if (!messageCounts[tags.username]) {
                 messageCounts[tags.username] = 0;
             }
@@ -172,10 +184,35 @@ client.on('message', async (channel, tags, message, self) => {
             if (await checkCustomCommands(tags, channel, message)) {
                 return;
             }
+			const channelName = channel.startsWith('#') ? channel.slice(1).toLowerCase() : channel;
+			//console.log(message + " from " + tags.username + " in channel: " + channel);
+		
+
+			const paused = await settings.isPaused(channelName); // or however you access your Settings instance
 			const botIsModerator = await isBotModerator(client, channel);
 			if (message.toLowerCase().includes(`@${process.env.TWITCH_BOT_USERNAME.toLowerCase()}`)) {
+				const isStreamer = channel.slice(1).toLowerCase() === tags.username.toLowerCase();
+				if (paused) {
+					if (isStreamer) {
+						await sendMessage(client, channel, `🔇 Bot is currently paused. Use "!resume" to resume.`);
+					} else {
+						const user = tags.username.toLowerCase();
+						if (!pauseAttempts[user]) {
+							pauseAttempts[user] = 1;
+						} else {
+							pauseAttempts[user]++;
+						}
+						setTimeout(() => {
+							delete pauseAttempts[user];
+							}, 60000); // clear after 60 seconds
+						if (pauseAttempts[user] >= 3) {
+							await sendMessage(client, channel, `🤖 Bot is still paused. Ask ${channelName} to use !resume.`);
+							pauseAttempts[user] = 0;
+						}
+					}
+					return;
+				}
 				if (!botIsModerator && tags.username.toLowerCase() !== process.env.CREATOR_CHANNEL.toLowerCase()) {
-							const isStreamer = channel.slice(1).toLowerCase() === tags.username.toLowerCase();
                             if (isStreamer) {
                                 await sendMessage(client, channel, `Bot needs to be a VIP or Moderator to use commands.`);
                             }
@@ -184,9 +221,9 @@ client.on('message', async (channel, tags, message, self) => {
 				const askCommand = commands.commands["ask"];
 				let cleanedMessage = message.replace(new RegExp(`@${process.env.TWITCH_BOT_USERNAME}`, 'ig'), '').trim();
 				    if (!cleanedMessage || cleanedMessage.length < 2) {
-						cleanedMessage = "Hej!";
+						cleanedMessage = "Hello!";
 					}
-				let result = await askCommand.execute(tags, channel, cleanedMessage);
+				let result = await askCommand.execute(tags, channel, cleanedMessage, commands);
                         if (result) {
 							if (!commands.isAvoidTag(askCommand)) {
                                 result += ` @${tags.username}`;
@@ -194,7 +231,6 @@ client.on('message', async (channel, tags, message, self) => {
                             await sendMessage(client, channel, result, false);
                             await addLog(channel, tags.username, 'ask-via-mention');
                         }
-				
 				return;
 			}
             const match = message.match(regexpCommand);
@@ -205,8 +241,30 @@ client.on('message', async (channel, tags, message, self) => {
                 const commandInstance = commands.commands[commandTrigger];
                 if (commandInstance && typeof commandInstance.execute === 'function') {
                     try {
-                        const userCooldown = cooldowns[tags.username];
+						const pauseBypassCommands = ['pause', 'resume', 'activate', 'deactivate', 'unpausa', 'pausa'];
+						const isPauseCommand = pauseBypassCommands.includes(commandTrigger);
 
+						if (paused && !isPauseCommand) {
+							console.log(`Bot is paused on ${channelName}.`);
+							    const isStreamer = channelName === tags.username.toLowerCase();
+							if (isStreamer) {
+								await sendMessage(client, channel, `🔇 Bot is currently paused. Use "!resume" to resume.`);
+							} else {
+								const user = tags.username.toLowerCase();
+								if (!pauseAttempts[user]) {
+									pauseAttempts[user] = 1;
+								} else {
+									pauseAttempts[user]++;
+								}
+
+								if (pauseAttempts[user] >= 3) {
+									await sendMessage(client, channel, `🔇 Bot is still paused. Ask ${channelName} to use !resume.`);
+									pauseAttempts[user] = 0;
+								}
+							}
+							return;
+						}
+                        const userCooldown = cooldowns[tags.username];
                             let currentTime = Date.now();
                             if (currentTime - userCooldown.lastUsed < 3000) {
                                 console.log(`Command cooldown active for user ${tags.username}.`);
@@ -240,7 +298,7 @@ client.on('message', async (channel, tags, message, self) => {
                         }
                         currentTime = Date.now();
                         userCooldown.lastUsed = currentTime;
-                        console.log(`New lastUsed for ${tags.username} ${currentTime}`)
+                        //console.log(`New lastUsed for ${tags.username} ${currentTime}`)
                         userCooldown.activeCooldowns.push(channel);
                         setTimeout(() => {
                             const idx = userCooldown.activeCooldowns.indexOf(channel);
@@ -249,7 +307,7 @@ client.on('message', async (channel, tags, message, self) => {
                             }
                         }, 3000);
                         await info(`Command execute on channel: ${channel}`, `${playerIsMod ? `Mod: ` : isStreamer ? `Streamer: ` : `Viewer: `}${tags.username} has used the command: ${command}`);
-                        let result = await commandInstance.execute(tags, channel, argument, client, botIsModerator);
+                        let result = await commandInstance.execute(tags, channel, argument, client, botIsModerator, commands);
                         if (result) {
                             //console.log(`Result: ${result}`);
                             if (!commands.isAvoidTag(commandInstance)) {

@@ -44,11 +44,11 @@ class Kdr {
             const { kills, deaths, rounds, damage_dealt } = cs_fields;
             const ratio = deaths !== 0 ? (kills / deaths).toFixed(2) : "N/A";
 
-            const { matches, wins, losses, elo, reported, max_win_streak } = game_stats;
+            const { matches, wins, losses, elo, reported, max_win_streak, honor } = game_stats;
             const winRatio = matches !== 0 ? ((wins / matches) * 100).toFixed(2) + "%" : "N/A";
 
             const avgDamagePerRound = rounds !== 0 ? (damage_dealt / rounds).toFixed(2) : "N/A";
-            return `${player.username}'s: Elo: ${elo}, Kills: ${kills}, Deaths: ${deaths}, Ratio: ${ratio}, Damage/Round: ${avgDamagePerRound}, Matches: ${game_stats.matches}, Win%: ${winRatio}, Best winstreak: ${max_win_streak}, Reports: ${reported}`
+            return `${player.username}'s: Elo: ${elo}, Kills: ${kills}, Deaths: ${deaths}, Ratio: ${ratio}, Damage/Round: ${avgDamagePerRound}, Matches: ${game_stats.matches}, Win%: ${winRatio}, Best winstreak: ${max_win_streak}, Honor: ${honor}%`
         } catch (error) {
             console.log(`An error has occurred while executing command ${this.name}`, error);
         }

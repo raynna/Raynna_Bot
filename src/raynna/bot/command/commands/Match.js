@@ -39,9 +39,13 @@ class Match {
 			if (liveError) {
 				return liveError.replace('{id}', name);
 			}
+			if (!liveMatch || !liveMatch.match) {
+				return `${player.username} isn't currently in a match.`;
+			}
 			const matchId = liveMatch.match.id;
-			if (matchId == null) {
-				return "error finding matchId";
+			const bracketId = liveMatch.match.bracket_id;
+			if (bracketId) {
+				return `${player.username} is currently in a bracket, disabled to avoid spoilers.`;
 			}
             const { data: match, errorMessage: matchError } = await getData(RequestType.ESPLAY_CURRENT_MATCH, matchId);
             if (matchError) {
@@ -59,7 +63,7 @@ class Match {
 
             const { maps } = globals;
             const map = maps.find(map => map.id === map_id);
-            const mapName = map ? map.name : "Unknown Map";
+            const mapName = map ? map.name : "Picking Map";
 			const currentUser = users.find(u => u.id === id);
 			const teamId = currentUser?.team;
 			console.log(`team1:${team1_score}, team2:${team2_score}`);

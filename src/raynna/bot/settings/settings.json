@@ -14,7 +14,13 @@
     },
     "toggled": [],
     "font": "bold",
-    "game": "Software and Game Development"
+    "game": "Software and Game Development",
+    "gpt": {
+      "mood": "positive",
+      "scope": "channel"
+    },
+    "custom": {},
+    "paused": false
   },
   "22958834": {
     "twitch": {
@@ -48,7 +54,13 @@
     },
     "toggled": [],
     "font": "bold",
-    "game": "Counter-Strike"
+    "game": "Counter-Strike",
+    "gpt": {
+      "mood": "positive",
+      "scope": "channel"
+    },
+    "custom": {},
+    "paused": false
   },
   "25682676": {
     "twitch": {
@@ -117,11 +129,14 @@
       "id": -1
     },
     "gpt": {
-      "mood": "angry"
+      "mood": "angry",
+      "scope": "channel"
     },
     "toggled": [],
     "font": "bold",
-    "game": "RuneScape"
+    "game": "RuneScape",
+    "custom": {},
+    "paused": false
   },
   "28965201": {
     "twitch": {
@@ -138,7 +153,13 @@
     },
     "toggled": [],
     "font": "bold",
-    "game": "Counter-Strike"
+    "game": "Counter-Strike",
+    "gpt": {
+      "mood": "positive",
+      "scope": "channel"
+    },
+    "custom": {},
+    "paused": false
   },
   "37452555": {
     "twitch": {
@@ -154,7 +175,8 @@
       "name": "aNDIS88"
     },
     "gpt": {
-      "mood": "neutral"
+      "mood": "neutral",
+      "scope": "channel"
     },
     "toggled": [
       "averageexperience",
@@ -193,7 +215,9 @@
       "yesterday"
     ],
     "font": "bold",
-    "game": "Counter-Strike"
+    "game": "Counter-Strike",
+    "custom": {},
+    "paused": false
   },
   "38019896": {
     "twitch": {
@@ -210,7 +234,13 @@
     },
     "toggled": [],
     "font": "bold",
-    "game": "Counter-Strike"
+    "game": "Counter-Strike",
+    "gpt": {
+      "mood": "positive",
+      "scope": "channel"
+    },
+    "custom": {},
+    "paused": false
   },
   "47376416": {
     "twitch": {
@@ -227,7 +257,13 @@
     },
     "toggled": [],
     "font": "bold",
-    "game": "Counter-Strike"
+    "game": "Counter-Strike",
+    "gpt": {
+      "mood": "positive",
+      "scope": "channel"
+    },
+    "custom": {},
+    "paused": false
   },
   "47536262": {
     "twitch": {
@@ -309,7 +345,15 @@
     "cs2": {
       "name": "",
       "id": -1
-    }
+    },
+    "gpt": {
+      "mood": "rude",
+      "scope": "channel"
+    },
+    "custom": {
+      "deaths": 17
+    },
+    "paused": false
   },
   "49312952": {
     "twitch": {
@@ -326,7 +370,13 @@
     },
     "toggled": [],
     "font": "bold",
-    "game": "RuneScape"
+    "game": "RuneScape",
+    "gpt": {
+      "mood": "positive",
+      "scope": "channel"
+    },
+    "custom": {},
+    "paused": false
   },
   "49619460": {
     "twitch": {
@@ -343,7 +393,13 @@
     },
     "toggled": [],
     "font": "bold",
-    "game": "RuneScape"
+    "game": "RuneScape",
+    "gpt": {
+      "mood": "positive",
+      "scope": "channel"
+    },
+    "custom": {},
+    "paused": false
   },
   "50750562": {
     "twitch": {
@@ -394,7 +450,13 @@
     },
     "toggled": [],
     "font": "bold",
-    "game": ""
+    "game": "",
+    "gpt": {
+      "mood": "positive",
+      "scope": "channel"
+    },
+    "custom": {},
+    "paused": false
   },
   "57810555": {
     "twitch": {
@@ -441,7 +503,13 @@
     "cs2": {
       "name": "",
       "id": -1
-    }
+    },
+    "gpt": {
+      "mood": "positive",
+      "scope": "channel"
+    },
+    "custom": {},
+    "paused": false
   },
   "58234694": {
     "twitch": {
@@ -490,13 +558,17 @@
       "wiki",
       "wildernessevent",
       "year",
-      "yesterday"
+      "yesterday",
+      "tournament"
     ],
     "font": "bold",
     "game": "Counter-Strike",
     "gpt": {
-      "mood": "negative"
-    }
+      "mood": "negative",
+      "scope": "channel"
+    },
+    "custom": {},
+    "paused": false
   },
   "63232377": {
     "twitch": {
@@ -513,7 +585,13 @@
     },
     "toggled": [],
     "font": "bold",
-    "game": "Counter-Strike"
+    "game": "Counter-Strike",
+    "gpt": {
+      "mood": "positive",
+      "scope": "channel"
+    },
+    "custom": {},
+    "paused": false
   },
   "65381354": {
     "twitch": {
@@ -530,7 +608,13 @@
     },
     "toggled": [],
     "font": "bold",
-    "game": "Counter-Strike"
+    "game": "Counter-Strike",
+    "gpt": {
+      "mood": "positive",
+      "scope": "channel"
+    },
+    "custom": {},
+    "paused": false
   },
   "67547968": {
     "twitch": {
@@ -581,7 +665,13 @@
     "cs2": {
       "name": "",
       "id": -1
-    }
+    },
+    "gpt": {
+      "mood": "positive",
+      "scope": "channel"
+    },
+    "custom": {},
+    "paused": false
   },
   "73140219": {
     "twitch": {
@@ -598,7 +688,13 @@
     },
     "toggled": [],
     "font": "bold",
-    "game": "RuneScape"
+    "game": "RuneScape",
+    "gpt": {
+      "mood": "positive",
+      "scope": "channel"
+    },
+    "custom": {},
+    "paused": false
   },
   "78501398": {
     "twitch": {
@@ -626,7 +722,13 @@
     "cs2": {
       "name": "",
       "id": -1
-    }
+    },
+    "gpt": {
+      "mood": "positive",
+      "scope": "channel"
+    },
+    "custom": {},
+    "paused": false
   },
   "82345727": {
     "twitch": {
@@ -678,7 +780,13 @@
       "yesterday"
     ],
     "font": "bold",
-    "game": "Counter-Strike"
+    "game": "Counter-Strike",
+    "gpt": {
+      "mood": "positive",
+      "scope": "channel"
+    },
+    "custom": {},
+    "paused": false
   },
   "84895439": {
     "twitch": {
@@ -756,7 +864,13 @@
       "clan"
     ],
     "font": "default",
-    "game": "Software and Game Development"
+    "game": "Software and Game Development",
+    "gpt": {
+      "mood": "neutral",
+      "scope": "channel"
+    },
+    "custom": {},
+    "paused": false
   },
   "100957167": {
     "twitch": {
@@ -774,7 +888,13 @@
     "cs2": {
       "name": "",
       "id": -1
-    }
+    },
+    "gpt": {
+      "mood": "positive",
+      "scope": "channel"
+    },
+    "custom": {},
+    "paused": false
   },
   "117020610": {
     "twitch": {
@@ -802,7 +922,13 @@
     "cs2": {
       "name": "",
       "id": -1
-    }
+    },
+    "gpt": {
+      "mood": "positive",
+      "scope": "channel"
+    },
+    "custom": {},
+    "paused": false
   },
   "127302375": {
     "twitch": {
@@ -814,7 +940,17 @@
       "id": -1
     },
     "toggled": [],
-    "font": "bold"
+    "font": "bold",
+    "cs2": {
+      "name": "",
+      "id": -1
+    },
+    "gpt": {
+      "mood": "positive",
+      "scope": "channel"
+    },
+    "custom": {},
+    "paused": false
   },
   "128945279": {
     "twitch": {
@@ -871,7 +1007,15 @@
     "cs2": {
       "name": "",
       "id": -1
-    }
+    },
+    "gpt": {
+      "mood": "rude",
+      "scope": "channel"
+    },
+    "custom": {
+      "deaths": 3
+    },
+    "paused": false
   },
   "140293496": {
     "twitch": {
@@ -887,7 +1031,13 @@
     "cs2": {
       "name": "",
       "id": -1
-    }
+    },
+    "gpt": {
+      "mood": "positive",
+      "scope": "channel"
+    },
+    "custom": {},
+    "paused": false
   },
   "141328522": {
     "twitch": {
@@ -952,7 +1102,15 @@
     "cs2": {
       "name": "",
       "id": -1
-    }
+    },
+    "gpt": {
+      "mood": "rude",
+      "scope": "user"
+    },
+    "custom": {
+      "deaths": 0
+    },
+    "paused": false
   },
   "145498937": {
     "twitch": {
@@ -1005,8 +1163,11 @@
       "name": "Stakarn"
     },
     "gpt": {
-      "mood": "neutral"
-    }
+      "mood": "flirty",
+      "scope": "channel"
+    },
+    "custom": {},
+    "paused": false
   },
   "146316667": {
     "twitch": {
@@ -1034,7 +1195,13 @@
     "cs2": {
       "name": "",
       "id": -1
-    }
+    },
+    "gpt": {
+      "mood": "positive",
+      "scope": "channel"
+    },
+    "custom": {},
+    "paused": false
   },
   "147039284": {
     "twitch": {
@@ -1080,7 +1247,13 @@
     },
     "toggled": [],
     "font": "bold",
-    "game": ""
+    "game": "",
+    "gpt": {
+      "mood": "positive",
+      "scope": "channel"
+    },
+    "custom": {},
+    "paused": false
   },
   "155825736": {
     "twitch": {
@@ -1096,7 +1269,13 @@
     "cs2": {
       "name": "",
       "id": -1
-    }
+    },
+    "gpt": {
+      "mood": "positive",
+      "scope": "channel"
+    },
+    "custom": {},
+    "paused": false
   },
   "160956273": {
     "twitch": {
@@ -1118,8 +1297,8 @@
       "username": "4StarBall"
     },
     "runescape": {
-      "name": "",
-      "id": -1
+      "id": 265741,
+      "name": "4StarBall"
     },
     "cs2": {
       "name": "",
@@ -1140,7 +1319,13 @@
       "winstreak"
     ],
     "font": "bold",
-    "game": "RuneScape"
+    "game": "RuneScape",
+    "gpt": {
+      "mood": "rude",
+      "scope": "channel"
+    },
+    "custom": {},
+    "paused": false
   },
   "180011933": {
     "twitch": {
@@ -1151,13 +1336,21 @@
       "name": "",
       "id": -1
     },
-    "toggled": [],
+    "toggled": [
+      "tournament"
+    ],
     "font": "bold",
     "game": "Counter-Strike",
     "cs2": {
-      "name": "",
-      "id": -1
-    }
+      "id": 5428472,
+      "name": "kREATIV"
+    },
+    "gpt": {
+      "mood": "positive",
+      "scope": "channel"
+    },
+    "custom": {},
+    "paused": true
   },
   "180604126": {
     "twitch": {
@@ -1190,7 +1383,13 @@
     "cs2": {
       "name": "",
       "id": -1
-    }
+    },
+    "gpt": {
+      "mood": "positive",
+      "scope": "channel"
+    },
+    "custom": {},
+    "paused": false
   },
   "198276927": {
     "twitch": {
@@ -1222,8 +1421,11 @@
     "font": "bold",
     "game": "RuneScape",
     "gpt": {
-      "mood": "rapper"
-    }
+      "mood": "rapper",
+      "scope": "channel"
+    },
+    "custom": {},
+    "paused": false
   },
   "211128304": {
     "twitch": {
@@ -1264,7 +1466,13 @@
     "cs2": {
       "id": 438877306,
       "name": "ChrilleEkberG"
-    }
+    },
+    "gpt": {
+      "mood": "positive",
+      "scope": "channel"
+    },
+    "custom": {},
+    "paused": false
   },
   "468106723": {
     "twitch": {
@@ -1281,7 +1489,36 @@
     },
     "toggled": [],
     "font": "default",
-    "game": "Software and Game Development"
+    "game": "Software and Game Development",
+    "gpt": {
+      "mood": "positive",
+      "scope": "channel"
+    },
+    "custom": {},
+    "paused": false
+  },
+  "484168740": {
+    "twitch": {
+      "channel": "rhytsuz",
+      "username": "Rhytsuz"
+    },
+    "runescape": {
+      "name": "",
+      "id": -1
+    },
+    "cs2": {
+      "name": "",
+      "id": -1
+    },
+    "gpt": {
+      "mood": "positive",
+      "scope": "channel"
+    },
+    "custom": {},
+    "toggled": [],
+    "font": "bold",
+    "paused": false,
+    "game": "RuneScape"
   },
   "491679637": {
     "twitch": {
@@ -1297,11 +1534,16 @@
       "name": "Raynna"
     },
     "gpt": {
-      "mood": "positive"
+      "mood": "rude",
+      "scope": "channel"
     },
     "toggled": [],
     "font": "default",
-    "game": ""
+    "game": "",
+    "custom": {
+      "deaths": 2
+    },
+    "paused": false
   },
   "504293747": {
     "twitch": {
@@ -1317,7 +1559,13 @@
     "cs2": {
       "name": "",
       "id": -1
-    }
+    },
+    "gpt": {
+      "mood": "positive",
+      "scope": "channel"
+    },
+    "custom": {},
+    "paused": false
   },
   "506925489": {
     "twitch": {
@@ -1357,7 +1605,15 @@
     },
     "toggled": [],
     "font": "bold",
-    "game": "RuneScape: Dragonwilds"
+    "game": "RuneScape: Dragonwilds",
+    "gpt": {
+      "mood": "positive",
+      "scope": "channel"
+    },
+    "custom": {
+      "deaths": 2
+    },
+    "paused": false
   },
   "561066744": {
     "twitch": {
@@ -1389,11 +1645,14 @@
       "id": -1
     },
     "gpt": {
-      "mood": "valley-girl"
+      "mood": "positive",
+      "scope": "channel"
     },
     "toggled": [],
     "font": "bold",
-    "game": "RuneScape"
+    "game": "RuneScape",
+    "custom": {},
+    "paused": false
   },
   "587584543": {
     "twitch": {
@@ -1409,7 +1668,13 @@
     "cs2": {
       "name": "",
       "id": -1
-    }
+    },
+    "gpt": {
+      "mood": "positive",
+      "scope": "channel"
+    },
+    "custom": {},
+    "paused": false
   },
   "669172013": {
     "twitch": {
@@ -1425,7 +1690,13 @@
     "cs2": {
       "name": "",
       "id": -1
-    }
+    },
+    "gpt": {
+      "mood": "positive",
+      "scope": "channel"
+    },
+    "custom": {},
+    "paused": false
   },
   "675764127": {
     "twitch": {
@@ -1441,7 +1712,13 @@
     "cs2": {
       "name": "",
       "id": -1
-    }
+    },
+    "gpt": {
+      "mood": "positive",
+      "scope": "channel"
+    },
+    "custom": {},
+    "paused": false
   },
   "678745276": {
     "twitch": {
@@ -1515,7 +1792,13 @@
     "cs2": {
       "id": 1882505739,
       "name": "KloakBengt"
-    }
+    },
+    "gpt": {
+      "mood": "rude",
+      "scope": "channel"
+    },
+    "custom": {},
+    "paused": false
   },
   "770392237": {
     "twitch": {
@@ -1567,7 +1850,13 @@
       "yesterday"
     ],
     "font": "bold",
-    "game": "Counter-Strike"
+    "game": "Counter-Strike",
+    "gpt": {
+      "mood": "positive",
+      "scope": "channel"
+    },
+    "custom": {},
+    "paused": false
   },
   "825951214": {
     "twitch": {
@@ -1601,7 +1890,13 @@
     },
     "toggled": [],
     "font": "bold",
-    "game": "RuneScape"
+    "game": "RuneScape",
+    "gpt": {
+      "mood": "positive",
+      "scope": "channel"
+    },
+    "custom": {},
+    "paused": false
   },
   "881097329": {
     "twitch": {
@@ -1618,7 +1913,13 @@
     },
     "toggled": [],
     "font": "bold",
-    "game": "Counter-Strike"
+    "game": "Counter-Strike",
+    "gpt": {
+      "mood": "positive",
+      "scope": "channel"
+    },
+    "custom": {},
+    "paused": false
   },
   "902152197": {
     "twitch": {
@@ -1635,6 +1936,12 @@
     "cs2": {
       "id": 3230609769,
       "name": "Rimbo"
-    }
+    },
+    "gpt": {
+      "mood": "positive",
+      "scope": "channel"
+    },
+    "custom": {},
+    "paused": false
   }
 }

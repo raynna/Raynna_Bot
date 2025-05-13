@@ -193,6 +193,11 @@ const RequestType = {
         name: 'ESPLAY_GLOBALS',
         link: 'https://esplay.com/api/globals/get?ts=_0',
     },
+	ESPLAY_GATHER: {
+		name: 'ESPLAY_GATHER',
+        link: 'https://esplay.com/api/gather/get?id={id}',
+		values: ['{id}']
+	},
     ESPLAY_GATHERS: {
         name: 'ESPLAY_GATHERS',
         link: 'https://esplay.com/api/gather/list?game_id=1'

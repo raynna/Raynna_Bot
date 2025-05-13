@@ -1,5 +1,7 @@
 const fs = require("fs");
 
+const { getData, RequestType } = require("../requests/Request");
+
 class Settings {
     constructor() {
         this.savedSettings = this.loadSettings();
@@ -130,10 +132,27 @@ class Settings {
                     hasChanges = true;
                 }
 				if (!this.savedSettings[twitchId].gpt) {
-                    this.savedSettings[twitchId].gpt = {mood: "positive"};
-                    console.log(`Added mood settings for: ${twitchId}: ${JSON.stringify(this.savedSettings[twitchId].gpt)}`);
+                    this.savedSettings[twitchId].gpt = {mood: "positive", scope: "channel"};
+                    console.log(`Added gpt settings for: ${twitchId}: ${JSON.stringify(this.savedSettings[twitchId].gpt)}`);
                     hasChanges = true;
                 }
+				if (!('custom' in this.savedSettings[twitchId])) {
+					this.savedSettings[twitchId].custom = {};
+					console.log(`Added custom settings for: ${twitchId}: ${JSON.stringify(this.savedSettings[twitchId].custom)}`);
+					hasChanges = true;
+				}
+				if (!this.savedSettings[twitchId].gpt.mood) {
+					this.savedSettings[twitchId].gpt.mood = "positive";
+					console.log(`Added mood settings for: ${twitchId}: ${JSON.stringify(this.savedSettings[twitchId].gpt.mood)}`);
+					hasChanges = true;
+				}
+
+				if (!this.savedSettings[twitchId].gpt.scope) {
+					this.savedSettings[twitchId].gpt.scope = "channel";
+					console.log(`Added scope settings for: ${twitchId}: ${JSON.stringify(this.savedSettings[twitchId].gpt.scope)}`);
+					hasChanges = true;
+				}
+				
                 if (!this.savedSettings[twitchId].toggled || !Array.isArray(this.savedSettings[twitchId].toggled)) {
                     this.savedSettings[twitchId].toggled = [];
                     console.log(`Added toggle settings for: ${twitchId}: ${JSON.stringify(this.savedSettings[twitchId].toggled)}`);
@@ -144,11 +163,11 @@ class Settings {
                     console.log(`Added font settings for: ${twitchId}: ${JSON.stringify(this.savedSettings[twitchId].font)}`);
                     hasChanges = true;
                 }
-		    if (this.savedSettings[twitchId].custom) {
-			  this.savedSettings[twitchId].custom = [];
-			  console.log(`Created custom settings for: ${twitchId}`);
-			  hasChanges = true;			
-		    }
+				if (!('paused' in this.savedSettings[twitchId])) {
+					this.savedSettings[twitchId].paused = false;
+					console.log(`Added pause settings for: ${twitchId}: ${JSON.stringify(this.savedSettings[twitchId].paused)}`);
+					hasChanges = true;
+				}
                 if (hasChanges) {
                     await this.saveSettings();
                     console.log(`Settings after save for twitch user ${twitchId}: ${JSON.stringify(this.savedSettings[twitchId])}`);
@@ -177,11 +196,98 @@ class Settings {
         await this.saveSettings();
     }
 	
+	async savePause(twitchId, paused) {
+		await this.check(twitchId);
+		this.savedSettings[twitchId].paused = paused;
+		await this.saveSettings();
+	}
+	
 	async saveFont(twitchId, font) {
 		await this.check(twitchId);
 		this.savedSettings[twitchId].font = font;
 		await this.saveSettings();
 	}
+	
+	async saveDeath(channelName) {
+		const { data: twitch, errorMessage } = await getData(RequestType.TwitchUser, channelName.toLowerCase());
+		if (errorMessage || !twitch?.data?.length) {
+			console.log(`Error getting Twitch data for channel: ${channelName}`);
+			return;
+		}
+
+		const twitchId = twitch.data[0].id;
+		await this.check(twitchId);
+
+		if (!('deaths' in this.savedSettings[twitchId].custom)) {
+			console.log(`Initializing deaths for ${twitchId}`);
+			this.savedSettings[twitchId].custom.deaths = 0;
+		}
+
+		this.savedSettings[twitchId].custom.deaths += 1;
+
+		console.log(`Deaths updated for ${twitchId}: ${this.savedSettings[twitchId].custom.deaths}`);
+
+		await this.saveSettings();
+	}
+	
+	async resetDeaths(channelName) {
+		const { data: twitch, errorMessage } = await getData(RequestType.TwitchUser, channelName.toLowerCase());
+		if (errorMessage || !twitch?.data?.length) {
+			console.log(`Error getting Twitch data for channel: ${channelName}`);
+			return;
+		}
+
+		const twitchId = twitch.data[0].id;
+		await this.check(twitchId);
+
+		if (!('deaths' in this.savedSettings[twitchId].custom)) {
+			console.log(`Initializing deaths for ${twitchId}`);
+			this.savedSettings[twitchId].custom.deaths = 0;
+		}
+
+		this.savedSettings[twitchId].custom.deaths = 0;
+
+		console.log(`Deaths reset for ${twitchId}: ${this.savedSettings[twitchId].custom.deaths}`);
+
+		await this.saveSettings();
+	}
+	
+	async getDeaths(channelName) {
+		const { data: twitch, errorMessage } = await getData(RequestType.TwitchUser, channelName.toLowerCase());
+		if (errorMessage || !twitch?.data?.length) {
+			console.log(`Error getting Twitch data for channel: ${channelName}`);
+			return 0;
+		}
+
+		const twitchId = twitch.data[0].id;
+		await this.check(twitchId);
+
+		const deaths = this.savedSettings[twitchId]?.custom?.deaths || 0;
+		console.log(`Deaths for ${twitchId}: ${deaths}`);
+
+		await this.saveSettings();
+		return deaths;
+}
+	
+	async saveScope(twitchId, scope) {
+		await this.check(twitchId);
+		const existingGpt = this.savedSettings[twitchId].gpt || {};
+		this.savedSettings[twitchId].gpt = {
+			...existingGpt,
+			scope: scope
+		};
+		await this.saveSettings();
+	}
+	
+	async isPaused(channelName) {
+		const { data: twitch, errorMessage } = await getData(RequestType.TwitchUser, channelName.toLowerCase());
+		if (errorMessage || !twitch?.data?.length) return false;
+
+		const twitchId = twitch.data[0].id;
+		await this.check(twitchId); // Ensure settings are loaded
+		await this.saveSettings();
+		return this.savedSettings[twitchId]?.paused || false;
+}
 
     async toggle(twitchId, command, triggers) {
         await this.check(twitchId);

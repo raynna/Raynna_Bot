@@ -10,6 +10,7 @@ class ChangeMood {
         this.game = "General";
         this.validMoods = [
 		'angry', 'negative', 'positive', 'upset', 'sad', 'happy', 'neutral', 'rude',
+		"flirty", "inlove", "existential",
 		'sassy',         // Snarky and playful
 		'giga-chad',     // Overconfident and exaggerated bravado
 		'boomer',        // Talks like an old-school internet user or out-of-touch parent
@@ -45,10 +46,10 @@ class ChangeMood {
 		'karen',           // Always wants to speak to the manager
 		'gen-z',           // Vibes, slang, and emotional damage
 		'retro-gamer',     // Talks in 80s/90s arcade slang or old-school gaming lingo
-		'cyberpunk', ];
+		'cyberpunk'];
     }
 
-    async execute(tags, channel, argument, client, isBotModerator) {
+    async execute(tags, channel, argument, client, isBotModerator, commands) {
         try {
             let mood = argument ? argument.trim().toLowerCase() : "";
 
@@ -74,8 +75,10 @@ class ChangeMood {
             await this.settings.check(twitchId);
 
             await this.settings.saveMood(twitchId, mood);
-
-            return `My Mood for channel ${channel} has been changed to "${mood}".`;
+			let message = `My Mood for channel ${channel} has been changed to "${mood}".`;
+			const askCommand = commands.commands["ask"];
+			let result = await askCommand.execute(tags, channel, "reset");
+            return message;
 
         } catch (error) {
             console.error(`An error occurred while executing command ${this.name}:`, error);

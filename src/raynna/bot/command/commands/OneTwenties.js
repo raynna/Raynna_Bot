@@ -43,7 +43,7 @@ class OneTwenties {
                 if (player.error === "PROFILE_PRIVATE") {
                     return username + "'s RuneMetrics profile is set on private.";
                 }
-                return "Error looking for " + name + ", reason: " + player.error;
+                return "Error looking for " + username + ", reason: " + player.error;
             }
             const { name, skillvalues } = player;
             const XP_FOR_120 = 104273167;
