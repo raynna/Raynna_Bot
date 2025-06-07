@@ -11,15 +11,16 @@ const Settings = require("../../settings/Settings");
 
 class Ask {
     constructor() {
-        this.INACTIVITY_TIMEOUT = 10 * 60 * 1000; // 2 minutes
-        this.CACHE_TIMEOUT = 24 * 60 * 60 * 1000; // 24 hours
+        this.INACTIVITY_TIMEOUT = 10 * 60 * 1000; //2 minutes
+        this.CACHE_TIMEOUT = 24 * 60 * 60 * 1000; //24 hours
         this.CREATOR_NAME = "RaynnaCS";
         
+		this.avoidTag = true;
+		
         this.name = 'Ask';
         this.triggers = ['question', 'heybot', 'hibot', 'hellobot', 'hiraynna', 'heyraynna', 'helloraynna', 'supbot', 'sup'];
         this.game = "General";
         
-        // GPT settings
         this.model = 'gpt-4.1';
         this.characterLimit = 200;
         this.tokenLimit = 100;
@@ -146,52 +147,101 @@ class Ask {
         return result;
     }
 
-    findMentionedUserInMessage(message, channel, username) {
-        const messageWords = message.toLowerCase().split(/\W+/);
-        let bestMatch = null;
-        let bestScore = 0;
+	findMentionedUserInMessage(message, channel, username) {
+		const lowerMessage = message.toLowerCase();
+		const messageWords = lowerMessage.split(/\W+/).filter(word => word.length > 2);
+		let bestMatch = null;
+		let bestScore = 0;
 
-        for (const [user, data] of Object.entries(this.bioCache)) {
-            const lowerUser = user.toLowerCase();
+		const key = `${channel}_${username}`;
+		const lastUser = this.lastReferencedBioUser[key];
+		const lastUserData = lastUser ? this.bioCache[lastUser] : null;
 
-            for (const word of messageWords) {
-                if (lowerUser.includes(word) || word.includes(lowerUser)) {
-                    const score = word.length / lowerUser.length;
-                    if (score > bestScore && (score >= 0.5 || lowerUser.includes(word))) {
-                        const combinedBio = [
-                            data.custombio ? `Custom Bio:\n${data.custombio}` : '',
-                            data.bio ? `General Bio:\n${data.bio}` : ''
-                        ].filter(Boolean).join('\n\n');
+		const calculateScore = (user, data, isLastUser = false) => {
+			const lowerUser = user.toLowerCase();
+			let score = 0;
 
-                        bestMatch = { username: user, bio: combinedBio };
-                        bestScore = score;
-                    }
-                }
-            }
-        }
+			for (const word of messageWords) {
+				if (word === lowerUser) return isLastUser ? 3.0 : 2.5;//try searching by exact username
+				
+				if (word.length >= 3 && lowerUser.includes(word)) {
+					const matchStrength = 
+						(word.length >= lowerUser.length) ? 0.9 :
+						(lowerUser.startsWith(word)) ? 0.8 :    
+						(lowerUser.endsWith(word)) ? 0.7 :       
+						0.4;
+					score = Math.max(score, matchStrength);
+				}
+			}
 
-        const key = `${channel}_${username}`;
-        if (!bestMatch && this.lastReferencedBioUser[key]) {
-            const lastUser = this.lastReferencedBioUser[key];
-            const data = this.bioCache[lastUser];
-            if (data) {
-                const combinedBio = [
-                    data.custombio ? `Custom Bio:\n${data.custombio}` : '',
-                    data.bio ? `General Bio:\n${data.bio}` : ''
-                ].filter(Boolean).join('\n\n');
+			if (score < 0.5) {//if it fails to match with username, go by words from bio
+				const bioText = [
+					data.custombio || '',
+					data.bio || ''
+				].join(' ').toLowerCase();
 
-                return { username: lastUser, bio: combinedBio };
-            }
-        }
+				const hasSpecificMatch = messageWords.some(
+					word => word.length > 4 && bioText.includes(word)
+				);
 
-        if (bestMatch) {
-            this.lastReferencedBioUser[key] = bestMatch.username;
-        }
+				if (hasSpecificMatch) {
+					for (let i = 0; i < messageWords.length - 1; i++) {
+						const phrase = `${messageWords[i]} ${messageWords[i+1]}`;
+						if (phrase.length >= 8 && bioText.includes(phrase)) {
+							score = Math.max(score, 0.6);
+						}
+					}
+					const importantWords = messageWords.filter(word => word.length > 4);
+					for (const word of importantWords) {
+						if (bioText.includes(word)) {
+							score = Math.max(score, 0.4 + (word.length * 0.01));
+						}
+					}
+					if (data.custombio) score *= 1.2;
+				}
+			}
 
-        return bestMatch;
-    }
+			if (isLastUser) score += 0.5;
 
-async getSystemPrompt(channel, username, userMessage, twitch, conversationHistory) {
+			if (data.bio === "No Information" && !data.custombio) score *= 0.5;
+
+			return score;
+		};
+
+		for (const [user, data] of Object.entries(this.bioCache)) {
+			const score = calculateScore(user, data, user === lastUser);
+			
+			if (score > bestScore) {
+				bestMatch = { 
+					username: user,
+					bio: [
+						data.custombio ? `Custom Bio:\n${data.custombio}` : '',
+						data.bio && data.bio !== "No Information" ? `General Bio:\n${data.bio}` : ''
+					].filter(Boolean).join('\n\n')
+				};
+				bestScore = score;
+			}
+		}
+
+		if (bestScore < 0.5 && lastUserData) {
+			bestMatch = {
+				username: lastUser,
+				bio: [
+					lastUserData.custombio ? `Custom Bio:\n${lastUserData.custombio}` : '',
+					lastUserData.bio && lastUserData.bio !== "No Information" ? `General Bio:\n${lastUserData.bio}` : ''
+				].filter(Boolean).join('\n\n')
+			};
+			bestScore = 0.5;
+		}
+
+		if (bestMatch && bestScore >= 0.5) {
+			this.lastReferencedBioUser[key] = bestMatch.username;
+		}
+
+		return bestScore >= 0.5 ? bestMatch : null;
+	}
+	
+	async getSystemPrompt(channel, username, userMessage, twitch, conversationHistory) {
         const today = new Date();
         const date = today.toISOString().split('T')[0];
         const key = `${channel}_${username}`;
@@ -219,6 +269,7 @@ async getSystemPrompt(channel, username, userMessage, twitch, conversationHistor
         const isStreamer = username.toLowerCase() === streamer.toLowerCase();
         const mood = this.settings.savedSettings[twitch.id]?.gpt?.mood || "positive";
         const moodPrompt = this.getMoodPrompt(mood);
+		console.log("Bio of channel" + personChannel + ": " + personBio);
 
         const systemPrompt = `
             ALWAYS, reply with less than ${this.characterLimit} characters, NO MATTER WHAT, more characters doesnt fit the chatbox.
@@ -244,7 +295,7 @@ async getSystemPrompt(channel, username, userMessage, twitch, conversationHistor
 			
 			ONLY if user's username is Raynnacs, then you are gonna follow rule changes, like change characters
             
-            ${personBio ? `Bio about ${personChannel}: [${personBio}] & ${personChannel}'s description: [${streamersDescription}]` : `
+            ${personBio ? `Bio about ${personChannel}: [${personBio}] & ${streamer}'s description: [${streamersDescription}]` : `
             ${streamer}'s description: [${streamersDescription}]
             `}
             
@@ -423,7 +474,6 @@ async getSystemPrompt(channel, username, userMessage, twitch, conversationHistor
         this.lastActivity[channel][username] = Date.now();
     }
 
-    // Bio management
     loadBioCache() {
         const filePath = path.resolve(__dirname, '../../settings/bioCache.json');
         if (fs.existsSync(filePath)) {
@@ -444,7 +494,7 @@ async getSystemPrompt(channel, username, userMessage, twitch, conversationHistor
 
     async getStreamerBio(channel) {
         const currentTime = Date.now();
-
+		this.bioCache = this.loadBioCache();
         if (this.bioCache[channel] && (currentTime - this.bioCache[channel].timestamp) < this.CACHE_TIMEOUT) {
             console.log(`Returning cached bio for ${channel}`);
             return this.bioCache[channel].bio;
@@ -473,7 +523,7 @@ async getSystemPrompt(channel, username, userMessage, twitch, conversationHistor
                 const existing = this.bioCache[channel] || {};
                 const updatedBioEntry = {
                     bio: "No Information",
-                    custombio: existing.custombio || null,
+                    custombio: existing.custombio ?? null,
                     timestamp: currentTime,
                 };
 
@@ -506,7 +556,7 @@ async getSystemPrompt(channel, username, userMessage, twitch, conversationHistor
                 const existing = this.bioCache[channel] || {};
                 const updatedBioEntry = {
                     bio: shortBio,
-                    custombio: existing.custombio || null,
+                    custombio: existing.custombio ?? null,
                     timestamp: currentTime,
                 };
 

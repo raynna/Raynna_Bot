@@ -31,7 +31,7 @@ class Clues {
                 return message.replace('{username}', username);
             }
             if (!player) {
-                return `Couldn't find player with name ${name}`;
+                return `Couldn't find player with name ${username}`;
             }
             const { name, minigames } = player;
             if (!minigames) {

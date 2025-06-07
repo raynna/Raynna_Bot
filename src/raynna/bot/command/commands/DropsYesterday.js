@@ -62,7 +62,7 @@ class DropsYesterday {
                 console.log("Activity date:", activityDate, "| Activity text:", activity.text); // Debug: Log activity date and text
 
                 if (activityDate === yesterdayString && activity.text.includes("found")) {
-                    const match = activity.text.match(/found a (.*)/);
+					const match = activity.text.match(/found (?:a|an|some) (.+)/i);
                     if (match && match[1]) {
                         const itemName = match[1];
                         drops[itemName] = (drops[itemName] || 0) + 1;
@@ -77,7 +77,7 @@ class DropsYesterday {
             }
 
             if (formattedDrops.length === 0) {
-                return name + " hasn't gotten any drops yesterday.";
+                return name + " didn't get any drops yesterday.";
             }
             dropsSummary += formattedDrops.join(", ");
             return dropsSummary;

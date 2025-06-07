@@ -55,7 +55,7 @@ class DropsToday {
                 const activityDate = new Date(activity.date).toISOString().split('T')[0];
                 console.log("Activity date:", activityDate, "| Activity text:", activity.text); // Debug: Log activity date and text
                 if (activityDate === today && activity.text.includes("found")) {
-                    const match = activity.text.match(/found a (.*)/);
+                    const match = activity.text.match(/found (?:a|an|some) (.+)/i);
                     if (match && match[1]) {
                         const itemName = match[1];
                         if (drops[itemName]) {
