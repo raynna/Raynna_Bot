@@ -1,6 +1,6 @@
 {
-  "totalCommands": 5275,
-  "uniqueUserCount": 448,
+  "totalCommands": 5357,
+  "uniqueUserCount": 453,
   "mostUsedCommand": {
     "command": "ask",
     "count": 1875
@@ -93,7 +93,8 @@
     "2025-06-04": 1,
     "2025-06-05": 2,
     "2025-06-06": 36,
-    "2025-06-07": 19
+    "2025-06-07": 30,
+    "2025-06-08": 71
   },
   "commandsThisWeek": {
     "2025-W1": 439,
@@ -109,18 +110,19 @@
     "2025-W20": 283,
     "2025-W21": 215,
     "2025-W22": 263,
-    "2025-W23": 72
+    "2025-W23": 83,
+    "2025-W24": 71
   },
   "commandsThisMonth": {
     "2025-01": 2447,
     "2025-02": 115,
     "2025-04": 1125,
     "2025-05": 1512,
-    "2025-06": 76
+    "2025-06": 158
   },
   "userLogs": {
     "raynnacs": {
-      "totalCommands": 2424
+      "totalCommands": 2482
     },
     "imraz": {
       "totalCommands": 10
@@ -1026,7 +1028,7 @@
       "totalCommands": 2
     },
     "shadowferix": {
-      "totalCommands": 3
+      "totalCommands": 6
     },
     "le_bori_isaacunt": {
       "totalCommands": 1
@@ -1110,7 +1112,7 @@
       "totalCommands": 2
     },
     "senseu": {
-      "totalCommands": 1
+      "totalCommands": 8
     },
     "titttyrs": {
       "totalCommands": 2
@@ -1395,7 +1397,7 @@
       "totalCommands": 1
     },
     "fatblackcat4": {
-      "totalCommands": 5
+      "totalCommands": 6
     },
     "carguyrs": {
       "totalCommands": 1
@@ -1449,7 +1451,7 @@
       "totalCommands": 3
     },
     "rsn_bro_dk": {
-      "totalCommands": 2
+      "totalCommands": 3
     },
     "letsgooo111": {
       "totalCommands": 1
@@ -1462,31 +1464,46 @@
     },
     "twisteddcs": {
       "totalCommands": 1
+    },
+    "garekt_": {
+      "totalCommands": 1
+    },
+    "rsn_nffx": {
+      "totalCommands": 5
+    },
+    "homesliceofanapplepie": {
+      "totalCommands": 3
+    },
+    "rico_doom": {
+      "totalCommands": 2
+    },
+    "heppinn1": {
+      "totalCommands": 1
     }
   },
   "channels": {
     "raynnacs": {
-      "totalCommands": 752,
+      "totalCommands": 768,
       "specificCommands": {
         "gather": 9,
         "ask": 202,
         "99s": 2,
         "120s": 1,
         "pc": 6,
-        "changelist": 66,
+        "changelist": 67,
         "commands": 5,
         "general": 3,
         "modcommands": 2,
         "cscommands": 3,
-        "rscommands": 4,
+        "rscommands": 5,
         "mostkilled": 27,
         "mostkilledby": 1,
-        "stats": 8,
+        "stats": 9,
         "latestbans": 1,
         "weather": 25,
         "match": 12,
         "toggle": 26,
-        "clan": 5,
+        "clan": 6,
         "lastgame": 1,
         "tournament": 44,
         "turre": 18,
@@ -1494,15 +1511,15 @@
         "dropsyesterday": 3,
         "today": 1,
         "heyraynna": 1,
-        "total": 11,
-        "wildyevent": 2,
+        "total": 12,
+        "wildyevent": 3,
         "month": 3,
         "heybot": 2,
-        "ask-via-mention": 156,
-        "year": 5,
+        "ask-via-mention": 157,
+        "year": 6,
         "changemood": 8,
         "mood": 23,
-        "font": 6,
+        "font": 7,
         "rsname": 1,
         "csname": 1,
         "winstreak": 1,
@@ -1510,18 +1527,19 @@
         "pause": 8,
         "users": 1,
         "runescore": 2,
-        "clues": 4,
+        "clues": 6,
         "died": 3,
         "death": 2,
         "dead": 4,
         "deaths": 2,
         "hardrank": 1,
         "mediumrank": 1,
-        "merchant": 9,
-        "merch": 9,
-        "vos": 1,
+        "merchant": 10,
+        "merch": 10,
+        "vos": 2,
         "wiki": 1,
-        "quests": 1
+        "quests": 2,
+        "wildy": 1
       }
     },
     "pingisb0rd": {
@@ -1985,7 +2003,7 @@
       }
     },
     "parally": {
-      "totalCommands": 61,
+      "totalCommands": 63,
       "specificCommands": {
         "quests": 2,
         "heybot": 15,
@@ -2001,7 +2019,9 @@
         "deaths": 1,
         "mood": 1,
         "ask-via-mention": 2,
-        "clan": 2
+        "clan": 2,
+        "merchant": 1,
+        "99s": 1
       }
     },
     "drincompetentgamer": {
@@ -2492,6 +2512,33 @@
         "dropstoday": 1,
         "mood": 1,
         "moods": 1
+      }
+    },
+    "senseu": {
+      "totalCommands": 64,
+      "specificCommands": {
+        "clues": 3,
+        "ask-via-mention": 12,
+        "rscommands": 1,
+        "mood": 3,
+        "pc": 17,
+        "merchant": 1,
+        "wildyevent": 1,
+        "rsname": 1,
+        "hardrank": 1,
+        "font": 6,
+        "general": 1,
+        "toggle": 1,
+        "commands": 1,
+        "death": 1,
+        "modinfo": 1,
+        "99s": 1,
+        "quests": 3,
+        "total": 1,
+        "year": 3,
+        "lastyear": 1,
+        "dropstoday": 2,
+        "dropsyesterday": 2
       }
     }
   }

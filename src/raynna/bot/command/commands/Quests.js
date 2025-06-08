@@ -30,11 +30,11 @@ class Quests {
                 return message.replace('{username}', name);
             }
             if (!player) {
-                return `Couldn't find any player with name ${username}`;
+                return `Couldn't find any player with name ${name}`;
             }
             if (player.error) {
                 if (player.error === "PROFILE_PRIVATE") {
-                    return username + "'s RuneMetrics profile is set on private.";
+                    return name + "'s RuneMetrics profile is set on private.";
                 }
                 return "Error looking for " + name + ", reason: " + player.error;
             }

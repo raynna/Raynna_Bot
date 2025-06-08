@@ -14,18 +14,22 @@ class Font {
 
     async execute(tags, channel, argument, client, isBotModerator) {
         try {
-            let font = argument ? argument.trim().toLowerCase() : '';
+            let font = argument ? argument.toLowerCase().trim() : '';
 
             if (!font) {
                 return `Please provide a font (e.g., !font bold). Valid fonts: ${this.validFonts.join(', ')}`;
             }
-
             if (font === 'random') {
                 font = this.validFonts[Math.floor(Math.random() * this.validFonts.length)];
             } else if (font === 'reset') {
                 font = 'default';
-            } else if (!this.validFonts.includes(font)) {
-                return `Invalid font "${font}". Valid fonts are: ${this.validFonts.join(', ')}`;
+            } else {
+				const matchedFont = this.validFonts.find(f => f.toLowerCase() === font.toLowerCase());
+
+				if (!matchedFont) {
+					return `Invalid font "${font}". Valid fonts are: ${this.validFonts.join(', ')}`;
+				}
+				font = matchedFont;
             }
 
             const channelWithoutHash = channel.startsWith('#') ? channel.slice(1).toLowerCase() : channel.toLowerCase();

@@ -1162,6 +1162,44 @@
     "toggled": [],
     "font": "bold"
   },
+  "149960835": {
+    "twitch": {
+      "channel": "senseu",
+      "username": "Senseu"
+    },
+    "runescape": {
+      "id": 1602027972,
+      "name": "Glock"
+    },
+    "cs2": {
+      "name": "",
+      "id": -1
+    },
+    "gpt": {
+      "mood": "rude",
+      "scope": "channel"
+    },
+    "custom": {
+      "deaths": 1
+    },
+    "toggled": [
+      "cscommands",
+      "gather",
+      "kdr",
+      "lastmatch",
+      "latestban",
+      "latestbans",
+      "match",
+      "mostkilled",
+      "mostkilledby",
+      "steam",
+      "tournament",
+      "winstreak"
+    ],
+    "font": "italic",
+    "paused": false,
+    "game": "RuneScape"
+  },
   "151262560": {
     "twitch": {
       "channel": "lossalito",
@@ -1552,7 +1590,7 @@
       "scope": "channel"
     },
     "toggled": [],
-    "font": "default",
+    "font": "italicBold",
     "game": "",
     "custom": {
       "deaths": 2
